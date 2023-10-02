@@ -1,7 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dcg1fxh0lxwdy"]
+[gd_scene load_steps=3 format=3 uid="uid://dcg1fxh0lxwdy"]
 
 [ext_resource type="PackedScene" uid="uid://tpeybjfj2wky" path="res://scene/characters/player.tscn" id="1_hvvv1"]
+[ext_resource type="MeshLibrary" uid="uid://cuw66qi3btavk" path="res://assets/meshlib.tres" id="2_m2r1u"]
 
 [node name="Main" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_hvvv1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.50763, 0)
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = ExtResource("2_m2r1u")
+cell_size = Vector3(4, 0.5, 4)
+data = {
+"cells": PackedInt32Array(0, 0, 0, 0, 65535, 0, 65535, 65535, 0, 65535, 0, 0, 65533, 65534, 0, 65533, 65535, 0, 65533, 0, 0, 65533, 1, 0, 65533, 2, 0, 65534, 65534, 0, 65534, 65535, 0, 65534, 0, 0, 65534, 1, 0, 65534, 2, 0, 65535, 65534, 0, 65535, 1, 0, 65535, 2, 0, 0, 65534, 0, 0, 1, 0, 0, 2, 0, 1, 65534, 0, 1, 65535, 0, 1, 0, 0, 1, 1, 0, 1, 2, 0)
+}
