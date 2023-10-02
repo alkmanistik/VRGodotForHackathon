@@ -47,6 +47,8 @@ tracker = &"right_hand"
 mesh = SubResource("CapsuleMesh_ur23v")
 
 [node name="PlayerBody" parent="." instance=ExtResource("9_y1w6x")]
+collision_layer = 524289
+collision_mask = 30
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
 shape = SubResource("CapsuleShape3D_o5lxx")
