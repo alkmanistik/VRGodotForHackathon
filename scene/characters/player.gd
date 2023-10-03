@@ -1,12 +1,16 @@
-extends XROrigin3D
+extends Node3D
 
 var xr_interface: XRInterface
 
-func _ready() -> void:
+func _ready():
 	xr_interface = XRServer.find_interface("OpenXR")
 	if xr_interface and xr_interface.is_initialized():
-		print("Найден XR controller и инициализирован")
+		print("OpenXR initialised successfully")
+
+		# Turn off v-sync!
 		DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+
+		# Change our main viewport to output to the HMD
 		get_viewport().use_xr = true
 	else:
-		printerr("XR controller не инициализирован")
+		print("OpenXR not initialized, please check if your headset is connected")

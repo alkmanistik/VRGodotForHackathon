@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcg1fxh0lxwdy"]
+[gd_scene load_steps=8 format=3 uid="uid://dcg1fxh0lxwdy"]
 
 [ext_resource type="PackedScene" uid="uid://tpeybjfj2wky" path="res://scene/characters/player.tscn" id="1_hvvv1"]
-[ext_resource type="MeshLibrary" uid="uid://baej5qe7sjb03" path="res://assets/meshlib.tres" id="2_m2r1u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qi7sm"]
 
@@ -12,17 +11,17 @@ sky_material = SubResource("ProceduralSkyMaterial_qi7sm")
 background_mode = 2
 sky = SubResource("Sky_ype06")
 
-[node name="Main" type="Node3D"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyfgm"]
+albedo_color = Color(0.552941, 0.533333, 0.435294, 1)
 
-[node name="GridMap" type="GridMap" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.769068, 0)
-mesh_library = ExtResource("2_m2r1u")
-cell_size = Vector3(4, 0.5, 4)
-collision_layer = 4
-collision_mask = 11
-data = {
-"cells": PackedInt32Array(0, 0, 0, 0, 65535, 0, 65535, 65535, 0, 65535, 0, 0, 65533, 65534, 0, 65533, 65535, 0, 65533, 0, 0, 65533, 1, 0, 65533, 2, 0, 65534, 65534, 0, 65534, 65535, 0, 65534, 0, 0, 65534, 1, 0, 65534, 2, 0, 65535, 65534, 0, 65535, 1, 0, 65535, 2, 0, 0, 65534, 0, 0, 1, 0, 0, 2, 0, 1, 65534, 0, 1, 65535, 0, 1, 0, 0, 1, 1, 0, 1, 2, 0)
-}
+[sub_resource type="PlaneMesh" id="PlaneMesh_m1gpn"]
+material = SubResource("StandardMaterial3D_dyfgm")
+size = Vector2(20, 20)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k4pah"]
+data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
+
+[node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_bbdc6")
@@ -32,3 +31,13 @@ transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 
 
 [node name="Player" parent="." instance=ExtResource("1_hvvv1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1539, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_m1gpn")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_k4pah")
