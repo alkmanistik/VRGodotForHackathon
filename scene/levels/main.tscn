@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dcg1fxh0lxwdy"]
+[gd_scene load_steps=6 format=3 uid="uid://dcg1fxh0lxwdy"]
 
-[ext_resource type="PackedScene" uid="uid://tpeybjfj2wky" path="res://scene/characters/player.tscn" id="1_hvvv1"]
+[ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_4drv5"]
+[ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="2_ofn13"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qi7sm"]
 
@@ -11,16 +12,6 @@ sky_material = SubResource("ProceduralSkyMaterial_qi7sm")
 background_mode = 2
 sky = SubResource("Sky_ype06")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyfgm"]
-albedo_color = Color(0.552941, 0.533333, 0.435294, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_m1gpn"]
-material = SubResource("StandardMaterial3D_dyfgm")
-size = Vector2(20, 20)
-
-[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_k4pah"]
-data = PackedVector3Array(10, 0, 10, -10, 0, 10, 10, 0, -10, -10, 0, 10, -10, 0, -10, 10, 0, -10)
-
 [node name="Main" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -29,15 +20,20 @@ environment = SubResource("Environment_bbdc6")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 15, 0)
 
-[node name="Player" parent="." instance=ExtResource("1_hvvv1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1539, 0)
+[node name="Debug Player" parent="." instance=ExtResource("2_ofn13")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -7.94536, 8.80977, -8.33485)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("PlaneMesh_m1gpn")
+[node name="GridMap2" type="GridMap" parent="."]
+mesh_library = ExtResource("2_4drv5")
+data = {
+"cells": PackedInt32Array(262140, 65529, 655367, 262137, 65532, 7, 262140, 65532, 1048583, 262137, 65529, 1441799, 262138, 65531, 1441796, 262139, 65531, 1441796, 262139, 65530, 1441796, 262138, 65530, 1441796, 262140, 65530, 1048586, 262140, 65531, 1048586, 262139, 65532, 10, 262138, 65532, 10, 262137, 65531, 1441802, 262137, 65530, 1441802, 262138, 65529, 655370, 262139, 65529, 655370, 196604, 65529, 655366, 196604, 65532, 1048582, 196601, 65532, 6, 196601, 65529, 1441798, 196601, 65530, 1441801, 196601, 65531, 1441801, 196602, 65529, 655369, 196603, 65529, 655369, 196604, 65531, 1048585, 196604, 65530, 1048585, 196603, 65532, 9, 196602, 65532, 9, 131066, 65529, 655368, 131067, 65529, 655368, 131065, 65529, 1441797, 131065, 65530, 1441800, 131065, 65531, 1441800, 131065, 65532, 5, 131068, 65529, 655365, 131068, 65530, 1048584, 131068, 65531, 1048584, 131068, 65532, 1048581, 131066, 65530, 3, 131066, 65531, 3, 131066, 65532, 8, 131067, 65530, 3, 131067, 65531, 3, 131067, 65532, 8)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-collision_layer = 4
-collision_mask = 11
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_k4pah")
+[node name="GridMap3" type="GridMap" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, -6)
+mesh_library = ExtResource("2_4drv5")
+data = {
+"cells": PackedInt32Array(262140, 65529, 655367, 262137, 65532, 7, 262140, 65532, 1048583, 262137, 65529, 1441799, 262138, 65531, 1441796, 262139, 65531, 1441796, 262139, 65530, 1441796, 262138, 65530, 1441796, 262140, 65530, 1048586, 262140, 65531, 1048586, 262139, 65532, 10, 262138, 65532, 10, 262137, 65531, 1441802, 262137, 65530, 1441802, 262138, 65529, 655370, 262139, 65529, 655370, 196604, 65529, 655366, 196604, 65532, 1048582, 196601, 65532, 6, 196601, 65529, 1441798, 196601, 65530, 1441801, 196601, 65531, 1441801, 196602, 65529, 655369, 196603, 65529, 655369, 196604, 65531, 1048585, 196604, 65530, 1048585, 196603, 65532, 9, 196602, 65532, 9, 131066, 65529, 655368, 131067, 65529, 655368, 131065, 65529, 1441797, 131065, 65530, 1441800, 131065, 65531, 1441800, 131065, 65532, 5, 131068, 65529, 655365, 131068, 65530, 1048584, 131068, 65531, 1048584, 131068, 65532, 1048581, 131066, 65530, 3, 131066, 65531, 3, 131066, 65532, 8, 131067, 65530, 3, 131067, 65531, 3, 131067, 65532, 8)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
