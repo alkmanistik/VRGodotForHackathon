@@ -30,12 +30,29 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
+	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
+  
+  # clamp camera x rotation axis
+	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)
+  
+  # rotate the player along their y-axis
+	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
+  
+  # reset the mouseDelta vector
+	mouseDelta = Vector2()
+	
 	move_and_slide()
 
-func _unhandled_input(event):
-	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * CAMERA_SPEED)
-		camera.rotate_x(event.relative.y * CAMERA_SPEED)
-		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x,-85,85)
+# cam look
+var minLookAngle : float = -90.0
+var maxLookAngle : float = 90.0
+var lookSensitivity : float = 10.0
+# vectors
+var vel : Vector3 = Vector3()
+var mouseDelta : Vector2 = Vector2()
 
+func _input(event):
+  
+	if event is InputEventMouseMotion:
+		mouseDelta = event.relative
