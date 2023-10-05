@@ -1,0 +1,177 @@
+[gd_scene load_steps=17 format=3 uid="uid://dj63bu6mifmea"]
+
+[ext_resource type="Script" path="res://scene/levels/main.gd" id="1_s45a5"]
+[ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_37qtw"]
+[ext_resource type="Texture2D" uid="uid://c28pojjx0kja3" path="res://addons/boujie_water_shader/shader/ocean_albedo_1.png" id="3_uwv2a"]
+[ext_resource type="Shader" path="res://addons/boujie_water_shader/shader/water.gdshader" id="4_ohfyu"]
+[ext_resource type="PackedScene" uid="uid://dpy1eg3i331se" path="res://addons/godot-xr-tools/objects/teleport_area.tscn" id="5_swyqr"]
+[ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="6_8rtns"]
+[ext_resource type="PackedScene" uid="uid://blisueg4m8kk3" path="res://scene/Objects/Dynamic/coin.tscn" id="7_q1p1a"]
+[ext_resource type="PackedScene" uid="uid://bhifgoy7atjf5" path="res://scene/Objects/Static/tree.tscn" id="8_psesi"]
+[ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="9_spkxo"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qi7sm"]
+
+[sub_resource type="Sky" id="Sky_ype06"]
+sky_material = SubResource("ProceduralSkyMaterial_qi7sm")
+
+[sub_resource type="Environment" id="Environment_bbdc6"]
+background_mode = 2
+sky = SubResource("Sky_ype06")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_no54t"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wawsk"]
+albedo_texture = ExtResource("3_uwv2a")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ngp10"]
+render_priority = 0
+shader = ExtResource("4_ohfyu")
+shader_parameter/freeze_time = false
+shader_parameter/albedo = null
+shader_parameter/albedo_fresnel = null
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.2
+shader_parameter/metallic = 0.0
+shader_parameter/vertex_displace_from_mesh_normal = null
+shader_parameter/normal_wave_from_mesh_normal = null
+shader_parameter/refraction = null
+shader_parameter/refraction_texture_channel = null
+shader_parameter/refraction_opacity = null
+shader_parameter/shore_start_blend = null
+shader_parameter/shore_end_blend = null
+shader_parameter/distance_fade_min = null
+shader_parameter/distance_fade_max = null
+shader_parameter/near_fade_min = null
+shader_parameter/near_fade_max = null
+shader_parameter/foam_fade_min = null
+shader_parameter/foam_fade_max = null
+shader_parameter/shore_fade_min = null
+shader_parameter/shore_fade_max = null
+shader_parameter/vertex_wave_fade_min = null
+shader_parameter/vertex_wave_fade_max = null
+shader_parameter/depth_fog_fade_min = null
+shader_parameter/depth_fog_fade_max = null
+shader_parameter/refraction_scaling_distance_min = null
+shader_parameter/uv_blend_sharpness = null
+shader_parameter/uv_tri_scale = null
+shader_parameter/uv_tri_offset = null
+shader_parameter/color_deep = null
+shader_parameter/color_shallow = null
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = -0.75
+shader_parameter/albedo_snell = null
+shader_parameter/snell_direction = Vector3(0, 1, 0)
+shader_parameter/snell_tightness = 0.7
+shader_parameter/WaveCount = 0
+shader_parameter/WaveSteepnesses = null
+shader_parameter/WaveAmplitudes = null
+shader_parameter/WaveDirectionsDegrees = null
+shader_parameter/WaveFrequencies = null
+shader_parameter/WaveSpeeds = null
+shader_parameter/WavePhases = null
+shader_parameter/FoamWaveCount = 0
+shader_parameter/FoamWaveSteepnesses = null
+shader_parameter/FoamWaveAmplitudes = null
+shader_parameter/FoamWaveDirectionsDegrees = null
+shader_parameter/FoamWaveFrequencies = null
+shader_parameter/FoamWaveSpeeds = null
+shader_parameter/FoamWavePhases = null
+shader_parameter/UVWaveCount = 0
+shader_parameter/UVWaveSteepnesses = null
+shader_parameter/UVWaveAmplitudes = null
+shader_parameter/UVWaveDirectionsDegrees = null
+shader_parameter/UVWaveFrequencies = null
+shader_parameter/UVWaveSpeeds = null
+shader_parameter/UVWavePhases = null
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ogroy"]
+lightmap_size_hint = Vector2i(1502, 1502)
+material = SubResource("ShaderMaterial_ngp10")
+size = Vector2(300, 300)
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_s45a5")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bbdc6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 15, 0)
+shadow_enabled = true
+
+[node name="map" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.33822, 0)
+
+[node name="GridMap2" type="GridMap" parent="map"]
+mesh_library = ExtResource("2_37qtw")
+collision_layer = 4
+collision_mask = 11
+data = {
+"cells": PackedInt32Array(262140, 65529, 655367, 262137, 65532, 7, 262140, 65532, 1048583, 262137, 65529, 1441799, 262138, 65531, 1441796, 262139, 65531, 1441796, 262139, 65530, 1441796, 262138, 65530, 1441796, 262140, 65530, 1048586, 262140, 65531, 1048586, 262139, 65532, 10, 262138, 65532, 10, 262137, 65531, 1441802, 262137, 65530, 1441802, 262138, 65529, 655370, 262139, 65529, 655370, 196604, 65529, 655366, 196604, 65532, 1048582, 196601, 65532, 6, 196601, 65529, 1441798, 196601, 65530, 1441801, 196601, 65531, 1441801, 196602, 65529, 655369, 196603, 65529, 655369, 196604, 65531, 1048585, 196604, 65530, 1048585, 196603, 65532, 9, 196602, 65532, 9, 131066, 65529, 655368, 131067, 65529, 655368, 131065, 65529, 1441797, 131065, 65530, 1441800, 131065, 65531, 1441800, 131065, 65532, 5, 131068, 65529, 655365, 131068, 65530, 1048584, 131068, 65531, 1048584, 131068, 65532, 1048581, 131066, 65530, 3, 131066, 65531, 3, 131066, 65532, 8, 131067, 65530, 3, 131067, 65531, 3, 131067, 65532, 8)
+}
+metadata/_editor_floor_ = Vector3(0, 3, 0)
+
+[node name="GridMap4" type="GridMap" parent="map"]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 20, -26, 13)
+mesh_library = ExtResource("2_37qtw")
+collision_layer = 4
+collision_mask = 11
+data = {
+"cells": PackedInt32Array(262140, 65529, 655367, 262137, 65532, 7, 262140, 65532, 1048583, 262137, 65529, 1441799, 262138, 65531, 1441796, 262139, 65531, 1441796, 262139, 65530, 1441796, 262138, 65530, 1441796, 262140, 65530, 1048586, 262140, 65531, 1048586, 262139, 65532, 10, 262138, 65532, 10, 262137, 65531, 1441802, 262137, 65530, 1441802, 262138, 65529, 655370, 262139, 65529, 655370, 196604, 65529, 655366, 196604, 65532, 1048582, 196601, 65532, 6, 196601, 65529, 1441798, 196601, 65530, 1441801, 196601, 65531, 1441801, 196602, 65529, 655369, 196603, 65529, 655369, 196604, 65531, 1048585, 196604, 65530, 1048585, 196603, 65532, 9, 196602, 65532, 9, 131066, 65529, 655368, 131067, 65529, 655368, 131065, 65529, 1441797, 131065, 65530, 1441800, 131065, 65531, 1441800, 131065, 65532, 5, 131068, 65529, 655365, 131068, 65530, 1048584, 131068, 65531, 1048584, 131068, 65532, 1048581, 131066, 65530, 3, 131066, 65531, 3, 131066, 65532, 8, 131067, 65530, 3, 131067, 65531, 3, 131067, 65532, 8)
+}
+metadata/_editor_floor_ = Vector3(0, 1, 0)
+
+[node name="GridMap3" type="GridMap" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, -6)
+mesh_library = ExtResource("2_37qtw")
+collision_layer = 4
+collision_mask = 11
+data = {
+"cells": PackedInt32Array(262140, 65529, 655367, 262137, 65532, 7, 262140, 65532, 1048583, 262137, 65529, 1441799, 262138, 65531, 1441796, 262139, 65531, 1441796, 262139, 65530, 1441796, 262138, 65530, 1441796, 262140, 65530, 1048586, 262140, 65531, 1048586, 262139, 65532, 10, 262138, 65532, 10, 262137, 65531, 1441802, 262137, 65530, 1441802, 262138, 65529, 655370, 262139, 65529, 655370, 196604, 65529, 655366, 196604, 65532, 1048582, 196601, 65532, 6, 196601, 65529, 1441798, 196601, 65530, 1441801, 196601, 65531, 1441801, 196602, 65529, 655369, 196603, 65529, 655369, 196604, 65531, 1048585, 196604, 65530, 1048585, 196603, 65532, 9, 196602, 65532, 9, 131066, 65529, 655368, 131067, 65529, 655368, 131065, 65529, 1441797, 131065, 65530, 1441800, 131065, 65531, 1441800, 131065, 65532, 5, 131068, 65529, 655365, 131068, 65530, 1048584, 131068, 65531, 1048584, 131068, 65532, 1048581, 131066, 65530, 3, 131066, 65531, 3, 131066, 65532, 8, 131067, 65530, 3, 131067, 65531, 3, 131067, 65532, 8, -3, 65519, 2)
+}
+metadata/_editor_floor_ = Vector3(0, -1, 0)
+
+[node name="SpawnPosition" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4191, 4.51566, -30.7585)
+
+[node name="RespawnZone" type="Area3D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RespawnZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1444, 0, -39.8547)
+shape = SubResource("BoxShape3D_no54t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_wawsk")
+mesh = SubResource("PlaneMesh_ogroy")
+
+[node name="TeleportArea" parent="." node_paths=PackedStringArray("target") instance=ExtResource("5_swyqr")]
+target = NodePath("../SpawnPosition")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleportArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1444, 0, -39.8547)
+shape = SubResource("BoxShape3D_no54t")
+
+[node name="Debug Player" parent="." instance=ExtResource("6_8rtns")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8316, 5.51566, -26.9246)
+
+[node name="Coin" parent="." instance=ExtResource("7_q1p1a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.4334, 4.22049, -27.8988)
+
+[node name="Coin2" parent="." instance=ExtResource("7_q1p1a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.6576, 4.22049, -27.8988)
+
+[node name="Coin3" parent="." instance=ExtResource("7_q1p1a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.4334, 4.22049, -32.7647)
+
+[node name="Coin4" parent="." instance=ExtResource("7_q1p1a")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.4334, 4.22049, -23.7436)
+
+[node name="Tree" parent="." instance=ExtResource("8_psesi")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5955, 2.91695, -36.3005)
+
+[node name="UI" parent="." instance=ExtResource("9_spkxo")]
+
+[connection signal="body_exited" from="RespawnZone" to="." method="_on_respawn_zone_body_exited"]
