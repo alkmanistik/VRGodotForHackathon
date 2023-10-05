@@ -16,12 +16,17 @@ var star:int = 0
 @onready var rainbow_star = preload("res://assets/custom assets/rainbow_star.png")
 
 func _ready() -> void:
+	for i in get_tree().get_nodes_in_group("coin"):
+		i.connect("add_coin", add_coin)
+		max_coin += 1
 	health_update()
 	coin_update()
 
 func add_coin() -> void:
 	coin += 1
 	coin_update()
+	if coin == max_coin:
+		add_star("money")
 
 func coin_update() -> void:
 	coin_label.text = str(coin)+"/"+str(max_coin)

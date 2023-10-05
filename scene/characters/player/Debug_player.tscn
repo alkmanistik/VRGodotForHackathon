@@ -1,8 +1,7 @@
-[gd_scene load_steps=33 format=3 uid="uid://8hm8o3cu16t0"]
+[gd_scene load_steps=32 format=3 uid="uid://8hm8o3cu16t0"]
 
 [ext_resource type="Texture2D" uid="uid://cgcfjn1mulr3i" path="res://assets/characters/3DGodotRobot_GodotPalette.png" id="1_7ntcb"]
 [ext_resource type="Script" path="res://scene/characters/player/Debug_player.gd" id="1_bj0h0"]
-[ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="3_ndk4r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pvvhv"]
 resource_name = "Material"
@@ -4496,7 +4495,7 @@ _data = {
 }
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bcf15"]
-height = 1.0
+height = 1.5
 
 [node name="Debug Player" type="CharacterBody3D"]
 collision_mask = 31
@@ -4710,7 +4709,5 @@ libraries = {
 transform = Transform3D(-1, 8.74228e-08, 0, 8.74228e-08, 1, -8.74228e-08, -7.64274e-15, -8.74228e-08, -1, 6.01096e-09, 1.31889, 0.43389)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
 shape = SubResource("CylinderShape3D_bcf15")
-
-[node name="UI" parent="." instance=ExtResource("3_ndk4r")]
