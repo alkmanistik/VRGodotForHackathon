@@ -101,8 +101,7 @@ collision_layer = 16
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1444, 0, -39.8547)
 shape = SubResource("BoxShape3D_utito")
 
-[node name="TeleportArea" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_b3e5s")]
-target = NodePath("")
+[node name="TeleportArea" parent="." instance=ExtResource("1_b3e5s")]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeleportArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1444, 0, -39.8547)
