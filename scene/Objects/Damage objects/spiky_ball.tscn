@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwiupkjdopnbr"]
+
+[ext_resource type="PackedScene" uid="uid://c68feue8i1fs8" path="res://assets/Ultimate Platformer Pack - Dec 2021/Level and Mechanics/glTF/SpikyBall.gltf" id="1_ndgmh"]
+[ext_resource type="Script" path="res://scene/Objects/Damage objects/spiky_ball.gd" id="1_rd3tl"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_uwpj6"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_hv8xx"]
+
+[node name="SpikyBall" type="Node3D"]
+script = ExtResource("1_rd3tl")
+
+[node name="SpikyBall" parent="." instance=ExtResource("1_ndgmh")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 11
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1.185, 0, 0, 0, 1.185, 0, 0, 0, 1.185, 0, 0, 0)
+shape = SubResource("SphereShape3D_uwpj6")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.65, 0, 0, 0, 1.65, 0, 0, 0, 1.65, 0, 0, 0)
+shape = SubResource("SphereShape3D_hv8xx")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
