@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://f02rs5h3c0e6"]
+
+[ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_eairg"]
+
+[node name="Bee Saber" instance=ExtResource("1_eairg")]

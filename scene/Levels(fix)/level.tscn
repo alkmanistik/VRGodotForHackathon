@@ -1,0 +1,115 @@
+[gd_scene load_steps=11 format=3 uid="uid://0otndonvy60n"]
+
+[ext_resource type="PackedScene" uid="uid://dpy1eg3i331se" path="res://addons/godot-xr-tools/objects/teleport_area.tscn" id="1_b3e5s"]
+[ext_resource type="Script" path="res://scene/Levels(fix)/level.gd" id="1_cuiud"]
+[ext_resource type="Texture2D" uid="uid://c28pojjx0kja3" path="res://addons/boujie_water_shader/shader/ocean_albedo_1.png" id="2_qg4kg"]
+[ext_resource type="Shader" path="res://addons/boujie_water_shader/shader/water.gdshader" id="3_2yryo"]
+
+[sub_resource type="Environment" id="Environment_1v8ha"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_utito"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1cldl"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5a0a"]
+albedo_texture = ExtResource("2_qg4kg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ngp10"]
+render_priority = 0
+shader = ExtResource("3_2yryo")
+shader_parameter/freeze_time = false
+shader_parameter/albedo = null
+shader_parameter/albedo_fresnel = null
+shader_parameter/specular = 0.5
+shader_parameter/roughness = 0.2
+shader_parameter/metallic = 0.0
+shader_parameter/vertex_displace_from_mesh_normal = null
+shader_parameter/normal_wave_from_mesh_normal = null
+shader_parameter/refraction = null
+shader_parameter/refraction_texture_channel = null
+shader_parameter/refraction_opacity = null
+shader_parameter/shore_start_blend = null
+shader_parameter/shore_end_blend = null
+shader_parameter/distance_fade_min = null
+shader_parameter/distance_fade_max = null
+shader_parameter/near_fade_min = null
+shader_parameter/near_fade_max = null
+shader_parameter/foam_fade_min = null
+shader_parameter/foam_fade_max = null
+shader_parameter/shore_fade_min = null
+shader_parameter/shore_fade_max = null
+shader_parameter/vertex_wave_fade_min = null
+shader_parameter/vertex_wave_fade_max = null
+shader_parameter/depth_fog_fade_min = null
+shader_parameter/depth_fog_fade_max = null
+shader_parameter/refraction_scaling_distance_min = null
+shader_parameter/uv_blend_sharpness = null
+shader_parameter/uv_tri_scale = null
+shader_parameter/uv_tri_offset = null
+shader_parameter/color_deep = null
+shader_parameter/color_shallow = null
+shader_parameter/beers_law = 2.0
+shader_parameter/depth_offset = -0.75
+shader_parameter/albedo_snell = null
+shader_parameter/snell_direction = Vector3(0, 1, 0)
+shader_parameter/snell_tightness = 0.7
+shader_parameter/WaveCount = 0
+shader_parameter/WaveSteepnesses = null
+shader_parameter/WaveAmplitudes = null
+shader_parameter/WaveDirectionsDegrees = null
+shader_parameter/WaveFrequencies = null
+shader_parameter/WaveSpeeds = null
+shader_parameter/WavePhases = null
+shader_parameter/FoamWaveCount = 0
+shader_parameter/FoamWaveSteepnesses = null
+shader_parameter/FoamWaveAmplitudes = null
+shader_parameter/FoamWaveDirectionsDegrees = null
+shader_parameter/FoamWaveFrequencies = null
+shader_parameter/FoamWaveSpeeds = null
+shader_parameter/FoamWavePhases = null
+shader_parameter/UVWaveCount = 0
+shader_parameter/UVWaveSteepnesses = null
+shader_parameter/UVWaveAmplitudes = null
+shader_parameter/UVWaveDirectionsDegrees = null
+shader_parameter/UVWaveFrequencies = null
+shader_parameter/UVWaveSpeeds = null
+shader_parameter/UVWavePhases = null
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ukfyh"]
+lightmap_size_hint = Vector2i(1502, 1502)
+material = SubResource("ShaderMaterial_ngp10")
+size = Vector2(300, 300)
+
+[node name="Level" type="Node3D"]
+script = ExtResource("1_cuiud")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1v8ha")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+shadow_enabled = true
+
+[node name="SpawnPosition" type="Marker3D" parent="."]
+
+[node name="RespawnZone" type="Area3D" parent="."]
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RespawnZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1444, 0, -39.8547)
+shape = SubResource("BoxShape3D_utito")
+
+[node name="TeleportArea" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_b3e5s")]
+target = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleportArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1444, 0, -39.8547)
+shape = SubResource("BoxShape3D_1cldl")
+
+[node name="Water" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_u5a0a")
+mesh = SubResource("PlaneMesh_ukfyh")
+
+[node name="Objects" type="Node3D" parent="."]
