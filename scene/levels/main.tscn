@@ -156,9 +156,9 @@ shape = SubResource("BoxShape3D_no54t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8316, 5.51566, -26.9246)
 
 [node name="Coin" parent="." instance=ExtResource("7_jid5r")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.8124, 3.64396, -29.7816)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.4334, 4.22049, -27.8988)
 
 [node name="Tree" parent="." instance=ExtResource("8_0200n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8973, 2.46352, -35.0879)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5955, 2.91695, -36.3005)
 
 [connection signal="body_exited" from="RespawnZone" to="." method="_on_respawn_zone_body_exited"]
