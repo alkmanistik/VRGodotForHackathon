@@ -22,7 +22,7 @@ func _physics_process(delta):
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir = Input.get_vector("left", "right", "up", "down")
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -30,12 +30,35 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
 	move_and_slide()
+	
+	if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
+		return
+	camera.rotation_degrees.x -= mouseDelta.y * lookSensitivity * delta
+  
+  # clamp camera x rotation axis
+	camera.rotation_degrees.x = clamp(camera.rotation_degrees.x, minLookAngle, maxLookAngle)
+  
+  # rotate the player along their y-axis
+	rotation_degrees.y -= mouseDelta.x * lookSensitivity * delta
+  
+  # reset the mouseDelta vector
+	mouseDelta = Vector2()
+	
 
-func _unhandled_input(event):
+# cam look
+var minLookAngle : float = -90.0
+var maxLookAngle : float = 90.0
+var lookSensitivity : float = 10.0
+# vectors
+var vel : Vector3 = Vector3()
+var mouseDelta : Vector2 = Vector2()
+
+func _input(event):
 	if event is InputEventMouseMotion:
-		rotate_y(-event.relative.x * CAMERA_SPEED)
-		camera.rotate_x(event.relative.y * CAMERA_SPEED)
-		camera.rotation_degrees.x = clamp(camera.rotation_degrees.x,-85,85)
-
+		mouseDelta = event.relative
+	if event is InputEventMouseButton:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	if Input.is_action_just_pressed("ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

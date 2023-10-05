@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dcg1fxh0lxwdy"]
+[gd_scene load_steps=17 format=3 uid="uid://dcg1fxh0lxwdy"]
 
 [ext_resource type="Script" path="res://scene/levels/main.gd" id="1_848nl"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_4drv5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dpy1eg3i331se" path="res://addons/godot-xr-tools/objects/teleport_area.tscn" id="6_wk1an"]
 [ext_resource type="PackedScene" uid="uid://blisueg4m8kk3" path="res://scene/Objects/Dynamic/coin.tscn" id="7_jid5r"]
 [ext_resource type="PackedScene" uid="uid://bhifgoy7atjf5" path="res://scene/Objects/Static/tree.tscn" id="8_0200n"]
+[ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="9_yx414"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qi7sm"]
 
@@ -156,9 +157,20 @@ shape = SubResource("BoxShape3D_no54t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8316, 5.51566, -26.9246)
 
 [node name="Coin" parent="." instance=ExtResource("7_jid5r")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -28.8124, 3.64396, -29.7816)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.4334, 4.22049, -27.8988)
+
+[node name="Coin2" parent="." instance=ExtResource("7_jid5r")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.6576, 4.22049, -27.8988)
+
+[node name="Coin3" parent="." instance=ExtResource("7_jid5r")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.4334, 4.22049, -32.7647)
+
+[node name="Coin4" parent="." instance=ExtResource("7_jid5r")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.4334, 4.22049, -23.7436)
 
 [node name="Tree" parent="." instance=ExtResource("8_0200n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.8973, 2.46352, -35.0879)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5955, 2.91695, -36.3005)
+
+[node name="UI" parent="." instance=ExtResource("9_yx414")]
 
 [connection signal="body_exited" from="RespawnZone" to="." method="_on_respawn_zone_body_exited"]
