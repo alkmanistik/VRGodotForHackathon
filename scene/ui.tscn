@@ -25,6 +25,7 @@ theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
 [node name="Star" type="Control" parent="MarginContainer"]
+show_behind_parent = true
 layout_mode = 2
 
 [node name="Star_Container" type="HBoxContainer" parent="MarginContainer/Star"]

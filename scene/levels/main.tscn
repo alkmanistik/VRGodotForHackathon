@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dcg1fxh0lxwdy"]
+[gd_scene load_steps=17 format=3 uid="uid://dcg1fxh0lxwdy"]
 
 [ext_resource type="Script" path="res://scene/levels/main.gd" id="1_848nl"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_4drv5"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dpy1eg3i331se" path="res://addons/godot-xr-tools/objects/teleport_area.tscn" id="6_wk1an"]
 [ext_resource type="PackedScene" uid="uid://blisueg4m8kk3" path="res://scene/Objects/Dynamic/coin.tscn" id="7_jid5r"]
 [ext_resource type="PackedScene" uid="uid://bhifgoy7atjf5" path="res://scene/Objects/Static/tree.tscn" id="8_0200n"]
+[ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="9_yx414"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qi7sm"]
 
@@ -160,5 +161,7 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.4334, 4.22049, -27.
 
 [node name="Tree" parent="." instance=ExtResource("8_0200n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5955, 2.91695, -36.3005)
+
+[node name="UI" parent="." instance=ExtResource("9_yx414")]
 
 [connection signal="body_exited" from="RespawnZone" to="." method="_on_respawn_zone_body_exited"]
