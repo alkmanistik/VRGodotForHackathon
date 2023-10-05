@@ -59,11 +59,11 @@ collision_layer = 4
 collision_mask = 11
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bridge_Modular/Bridge_Modular2/StaticBody3D"]
-transform = Transform3D(1.37491, -0.818309, 0, 0.818309, 1.37491, 0, 0, 0, 1.6, -0.609424, 0.406316, 0.0993707)
+transform = Transform3D(1.54677, -0.818308, 0, 0.920596, 1.37491, 0, 0, 0, 1.6, -0.609424, 0.406316, 0.0993707)
 shape = SubResource("HeightMapShape3D_a5i73")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Bridge_Modular/Bridge_Modular2/StaticBody3D"]
-transform = Transform3D(1.47721, -0.260472, 0, 0.260472, 1.47721, 0, 0, 0, 1.5, 0.819705, 0.938019, 0.0424203)
+transform = Transform3D(1.47721, -0.260472, 0, 0.260472, 1.47721, 0, 0, 0, 1.5, 0.869692, 0.938019, 0.0424203)
 shape = SubResource("HeightMapShape3D_u46ne")
 
 [node name="CollisionShape3D3" type="CollisionShape3D" parent="Bridge_Modular/Bridge_Modular2/StaticBody3D"]
