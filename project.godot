@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 Settings="*res://autoloud/settings.gd"
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 
+[dotnet]
+
+project/assembly_name="VRGodotForHackathon"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
