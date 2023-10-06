@@ -89,7 +89,7 @@ script = ExtResource("1_cuiud")
 environment = SubResource("Environment_1v8ha")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.745115, 2.91527e-08, -0.666936, 0.666936, -3.257e-08, 0.745115, 0, -1, -4.37114e-08, -25.0794, 23.9308, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 shadow_enabled = true
 
 [node name="SpawnPosition" type="Marker3D" parent="."]
@@ -112,5 +112,3 @@ material_override = SubResource("StandardMaterial3D_u5a0a")
 mesh = SubResource("PlaneMesh_ukfyh")
 
 [node name="Objects" type="Node3D" parent="."]
-
-[node name="Mechanic" type="Node3D" parent="."]
