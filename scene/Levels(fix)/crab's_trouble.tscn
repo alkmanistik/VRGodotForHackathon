@@ -1,13 +1,106 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddp515rdd5geq"]
+[gd_scene load_steps=7 format=3 uid="uid://ddp515rdd5geq"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_yveak"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_w702g"]
+[ext_resource type="PackedScene" uid="uid://m7t6211h2q3" path="res://scene/Objects/Dynamic/tower.tscn" id="2_xyxto"]
+[ext_resource type="PackedScene" uid="uid://c0gu02gohut42" path="res://scene/Objects/Static/fence_corner.tscn" id="3_7o10o"]
 [ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="3_a8q4n"]
+[ext_resource type="PackedScene" uid="uid://bjm1geua20lid" path="res://scene/Objects/Static/fence_middle.tscn" id="4_j8p36"]
 
 [node name="Crab\'s Trouble" instance=ExtResource("1_yveak")]
 
 [node name="DirectionalLight3D" parent="." index="1"]
 transform = Transform3D(0.991445, -0.084423, 0.0995482, 0, 0.762668, 0.64679, -0.130526, -0.641256, 0.756144, 0, 0, 0)
+
+[node name="Tower" parent="Objects" index="0" instance=ExtResource("2_xyxto")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 23, 6, -10)
+
+[node name="Fence_Corner" parent="Objects" index="1" instance=ExtResource("3_7o10o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 7.317, -3)
+
+[node name="Fence_Corner2" parent="Objects" index="2" instance=ExtResource("3_7o10o")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 27, 7.317, -1.985)
+
+[node name="Fence_Corner3" parent="Objects" index="3" instance=ExtResource("3_7o10o")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 28, 7.317, -14.985)
+
+[node name="Fence_Middle" parent="Objects" index="4" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 7.317, -3.14)
+
+[node name="Fence_Middle2" parent="Objects" index="5" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 7.317, -3.14)
+
+[node name="Fence_Middle3" parent="Objects" index="6" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.317, -3.14)
+
+[node name="Fence_Middle6" parent="Objects" index="7" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 7.317, -3.14)
+
+[node name="Fence_Middle7" parent="Objects" index="8" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 7.317, -3.14)
+
+[node name="Fence_Middle8" parent="Objects" index="9" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 7.317, -3.14)
+
+[node name="Fence_Middle9" parent="Objects" index="10" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 7.317, -3.14)
+
+[node name="Fence_Middle10" parent="Objects" index="11" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 7.317, -3.14)
+
+[node name="Fence_Middle11" parent="Objects" index="12" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 7.317, -3.14)
+
+[node name="Fence_Middle12" parent="Objects" index="13" instance=ExtResource("4_j8p36")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.86, 7.317, -4.1)
+
+[node name="Fence_Middle13" parent="Objects" index="14" instance=ExtResource("4_j8p36")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.86, 7.317, -6.1)
+
+[node name="Fence_Middle14" parent="Objects" index="15" instance=ExtResource("4_j8p36")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.86, 7.317, -8.1)
+
+[node name="Fence_Middle15" parent="Objects" index="16" instance=ExtResource("4_j8p36")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.86, 7.317, -10.1)
+
+[node name="Fence_Middle16" parent="Objects" index="17" instance=ExtResource("4_j8p36")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.86, 7.317, -12.1)
+
+[node name="Fence_Middle17" parent="Objects" index="18" instance=ExtResource("4_j8p36")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 26.86, 7.317, -14.1)
+
+[node name="Fence_Middle18" parent="Objects" index="19" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 7.317, -16.84)
+
+[node name="Fence_Middle19" parent="Objects" index="20" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 7.317, -16.84)
+
+[node name="Fence_Middle20" parent="Objects" index="21" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 7.317, -16.84)
+
+[node name="Fence_Middle21" parent="Objects" index="22" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 7.317, -16.84)
+
+[node name="Fence_Middle22" parent="Objects" index="23" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 7.317, -16.84)
+
+[node name="Fence_Middle23" parent="Objects" index="24" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 7.317, -16.84)
+
+[node name="Fence_Middle24" parent="Objects" index="25" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 7.317, -16.84)
+
+[node name="Fence_Middle25" parent="Objects" index="26" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 7.317, -16.84)
+
+[node name="Fence_Middle26" parent="Objects" index="27" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 7.317, -16.84)
+
+[node name="Fence_Middle27" parent="Objects" index="28" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 7.317, -16.84)
+
+[node name="Fence_Middle28" parent="Objects" index="29" instance=ExtResource("4_j8p36")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 7.317, -16.84)
 
 [node name="GridMap" type="GridMap" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32856, 0)
