@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://m7t6211h2q3"]
 
-[ext_resource type="Script" path="res://scene/Objects/Dynamic/Tower_Door.gd" id="1_jiqck"]
+[ext_resource type="Script" path="res://Tower_Door.gd" id="1_jiqck"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7kxm"]
 resource_name = "Tower_Dark"
