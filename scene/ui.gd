@@ -1,10 +1,6 @@
 extends CanvasLayer
 
 signal dead()
-signal update_save(name: String, count_star: int, is_finish: bool)
-signal _have_key()
-
-var have_key: bool = false
 
 const MAX_HEALTH: int = 6
 var health: int = 6
@@ -12,7 +8,6 @@ var max_coin: int = 0
 var coin: int = 0
 var star:int = 0
 
-@onready var key_texture: TextureRect = $MarginContainer/Key/TextureRect
 @onready var coin_label: Label = $MarginContainer/Coin/HBoxContainer/Coin_label
 @onready var health_contаiner: HBoxContainer = $MarginContainer/Health/Health_Container
 @onready var star_container: HBoxContainer = $MarginContainer/Star/Star_Container
@@ -20,13 +15,7 @@ var star:int = 0
 @onready var full_star = preload("res://assets/custom assets/full_star.png")
 @onready var rainbow_star = preload("res://assets/custom assets/rainbow_star.png")
 
-@onready var key = preload("res://assets/custom assets/key.png")
-
 func _ready() -> void:
-	for i in get_tree().get_nodes_in_group("key"):
-		i.connect("add_key", add_key)
-	for i in get_tree().get_nodes_in_group("chest"):
-		i.connect("chest_open", chest_open)
 	for i in get_tree().get_nodes_in_group("coin"):
 		i.connect("add_coin", add_coin)
 		max_coin += 1
@@ -64,13 +53,3 @@ func add_star(quest: String) -> void:
 	if quest == "main":
 		temp_star.texture = rainbow_star
 	star += 1
-
-func chest_open():
-	have_key = false
-	key_texture.texture = null
-	add_star("chest")
-
-func add_key():
-	key_texture.texture = key
-	have_key = true
-	_have_key.emit()
