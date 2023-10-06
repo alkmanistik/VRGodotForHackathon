@@ -46,7 +46,7 @@ data = PackedVector3Array(-0.5654, 3.0626, 0.5611, -0.6003, 2.8497, 0.5695, -0.6
 [sub_resource type="BoxShape3D" id="BoxShape3D_v0kbg"]
 size = Vector3(1, 1.71883, 1)
 
-[node name="Spikes" type="Node3D"]
+[node name="Spikes" type="Node3D" groups=["trap"]]
 script = ExtResource("1_hbpr4")
 
 [node name="Spikes" type="Node3D" parent="."]
