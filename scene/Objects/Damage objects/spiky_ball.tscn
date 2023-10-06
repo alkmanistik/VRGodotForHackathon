@@ -7,7 +7,7 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hv8xx"]
 
-[node name="SpikyBall" type="Node3D"]
+[node name="SpikyBall" type="Node3D" groups=["trap"]]
 script = ExtResource("1_rd3tl")
 
 [node name="SpikyBall" parent="." instance=ExtResource("1_ndgmh")]
