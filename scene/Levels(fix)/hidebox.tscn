@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://mw4a8upiykcm"]
+[gd_scene load_steps=12 format=3 uid="uid://mw4a8upiykcm"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_gndjo"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_i2f7l"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cbbe4wnttaqmp" path="res://scene/Objects/Static/fence_1.tscn" id="5_d4mmd"]
 [ext_resource type="PackedScene" uid="uid://3rxi7owoo5rb" path="res://scene/Objects/Static/tree_fruit.tscn" id="6_lbo81"]
 [ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="8_fk0ca"]
+[ext_resource type="PackedScene" uid="uid://vxrmp7edq5b0" path="res://scene/Objects/Dynamic/treasure.tscn" id="9_e0gaq"]
+[ext_resource type="PackedScene" uid="uid://cuegexc5r3utd" path="res://scene/Objects/Dynamic/key.tscn" id="10_meq83"]
 
 [node name="Hidebox" instance=ExtResource("1_gndjo")]
 
@@ -22,7 +24,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 5, 6)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.5, -26)
 
 [node name="Fence" type="Node3D" parent="Objects" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
 
 [node name="Fence_Middle2" parent="Objects/Fence" index="0" instance=ExtResource("3_2rugx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, -4)
@@ -66,5 +68,11 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -7, 5.5, 9)
 
 [node name="Coin3" parent="Mechanic" index="2" instance=ExtResource("4_axgib")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -11, 5.5, -33)
+
+[node name="Treasure" parent="Mechanic" index="3" instance=ExtResource("9_e0gaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 5, -4)
+
+[node name="Key" parent="Mechanic" index="4" instance=ExtResource("10_meq83")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 6, 2)
 
 [node name="Player" parent="." index="9" instance=ExtResource("8_fk0ca")]

@@ -9,6 +9,6 @@ func _process(delta: float) -> void:
 
 
 
-func _on_body_entered(body: Node3D) -> void:
+func _on_body_entered(_body: Node3D) -> void:
 	add_coin.emit()
 	queue_free()
