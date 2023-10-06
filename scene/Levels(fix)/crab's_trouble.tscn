@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ddp515rdd5geq"]
+[gd_scene load_steps=10 format=3 uid="uid://ddp515rdd5geq"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_yveak"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_w702g"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://c0gu02gohut42" path="res://scene/Objects/Static/fence_corner.tscn" id="3_7o10o"]
 [ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="3_a8q4n"]
 [ext_resource type="PackedScene" uid="uid://bjm1geua20lid" path="res://scene/Objects/Static/fence_middle.tscn" id="4_j8p36"]
+[ext_resource type="PackedScene" uid="uid://dnby66eaxr7ms" path="res://scene/Objects/Static/bush_fruit.tscn" id="5_63eyi"]
+[ext_resource type="PackedScene" uid="uid://hfxa2kek2ot7" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Tree.gltf" id="6_87cbo"]
+[ext_resource type="PackedScene" uid="uid://b40m7sabp3rsa" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Bush_Fruit.gltf" id="7_4s2ys"]
 
 [node name="Crab\'s Trouble" instance=ExtResource("1_yveak")]
 
@@ -102,6 +105,30 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 7.317, -16.84)
 [node name="Fence_Middle28" parent="Objects" index="29" instance=ExtResource("4_j8p36")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 7.317, -16.84)
 
+[node name="Bush_Fruit" parent="Objects" index="30" instance=ExtResource("5_63eyi")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 4.49091, 5.31168, 4.59935)
+
+[node name="Bush_Fruit2" parent="Objects" index="31" instance=ExtResource("5_63eyi")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -0.5, 5.312, 4.599)
+
+[node name="Tree" parent="Objects" index="32" instance=ExtResource("6_87cbo")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -1.04764, 5.32856, -2.36004)
+
+[node name="Bush_Fruit3" parent="Objects" index="33" instance=ExtResource("7_4s2ys")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 7.67957, 7.32856, -13.8172)
+
+[node name="Bush_Fruit4" parent="Objects" index="34" instance=ExtResource("7_4s2ys")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 12.6064, 7.37136, -13.8345)
+
+[node name="Bush_Fruit5" parent="Objects" index="35" instance=ExtResource("7_4s2ys")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 7.49201, 7.37136, -6.30717)
+
+[node name="Bush_Fruit6" parent="Objects" index="36" instance=ExtResource("7_4s2ys")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 7.55246, 7.37136, -8.88976)
+
+[node name="Bush_Fruit7" parent="Objects" index="37" instance=ExtResource("7_4s2ys")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 9.99973, 7.37136, -13.8153)
+
 [node name="GridMap" type="GridMap" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32856, 0)
 mesh_library = ExtResource("2_w702g")
@@ -119,7 +146,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, 6, 0)
 
 [node name="Debug Player" parent="." index="9" instance=ExtResource("3_a8q4n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5569, 8.48732, -13.2562)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08519, 8.48732, 3.13639)
 
 [node name="GridMap2" type="GridMap" parent="." index="10"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.329, 0)
