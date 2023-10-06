@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cuegexc5r3utd"]
+
+[ext_resource type="PackedScene" uid="uid://cfnauwpex7thm" path="res://assets/Ultimate Platformer Pack - Dec 2021/Powerups and Pickups/glTF/Key.gltf" id="1_155u2"]
+[ext_resource type="Script" path="res://scene/Objects/Dynamic/key.gd" id="1_xj6lv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cdudr"]
+size = Vector3(1.5, 1, 0.5)
+
+[node name="Key" type="Node3D" groups=["key"]]
+script = ExtResource("1_xj6lv")
+
+[node name="Key" parent="." instance=ExtResource("1_155u2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+collision_layer = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+shape = SubResource("BoxShape3D_cdudr")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
