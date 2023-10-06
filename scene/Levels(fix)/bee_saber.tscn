@@ -8,6 +8,9 @@
 
 [node name="Bee Saber" instance=ExtResource("1_eairg")]
 
+[node name="SpawnPosition" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 5.5, -22)
+
 [node name="Objects" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3269, 0)
 
@@ -15,25 +18,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3269, 0)
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.8844, 3.87878, -42.3703)
 
 [node name="Bridge_Modular_Center4" parent="Objects" index="1" instance=ExtResource("3_oueb5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.8832, 3.87878, -44.3572)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.8832, 3.93253, -44.3572)
 
 [node name="Bridge_Modular4" parent="Objects" index="2" instance=ExtResource("2_xuita")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -38.8842, 3.87878, -50.2792)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -38.8842, 3.83186, -50.2423)
 
 [node name="Bridge_Modular_Center5" parent="Objects" index="3" instance=ExtResource("3_oueb5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.8832, 3.87878, -46.3032)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.8832, 3.92624, -46.3032)
 
 [node name="Bridge_Modular5" parent="Objects" index="4" instance=ExtResource("2_xuita")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.8844, 3.87878, -26.0572)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.884, 3.87421, -26.0932)
 
 [node name="Bridge_Modular_Center6" parent="Objects" index="5" instance=ExtResource("3_oueb5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.8832, 3.87878, -28.0441)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.883, 3.925, -28.044)
 
 [node name="Bridge_Modular6" parent="Objects" index="6" instance=ExtResource("2_xuita")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -38.8842, 3.87878, -33.9661)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -38.884, 3.83237, -33.909)
 
 [node name="Bridge_Modular_Center7" parent="Objects" index="7" instance=ExtResource("3_oueb5")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.8832, 3.87878, -29.9901)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.8832, 3.92526, -29.9901)
 
 [node name="GridMap" type="GridMap" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.7899, -3.46596, -25.1317)
@@ -43,7 +46,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 2, 0)
 
-[node name="Debug Player" parent="." index="8" instance=ExtResource("5_lat6p")]
+[node name="Player" parent="." index="8" instance=ExtResource("5_lat6p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5731, 4.69446, -38.3879)
 
 [node name="GridMap2" type="GridMap" parent="." index="9"]
