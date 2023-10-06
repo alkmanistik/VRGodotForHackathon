@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://0otndonvy60n"]
+[gd_scene load_steps=12 format=3 uid="uid://0otndonvy60n"]
 
 [ext_resource type="PackedScene" uid="uid://dpy1eg3i331se" path="res://addons/godot-xr-tools/objects/teleport_area.tscn" id="1_b3e5s"]
 [ext_resource type="Script" path="res://scene/Levels(fix)/level.gd" id="1_cuiud"]
 [ext_resource type="Texture2D" uid="uid://c28pojjx0kja3" path="res://addons/boujie_water_shader/shader/ocean_albedo_1.png" id="2_qg4kg"]
 [ext_resource type="Shader" path="res://addons/boujie_water_shader/shader/water.gdshader" id="3_2yryo"]
+[ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="5_7dnlo"]
 
 [sub_resource type="Environment" id="Environment_1v8ha"]
 
@@ -89,7 +90,7 @@ script = ExtResource("1_cuiud")
 environment = SubResource("Environment_1v8ha")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(0.745115, 2.91527e-08, -0.666936, 0.666936, -3.257e-08, 0.745115, 0, -1, -4.37114e-08, -25.0794, 23.9308, 0)
 shadow_enabled = true
 
 [node name="SpawnPosition" type="Marker3D" parent="."]
@@ -101,7 +102,8 @@ collision_layer = 16
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1444, 0, -39.8547)
 shape = SubResource("BoxShape3D_utito")
 
-[node name="TeleportArea" parent="." instance=ExtResource("1_b3e5s")]
+[node name="TeleportArea" parent="." node_paths=PackedStringArray("target") instance=ExtResource("1_b3e5s")]
+target = NodePath("../SpawnPosition")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TeleportArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1444, 0, -39.8547)
@@ -112,3 +114,9 @@ material_override = SubResource("StandardMaterial3D_u5a0a")
 mesh = SubResource("PlaneMesh_ukfyh")
 
 [node name="Objects" type="Node3D" parent="."]
+
+[node name="Mechanic" type="Node3D" parent="."]
+
+[node name="UI" parent="." instance=ExtResource("5_7dnlo")]
+
+[connection signal="body_entered" from="RespawnZone" to="." method="_on_respawn_zone_body_entered"]
