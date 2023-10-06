@@ -112,7 +112,7 @@ radius = 1.2
 [sub_resource type="SphereShape3D" id="SphereShape3D_lwflh"]
 radius = 0.57
 
-[node name="Hazard_Cylinder" type="Node3D"]
+[node name="Hazard_Cylinder" type="Node3D" groups=["trap"]]
 script = ExtResource("1_2hi1y")
 
 [node name="Cannonball" parent="." instance=ExtResource("1_udd5x")]
