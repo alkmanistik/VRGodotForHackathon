@@ -48,7 +48,7 @@ radius = 1.0
 height = 0.2
 radius = 1.5
 
-[node name="Hazard_Saw" type="Node3D" groups=["trap"]]
+[node name="Hazard_Saw" type="Node3D"]
 script = ExtResource("1_yo344")
 
 [node name="Hazard_Saw" type="Node3D" parent="."]

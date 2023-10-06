@@ -107,7 +107,7 @@ size = Vector3(2, 0.5, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_78c8s"]
 size = Vector3(2, 0.5, 2)
 
-[node name="SpikeTrap" type="Node3D" groups=["trap"]]
+[node name="SpikeTrap" type="Node3D"]
 script = ExtResource("1_nk6tt")
 
 [node name="Hazard_SpikeTrap" type="Node3D" parent="."]
