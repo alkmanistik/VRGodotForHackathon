@@ -28,6 +28,10 @@ project/assembly_name="VRGodotForHackathon"
 
 enabled=PackedStringArray("res://addons/godot-xr-tools/plugin.cfg")
 
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 up={
