@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b1hkg3nnolawo"
+path="res://.godot/imported/Treasure-chest-opening-sound-effect.mp3-b58a091254245a59c35eff627ac59792.mp3str"
+
+[deps]
+
+source_file="res://assets/custom assets/Audio/Treasure-chest-opening-sound-effect.mp3"
+dest_files=["res://.godot/imported/Treasure-chest-opening-sound-effect.mp3-b58a091254245a59c35eff627ac59792.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
