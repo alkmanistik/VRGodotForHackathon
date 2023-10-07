@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b6qps6wwx0eww"
+path="res://.godot/imported/Item-Get-_The-Legend-of-Zelda_-Breath-of-the-Wild-OST_.mp3-d5e739ec3e253842ae8dbb162511f597.mp3str"
+
+[deps]
+
+source_file="res://assets/custom assets/Audio/Item-Get-_The-Legend-of-Zelda_-Breath-of-the-Wild-OST_.mp3"
+dest_files=["res://.godot/imported/Item-Get-_The-Legend-of-Zelda_-Breath-of-the-Wild-OST_.mp3-d5e739ec3e253842ae8dbb162511f597.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

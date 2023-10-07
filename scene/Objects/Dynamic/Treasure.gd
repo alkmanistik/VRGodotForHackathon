@@ -20,6 +20,7 @@ func _on_area_3d_body_entered(_body):
 		open()
 		$"../ChestOpen".play()
 		is_open = true
+		
 
 
 func animation_finished(anim_name):
