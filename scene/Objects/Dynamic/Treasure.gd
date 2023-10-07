@@ -20,9 +20,9 @@ func open():
 
 func _on_area_3d_body_entered(_body):
 	if !is_open and can_open:
+		SoundPlayer.play_chest_open_sound()
 		open()
 		is_open = true
-		
 
 
 func animation_finished(anim_name):
