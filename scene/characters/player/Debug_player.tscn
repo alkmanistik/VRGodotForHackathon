@@ -4497,7 +4497,7 @@ _data = {
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bcf15"]
 height = 1.5
 
-[node name="Debug Player" type="CharacterBody3D"]
+[node name="Debug Player" type="CharacterBody3D" groups=["player"]]
 collision_mask = 31
 script = ExtResource("1_bj0h0")
 
