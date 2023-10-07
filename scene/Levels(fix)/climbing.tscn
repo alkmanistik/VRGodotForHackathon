@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dn5unsy8lnq26"]
+[gd_scene load_steps=16 format=3 uid="uid://dn5unsy8lnq26"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_kbthr"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_0bmso"]
@@ -14,8 +14,12 @@
 [ext_resource type="PackedScene" path="res://scene/Objects/Dynamic/treasure.tscn" id="7_dsm22"]
 [ext_resource type="PackedScene" uid="uid://w3utmrtbgcuy" path="res://scene/Objects/Static/rock_platforms_3.tscn" id="13_w8ifh"]
 [ext_resource type="PackedScene" uid="uid://cpx0xrvka0jhq" path="res://scene/Objects/Static/rock_platform_tall.tscn" id="14_nquro"]
+[ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="15_0ru01"]
 
 [node name="Climbing" instance=ExtResource("1_kbthr")]
+
+[node name="SpawnPosition" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.579086, 3.05313, -3.82812)
 
 [node name="Tower" parent="Objects" index="0" instance=ExtResource("2_nl4kr")]
 transform = Transform3D(-0.997364, 0, -0.0725593, 0, 1, 0, 0.0725593, 0, -0.997364, -0.117964, 0.490809, 2.34194)
@@ -27,19 +31,19 @@ transform = Transform3D(-1.70848, -0.798671, -0.665738, 0.640992, 0.199234, -1.8
 transform = Transform3D(1.76779, 0, -0.935366, 0, 2, 0, 0.935366, 0, 1.76779, 48.169, 48.332, -128.105)
 
 [node name="Bridge_Modular" parent="Objects" index="3" instance=ExtResource("5_kpng0")]
-transform = Transform3D(-0.0137702, 0, 0.999905, 0, 1, 0, -0.999905, 0, -0.0137702, 1.17813, 2.02542, -14.5364)
+transform = Transform3D(-0.0137702, 0, 0.999905, 0, 1, 0, -0.999905, 0, -0.0137702, 1.13878, 1.95669, -14.5364)
 
 [node name="Bridge_Modular2" parent="Objects" index="4" instance=ExtResource("5_kpng0")]
-transform = Transform3D(0.014189, 0, -0.999899, 0, 1, 0, 0.999899, 0, 0.014189, 0.852061, 2.081, -26.5017)
+transform = Transform3D(0.0165973, 0, -0.999862, 0, 1, 0, 0.999862, 0, 0.0165973, 1.12596, 1.987, -26.3915)
 
 [node name="Bridge_Modular_Center" parent="Objects" index="5" instance=ExtResource("6_bdw62")]
-transform = Transform3D(-0.0226874, 0, 0.999743, 0, 1, 0, -0.999743, 0, -0.0226874, -0.0472254, 2.18115, -22.5645)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.119285, 2.08098, -22.4451)
 
 [node name="Bridge_Modular_Center2" parent="Objects" index="6" instance=ExtResource("6_bdw62")]
-transform = Transform3D(0.0137004, 0, -0.999906, 0, 1, 0, 0.999906, 0, 0.0137004, 2.129, 2.12481, -18.4693)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.112, 2.04412, -18.457)
 
 [node name="Bridge_Modular_Center3" parent="Objects" index="7" instance=ExtResource("6_bdw62")]
-transform = Transform3D(0.0326521, 0, -0.999559, 0, 1, 0, 1.09952, 0, 0.0296837, 1.975, 2.181, -21.511)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.116, 2.081, -21.444)
 
 [node name="Treasure" parent="Objects" index="8" instance=ExtResource("7_dsm22")]
 transform = Transform3D(-0.656441, 0, -0.754377, 0, 1, 0, 0.754377, 0, -0.656441, 48.0802, 20.6042, -64.6074)
@@ -48,13 +52,13 @@ transform = Transform3D(-0.656441, 0, -0.754377, 0, 1, 0, 0.754377, 0, -0.656441
 transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -8.5459, 19.9888, -66.0116)
 
 [node name="Bridge_Modular_Center5" parent="Objects" index="10" instance=ExtResource("6_bdw62")]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -2.60288, 19.9731, -66.0165)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -2.603, 19.9457, -66.017)
 
 [node name="Bridge_Modular_Center6" parent="Objects" index="11" instance=ExtResource("6_bdw62")]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 3.37344, 19.9884, -66.027)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 3.373, 19.905, -66.027)
 
 [node name="Bridge_Modular_Center7" parent="Objects" index="12" instance=ExtResource("6_bdw62")]
-transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 9.34092, 19.9946, -66.0426)
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, 9.341, 19.8619, -66.043)
 
 [node name="GridMap" type="GridMap" parent="." index="9"]
 mesh_library = ExtResource("2_0bmso")
@@ -75,7 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 1.4, 0, 0, 0, 1, -5.74924, -0.765574, -29.08
 transform = Transform3D(2, 0, 0, 0, 3, 0, 0, 0, 2, -14.4805, 0.281033, -33.7338)
 
 [node name="RockPlatforms_Large2" parent="." index="14" instance=ExtResource("3_sbtrb")]
-transform = Transform3D(0.280502, 0, 2.99528, 0, 6.3, 0, -4.99213, 0, 0.168301, 18.2215, 0.18341, -59.842)
+transform = Transform3D(0.280502, 0, 2.99528, 0, 6.26, 0, -4.99213, 0, 0.168301, 18.2215, 0.18341, -59.842)
 
 [node name="RockPlatform_Medium" parent="." index="15" instance=ExtResource("6_as76m")]
 transform = Transform3D(4, 0, 0, 0, 7.5, 0, 0, 0, 9, -13.2885, -0.483651, -57.1733)
@@ -97,3 +101,6 @@ transform = Transform3D(5.63281, 0, 5.68079, 0, 11, 0, -5.68079, 0, 5.63281, 51.
 
 [node name="RockPlatforms_Large4" parent="." index="21" instance=ExtResource("3_sbtrb")]
 transform = Transform3D(1.1821, 0, 1.91067, 0, 1, 0, -3.82134, 0, 0.591049, 36.8413, 16.7029, -96.3612)
+
+[node name="Player" parent="." index="22" instance=ExtResource("15_0ru01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0904636, 3.18594, -5.34797)
