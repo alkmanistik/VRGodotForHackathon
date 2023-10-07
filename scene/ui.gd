@@ -43,8 +43,8 @@ func coin_update() -> void:
 	coin_label.text = str(coin)+"/"+str(max_coin)
 
 func health_update() -> void:
+	var temp_health = health
 	for i in health_contаiner.get_children():
-		var temp_health = health
 		if !temp_health:
 			i.hide()
 		else:
