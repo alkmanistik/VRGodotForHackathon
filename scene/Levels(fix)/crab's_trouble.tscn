@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ddp515rdd5geq"]
+[gd_scene load_steps=14 format=3 uid="uid://ddp515rdd5geq"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_yveak"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_w702g"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://b40m7sabp3rsa" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Bush_Fruit.gltf" id="7_4s2ys"]
 [ext_resource type="PackedScene" uid="uid://ciqvjc0wjkmkl" path="res://scene/Objects/Static/rock_platforms_large.tscn" id="7_vw5qh"]
 [ext_resource type="PackedScene" uid="uid://dmy7or7jnvweu" path="res://scene/Objects/Static/rock_platforms_1.tscn" id="8_x21ep"]
+[ext_resource type="PackedScene" uid="uid://vxrmp7edq5b0" path="res://scene/Objects/Dynamic/treasure.tscn" id="12_c20um"]
 
 [node name="Crab\'s Trouble" instance=ExtResource("1_yveak")]
 
@@ -137,6 +138,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 28.02,
 
 [node name="Player" parent="." index="7" instance=ExtResource("3_a8q4n")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.08519, 8.48732, 3.13639)
+
+[node name="Treasure" parent="Mechanic" index="0" instance=ExtResource("12_c20um")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 12, -9)
 
 [node name="Grid" type="Node3D" parent="." index="9"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
