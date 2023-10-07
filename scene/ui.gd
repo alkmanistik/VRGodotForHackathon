@@ -43,8 +43,8 @@ func coin_update() -> void:
 	coin_label.text = str(coin)+"/"+str(max_coin)
 
 func health_update() -> void:
+	var temp_health = health
 	for i in health_contаiner.get_children():
-		var temp_health = health
 		if !temp_health:
 			i.hide()
 		else:
@@ -59,6 +59,7 @@ func take_damage() -> void:
 	health_update()
 
 func add_star(quest: String) -> void:
+	SoundPlayer.play_star_sound()
 	var temp_star = star_container.get_child(star) as TextureRect
 	temp_star.texture = full_star
 	if quest == "main":

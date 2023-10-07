@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7plme4dp5885"]
+
+[ext_resource type="PackedScene" uid="uid://c150g2e4rsm4a" path="res://scene/menu_panel.tscn" id="1_4ijsx"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_dse7r"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_srw82"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1lkdk"]
+resource_local_to_scene = true
+transparency = 1
+blend_mode = 1
+albedo_texture = SubResource("ViewportTexture_srw82")
+
+[node name="Display_panel" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(1920, 1080)
+
+[node name="Panel" parent="SubViewport" instance=ExtResource("1_4ijsx")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 2.248, 0, 0, 0, 4.494, 0, 0, 0)
+mesh = SubResource("QuadMesh_dse7r")
+surface_material_override/0 = SubResource("StandardMaterial3D_1lkdk")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.15354)

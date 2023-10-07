@@ -8,7 +8,7 @@ func _process(delta: float) -> void:
 	rotation.y += SPEED_ROTATE * delta
 
 
-
 func _on_body_entered(_body: Node3D) -> void:
 	add_coin.emit()
+	SoundPlayer.play_coin_sound()
 	queue_free()

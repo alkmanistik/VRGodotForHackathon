@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://scene/ui.gd" id="1_5ok8w"]
 [ext_resource type="FontFile" uid="uid://durqhw2g3uvsu" path="res://assets/custom assets/joystix.monospace-regular.otf" id="2_lggkb"]
 [ext_resource type="Texture2D" uid="uid://b313ihnyvh58n" path="res://assets/custom assets/half_heard.png" id="3_qpq7p"]
-[ext_resource type="Texture2D" uid="uid://b51swiryurobf" path="res://assets/custom assets/Coin.png" id="5_f8l6x"]
+[ext_resource type="Texture2D" uid="uid://chwl2iw56yma0" path="res://assets/custom assets/Coin2d.png" id="5_a3vvw"]
 
 [sub_resource type="Theme" id="Theme_ns38g"]
-Label/font_sizes/font_size = 32
+Label/font_sizes/font_size = 40
 Label/fonts/font = ExtResource("2_lggkb")
 
 [node name="UI" type="CanvasLayer" groups=["ui"]]
@@ -33,17 +33,16 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 1.0
-offset_top = -81.0
-offset_right = 129.0
-offset_bottom = -41.0
+offset_top = -40.0
+offset_right = 128.0
 grow_vertical = 0
-scale = Vector2(2, 2)
+theme_override_constants/separation = 10
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/Star/Star_Container"]
+custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
 texture = ExtResource("1_0ieii")
-expand_mode = 2
+expand_mode = 4
 
 [node name="TextureRect2" type="TextureRect" parent="MarginContainer/Star/Star_Container"]
 layout_mode = 2
@@ -62,7 +61,6 @@ layout_mode = 2
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
-scale = Vector2(1.2, 1.2)
 theme_override_constants/separation = 0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/Health/Health_Container"]
@@ -106,11 +104,9 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -172.0
-offset_right = -29.0
+offset_left = -143.0
 offset_bottom = 42.0
 grow_horizontal = 0
-scale = Vector2(1.2, 1.2)
 theme_override_constants/separation = 20
 
 [node name="Coin_label" type="Label" parent="MarginContainer/Coin/HBoxContainer"]
@@ -121,13 +117,14 @@ text = "0/0
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/Coin/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("5_f8l6x")
+texture = ExtResource("5_a3vvw")
 expand_mode = 2
 
 [node name="Key" type="Control" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/Key"]
+custom_minimum_size = Vector2(128, 0)
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -138,4 +135,4 @@ offset_left = -64.0
 offset_top = -64.0
 grow_horizontal = 0
 grow_vertical = 0
-expand_mode = 2
+expand_mode = 3
