@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dcg1fxh0lxwdy"]
+[gd_scene load_steps=19 format=3 uid="uid://dcg1fxh0lxwdy"]
 
 [ext_resource type="Script" path="res://scene/levels/main.gd" id="1_848nl"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_4drv5"]
@@ -9,7 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://blisueg4m8kk3" path="res://scene/Objects/Dynamic/coin.tscn" id="7_jid5r"]
 [ext_resource type="PackedScene" uid="uid://bhifgoy7atjf5" path="res://scene/Objects/Static/tree.tscn" id="8_0200n"]
 [ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="9_yx414"]
-[ext_resource type="PackedScene" path="res://scene/display_panel.tscn" id="10_1o0by"]
+[ext_resource type="PackedScene" uid="uid://vxrmp7edq5b0" path="res://scene/Objects/Dynamic/treasure.tscn" id="12_kcbo4"]
+[ext_resource type="PackedScene" uid="uid://cuegexc5r3utd" path="res://scene/Objects/Dynamic/key.tscn" id="13_aelab"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qi7sm"]
 
@@ -175,7 +176,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5955, 2.91695, -36.3005)
 
 [node name="UI" parent="." instance=ExtResource("9_yx414")]
 
-[node name="Display_panel" parent="." instance=ExtResource("10_1o0by")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3477, 4.66004, -30.3503)
+[node name="Treasure" parent="." instance=ExtResource("12_kcbo4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.3428, 2.66178, -28.6331)
+
+[node name="Key" parent="." instance=ExtResource("13_aelab")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.652, 3.50536, -33.6291)
+
+[node name="Coin5" parent="." instance=ExtResource("7_jid5r")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.6549, 3.76837, -28.8416)
 
 [connection signal="body_exited" from="RespawnZone" to="." method="_on_respawn_zone_body_exited"]
