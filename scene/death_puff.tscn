@@ -27,6 +27,7 @@ shape = SubResource("SphereShape3D_hocc6")
 [node name="GPUParticles3D" type="GPUParticles3D" parent="."]
 layers = 8
 material_override = SubResource("StandardMaterial3D_cd65h")
+emitting = false
 amount = 1
 lifetime = 0.7
 process_material = SubResource("ParticleProcessMaterial_di71y")
