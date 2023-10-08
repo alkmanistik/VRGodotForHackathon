@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4fkn85031xr2"
+path="res://.godot/imported/soft-rain-ambient-111154.mp3-083db8ee7e692dbec12d9b9f94431583.mp3str"
+
+[deps]
+
+source_file="res://assets/custom assets/Audio/soft-rain-ambient-111154.mp3"
+dest_files=["res://.godot/imported/soft-rain-ambient-111154.mp3-083db8ee7e692dbec12d9b9f94431583.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -17,9 +17,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Settings="*res://autoloud/settings.gd"
+Settings="*res://autoload/settings.gd"
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
-SoundPlayer="*res://assets/custom assets/Audio/sound_player.tscn"
+SoundPlayer="*res://autoload/sound_player.tscn"
 
 [dotnet]
 
