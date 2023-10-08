@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://tpeybjfj2wky"]
+[gd_scene load_steps=14 format=3 uid="uid://tpeybjfj2wky"]
 
 [ext_resource type="Script" path="res://scene/characters/player.gd" id="1_hjo01"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="2_w6d1a"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="7_bw4mo"]
 [ext_resource type="PackedScene" uid="uid://dup2vp8v5rpi5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_tac_glove.tscn" id="8_nnnrb"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="8_x5yc6"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="9_klsff"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="9_y1w6x"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="10_1vh27"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ur23v"]
 
@@ -30,7 +32,6 @@ tracker = &"left_hand"
 turn_mode = 2
 
 [node name="FunctionTeleport" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("8_x5yc6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
 
 [node name="MovementDirect" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("4_1kcqw")]
 strafe = true
@@ -44,6 +45,11 @@ tracker = &"right_hand"
 [node name="CollisionHandRight" parent="RightXRController3D2" instance=ExtResource("5_1ovmc")]
 
 [node name="RightHand" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("8_nnnrb")]
+
+[node name="FunctionPickup" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("9_klsff")]
+
+[node name="FunctionPointer" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("10_1vh27")]
+distance = 5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_ur23v")

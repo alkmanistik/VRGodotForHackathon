@@ -59,7 +59,8 @@ func take_damage() -> void:
 	health_update()
 
 func add_star(quest: String) -> void:
-	SoundPlayer.play_star_sound()
+	if quest != "chest":
+		SoundPlayer.play_star_sound()
 	var temp_star = star_container.get_child(star) as TextureRect
 	temp_star.texture = full_star
 	if quest == "main":
