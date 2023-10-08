@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://fmsxm6yqjrdj"]
+[gd_scene load_steps=7 format=3 uid="uid://bopqii5ghkhub"]
 
-[ext_resource type="Script" path="res://scene/menu_panel.gd" id="1_ipwpw"]
+[ext_resource type="Script" path="res://scene/Menu/main_menu(fix).gd" id="1_mm4d3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ugn14"]
 
@@ -19,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ipwpw")
+script = ExtResource("1_mm4d3")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
@@ -117,6 +117,6 @@ keep_pressed_outside = true
 text = "Exit
 "
 
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Start_button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Settings_button" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Exit_button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Start_button" to="." method="_on_start_button_pressed" flags=18]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Settings_button" to="." method="_on_settings_button_pressed" flags=18]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Exit_button" to="." method="_on_exit_button_pressed" flags=18]
