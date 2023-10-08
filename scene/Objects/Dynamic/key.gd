@@ -7,5 +7,6 @@ func _process(delta):
 	rotation.x = 0
 
 func _on_area_3d_body_entered(_body):
+	SoundPlayer.play_key_sound()
 	add_key.emit()
 	queue_free()

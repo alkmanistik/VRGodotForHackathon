@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cf3uewug2vvb8"
+path="res://.godot/imported/Pick-up-Key-Sound-Effect-FX-By-Dylan-Kelk.mp3-96964769f17534139804deb2e1735644.mp3str"
+
+[deps]
+
+source_file="res://assets/custom assets/Audio/Pick-up-Key-Sound-Effect-FX-By-Dylan-Kelk.mp3"
+dest_files=["res://.godot/imported/Pick-up-Key-Sound-Effect-FX-By-Dylan-Kelk.mp3-96964769f17534139804deb2e1735644.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,301 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8hofvnwf6dn5"]
+
+[ext_resource type="Texture2D" uid="uid://fjltax3t7tjb" path="res://assets/Level screens/lvl1.png" id="3_dllqy"]
+[ext_resource type="Texture2D" uid="uid://b2wc8eekpjhre" path="res://assets/Ultimate Platformer Pack - Dec 2021/Preview.jpg" id="5_24366"]
+[ext_resource type="Texture2D" uid="uid://2qd56rkggr4t" path="res://assets/Level screens/lvl2.png" id="7_lv08f"]
+
+[sub_resource type="GDScript" id="GDScript_ayxoq"]
+script/source = "extends Panel
+
+func _ready():
+	$\"ScrollContainer/HBoxContainer/Hide Box\".modulate = \"777777\"
+	$\"ScrollContainer/HBoxContainer/Crab's Trouble\".modulate = \"777777\"
+	$\"ScrollContainer/HBoxContainer/Bee Saber\".modulate = \"777777\"
+	$ScrollContainer/HBoxContainer/Climbing.modulate = \"777777\"
+	
+func _on_hide_box_buton_mouse_entered():
+	$\"ScrollContainer/HBoxContainer/Hide Box\".modulate = \"ffffff\"
+func _on_hide_box_buton_mouse_exited():
+	$\"ScrollContainer/HBoxContainer/Hide Box\".modulate = \"777777\"
+
+func _on_craabs_trouble_buton_mouse_entered():
+	$\"ScrollContainer/HBoxContainer/Crab's Trouble\".modulate = \"ffffff\"
+func _on_craabs_trouble_buton_mouse_exited():
+	$\"ScrollContainer/HBoxContainer/Crab's Trouble\".modulate = \"777777\"
+
+func _on_bee_saber_button_mouse_entered():
+	$\"ScrollContainer/HBoxContainer/Bee Saber\".modulate = \"ffffff\"
+func _on_bee_saber_button_mouse_exited():
+	$\"ScrollContainer/HBoxContainer/Bee Saber\".modulate = \"777777\"
+
+func _on_climbing_buton_mouse_entered():
+	$ScrollContainer/HBoxContainer/Climbing.modulate = \"ffffff\"
+func _on_climbing_buton_mouse_exited():
+	$ScrollContainer/HBoxContainer/Climbing.modulate = \"777777\"
+
+
+
+func _on_climbing_buton_pressed():
+	get_tree().change_scene_to_file(\"res://scene/Levels(fix)/climbing.tscn\")
+func _on_bee_saber_button_pressed():
+	get_tree().change_scene_to_file(\"res://scene/Levels(fix)/bee_saber.tscn\")
+func _on_craabs_trouble_buton_pressed():
+	get_tree().change_scene_to_file(\"res://scene/Levels(fix)/crab's_trouble.tscn\")
+func _on_hide_box_buton_pressed():
+	get_tree().change_scene_to_file(\"res://scene/Levels(fix)/hidebox.tscn\")
+func _on_back_button_pressed():
+	get_tree().change_scene_to_file(\"res://scene/Menu/main_menu(fix).tscn\")
+"
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12kuo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0j5yl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w2aht"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_riw74"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_032gq"]
+
+[node name="Levels_menu" type="Panel"]
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = SubResource("GDScript_ayxoq")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 0
+offset_left = 550.0
+offset_top = 250.0
+offset_right = 1550.0
+offset_bottom = 850.0
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+custom_minimum_size = Vector2(1000, 600)
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Hide Box" type="Control" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/HBoxContainer/Hide Box"]
+custom_minimum_size = Vector2(400, 600)
+layout_direction = 1
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 600.0
+mouse_filter = 1
+color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Hide Box"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 400.0
+grow_horizontal = 2
+texture = ExtResource("3_dllqy")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/Hide Box"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 0
+offset_top = 400.0
+offset_right = 400.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 40
+text = "Hide Box"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Hide_Box_Buton" type="Button" parent="ScrollContainer/HBoxContainer/Hide Box"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer4" type="MarginContainer" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Crab\'s Trouble" type="Control" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/HBoxContainer/Crab\'s Trouble"]
+custom_minimum_size = Vector2(400, 600)
+layout_direction = 1
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 600.0
+mouse_filter = 1
+color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Crab\'s Trouble"]
+custom_minimum_size = Vector2(400, 400)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 400.0
+grow_horizontal = 2
+texture = ExtResource("5_24366")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/Crab\'s Trouble"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 0
+offset_top = 400.0
+offset_right = 400.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 40
+text = "Crab's Trouble"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Craab\'s_Trouble_Buton" type="Button" parent="ScrollContainer/HBoxContainer/Crab\'s Trouble"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Bee Saber" type="Control" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/HBoxContainer/Bee Saber"]
+custom_minimum_size = Vector2(400, 600)
+layout_direction = 1
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 600.0
+mouse_filter = 1
+color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Bee Saber"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 400.0
+grow_horizontal = 2
+texture = ExtResource("7_lv08f")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/Bee Saber"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 0
+offset_top = 400.0
+offset_right = 400.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 40
+text = "Bee Saber"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Bee_Saber_Button" type="Button" parent="ScrollContainer/HBoxContainer/Bee Saber"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+
+[node name="Climbing" type="Control" parent="ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 600)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="ScrollContainer/HBoxContainer/Climbing"]
+custom_minimum_size = Vector2(400, 600)
+layout_direction = 1
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 600.0
+mouse_filter = 1
+color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/HBoxContainer/Climbing"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 400.0
+grow_horizontal = 2
+texture = ExtResource("3_dllqy")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="ScrollContainer/HBoxContainer/Climbing"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 0
+offset_top = 400.0
+offset_right = 400.0
+offset_bottom = 500.0
+theme_override_font_sizes/font_size = 40
+text = "Climbing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Climbing_Buton" type="Button" parent="ScrollContainer/HBoxContainer/Climbing"]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back_button" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 0)
+offset_left = 1500.0
+offset_top = 900.0
+offset_right = 1800.0
+offset_bottom = 988.0
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.662745, 0.34902, 0.027451, 1)
+theme_override_colors/font_hover_color = Color(0.968627, 0.541176, 0.14902, 1)
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_12kuo")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_0j5yl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_w2aht")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_riw74")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_032gq")
+action_mode = 0
+keep_pressed_outside = true
+text = "Back"
+
+[connection signal="mouse_entered" from="ScrollContainer/HBoxContainer/Hide Box/Hide_Box_Buton" to="." method="_on_hide_box_buton_mouse_entered"]
+[connection signal="mouse_exited" from="ScrollContainer/HBoxContainer/Hide Box/Hide_Box_Buton" to="." method="_on_hide_box_buton_mouse_exited"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/Hide Box/Hide_Box_Buton" to="." method="_on_hide_box_buton_pressed"]
+[connection signal="mouse_entered" from="ScrollContainer/HBoxContainer/Crab's Trouble/Craab's_Trouble_Buton" to="." method="_on_craabs_trouble_buton_mouse_entered"]
+[connection signal="mouse_exited" from="ScrollContainer/HBoxContainer/Crab's Trouble/Craab's_Trouble_Buton" to="." method="_on_craabs_trouble_buton_mouse_exited"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/Crab's Trouble/Craab's_Trouble_Buton" to="." method="_on_craabs_trouble_buton_pressed"]
+[connection signal="mouse_entered" from="ScrollContainer/HBoxContainer/Bee Saber/Bee_Saber_Button" to="." method="_on_bee_saber_button_mouse_entered"]
+[connection signal="mouse_exited" from="ScrollContainer/HBoxContainer/Bee Saber/Bee_Saber_Button" to="." method="_on_bee_saber_button_mouse_exited"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/Bee Saber/Bee_Saber_Button" to="." method="_on_bee_saber_button_pressed"]
+[connection signal="mouse_entered" from="ScrollContainer/HBoxContainer/Climbing/Climbing_Buton" to="." method="_on_climbing_buton_mouse_entered"]
+[connection signal="mouse_exited" from="ScrollContainer/HBoxContainer/Climbing/Climbing_Buton" to="." method="_on_climbing_buton_mouse_exited"]
+[connection signal="pressed" from="ScrollContainer/HBoxContainer/Climbing/Climbing_Buton" to="." method="_on_climbing_buton_pressed"]
+[connection signal="pressed" from="Back_button" to="." method="_on_back_button_pressed"]
