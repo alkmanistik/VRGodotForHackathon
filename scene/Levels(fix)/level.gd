@@ -11,4 +11,4 @@ func _ready():
 
 
 func _on_respawn_zone_body_entered(_body):
-	player.position = spawn_position.position
+	player.position = spawn_position.positionss

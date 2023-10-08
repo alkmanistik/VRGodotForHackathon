@@ -27,6 +27,8 @@ func _ready() -> void:
 		i.connect("add_key", add_key)
 	for i in get_tree().get_nodes_in_group("chest"):
 		i.connect("chest_open", chest_open)
+	for i in get_tree().get_nodes_in_group("quest"):
+		i.connect("quest_complete", quest_complete)
 	for i in get_tree().get_nodes_in_group("coin"):
 		i.connect("add_coin", add_coin)
 		max_coin += 1
@@ -51,9 +53,9 @@ func health_update() -> void:
 			i.show()
 			temp_health -= 1
 
-func take_damage() -> void:
-	health -= 1
-	if !health:
+func take_damage(damage: int) -> void:
+	health -= damage
+	if health <= 0:
 		dead.emit()
 		return
 	health_update()
@@ -63,7 +65,7 @@ func add_star(quest: String) -> void:
 		SoundPlayer.play_star_sound()
 	var temp_star = star_container.get_child(star) as TextureRect
 	temp_star.texture = full_star
-	if quest == "main":
+	if quest == "quest":
 		temp_star.texture = rainbow_star
 	star += 1
 
@@ -76,3 +78,6 @@ func add_key():
 	key_texture.texture = key
 	have_key = true
 	_have_key.emit()
+
+func quest_complete():
+	add_star("quest")

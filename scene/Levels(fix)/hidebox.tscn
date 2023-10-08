@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://mw4a8upiykcm"]
+[gd_scene load_steps=13 format=3 uid="uid://mw4a8upiykcm"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_gndjo"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_i2f7l"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="8_fk0ca"]
 [ext_resource type="PackedScene" uid="uid://vxrmp7edq5b0" path="res://scene/Objects/Dynamic/treasure.tscn" id="9_e0gaq"]
 [ext_resource type="PackedScene" uid="uid://cuegexc5r3utd" path="res://scene/Objects/Dynamic/key.tscn" id="10_meq83"]
+[ext_resource type="PackedScene" uid="uid://cocih3mdliawc" path="res://scene/Levels(fix)/Quest/quest_hidebox.tscn" id="12_ika5t"]
 
 [node name="Hidebox" instance=ExtResource("1_gndjo")]
 
@@ -21,7 +22,7 @@ transform = Transform3D(1, 0, 0, 0, 0.587785, 0.809017, 0, -0.809017, 0.587785, 
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 5, 6)
 
 [node name="Tower" parent="Objects" index="0" instance=ExtResource("2_o5uwa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.5, -26)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.4, -26)
 
 [node name="Fence" type="Node3D" parent="Objects" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7)
@@ -76,3 +77,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 5, -4)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 6, 2)
 
 [node name="Player" parent="." index="9" instance=ExtResource("8_fk0ca")]
+
+[node name="quest_hidebox" parent="." index="11" instance=ExtResource("12_ika5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, -16)

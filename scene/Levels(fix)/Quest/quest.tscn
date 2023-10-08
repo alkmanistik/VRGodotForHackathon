@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbdpwjownr44e"]
+
+[ext_resource type="Script" path="res://scene/Levels(fix)/Quest/quest.gd" id="1_jl0d8"]
+
+[node name="Quest" type="Node3D" groups=["quest"]]
+script = ExtResource("1_jl0d8")
+
+[node name="Check" type="Area3D" parent="."]
+collision_layer = 16
+
+[node name="Object" type="Node3D" parent="."]
+
+[node name="Start" type="Area3D" parent="."]
+
+[connection signal="body_entered" from="Check" to="." method="check_zone"]
+[connection signal="body_entered" from="Start" to="." method="start_zone"]
