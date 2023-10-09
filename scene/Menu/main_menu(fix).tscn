@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bopqii5ghkhub"]
+[gd_scene load_steps=8 format=3 uid="uid://bopqii5ghkhub"]
 
 [ext_resource type="Script" path="res://scene/Menu/main_menu(fix).gd" id="1_mm4d3"]
+[ext_resource type="Theme" uid="uid://e053da73co0y" path="res://assets/custom assets/theme.tres" id="2_rngs3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ugn14"]
 
@@ -12,22 +13,17 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hlixc"]
 
-[node name="Main_menu" type="Panel"]
-custom_minimum_size = Vector2(1920, 1080)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Main_menu" type="CanvasLayer"]
 script = ExtResource("1_mm4d3")
 
 [node name="Control" type="Control" parent="."]
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_rngs3")
 
 [node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1

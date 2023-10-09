@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2via30b5yi3m"]
+
+[ext_resource type="PackedScene" uid="uid://bopqii5ghkhub" path="res://scene/Menu/main_menu(fix).tscn" id="1_j81ft"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_8rcal"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_x8ycl"]
+viewport_path = NodePath("SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lss44"]
+resource_local_to_scene = true
+transparency = 1
+blend_mode = 1
+albedo_texture = SubResource("ViewportTexture_x8ycl")
+
+[node name="Menu panels" type="Node3D"]
+
+[node name="SubViewport" type="SubViewport" parent="."]
+use_xr = true
+transparent_bg = true
+size = Vector2i(0, 0)
+
+[node name="Main_menu" parent="SubViewport" instance=ExtResource("1_j81ft")]
+offset_right = 1918.0
+offset_bottom = 1078.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 1.125, 0, 0, 0, 0.001, 0, 0, 0)
+mesh = SubResource("QuadMesh_8rcal")
+surface_material_override/0 = SubResource("StandardMaterial3D_lss44")
