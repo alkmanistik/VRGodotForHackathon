@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://tpeybjfj2wky"]
+[gd_scene load_steps=13 format=3 uid="uid://tpeybjfj2wky"]
 
 [ext_resource type="Script" path="res://scene/characters/player.gd" id="1_hjo01"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="2_w6d1a"]
@@ -12,11 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="9_y1w6x"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="10_1vh27"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ur23v"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5lxx"]
 
-[node name="Player" type="XROrigin3D"]
+[node name="Player" type="XROrigin3D" groups=["player"]]
 script = ExtResource("1_hjo01")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
@@ -50,9 +48,6 @@ tracker = &"right_hand"
 
 [node name="FunctionPointer" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("10_1vh27")]
 distance = 5.0
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_ur23v")
 
 [node name="PlayerBody" parent="." instance=ExtResource("9_y1w6x")]
 collision_layer = 524289
