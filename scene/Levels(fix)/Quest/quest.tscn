@@ -12,5 +12,7 @@ collision_layer = 16
 
 [node name="Start" type="Area3D" parent="."]
 
+[node name="StartPosition" type="Marker3D" parent="."]
+
 [connection signal="body_entered" from="Check" to="." method="check_zone"]
 [connection signal="body_entered" from="Start" to="." method="start_zone"]
