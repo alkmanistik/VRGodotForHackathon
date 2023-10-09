@@ -34,7 +34,7 @@ func _ready() -> void:
 		i.connect("add_coin", add_coin)
 		max_coin += 1
 	health_update()
-	
+	coin_update()
 
 func add_coin() -> void:
 	coin += 1

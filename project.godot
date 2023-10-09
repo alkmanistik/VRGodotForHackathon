@@ -75,6 +75,7 @@ right={
 3d_physics/layer_5="AreaZone"
 3d_physics/layer_6="VRLaser"
 3d_physics/layer_7="Tools"
+3d_physics/layer_8="ground"
 
 [rendering]
 
