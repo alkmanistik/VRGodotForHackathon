@@ -1,30 +1,80 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6lirsfitj0se"]
+[gd_scene load_steps=8 format=3 uid="uid://c6lirsfitj0se"]
 
 [ext_resource type="Texture2D" uid="uid://c367sanafhcgu" path="res://assets/custom assets/pngwing.com (1).png" id="1_g8qk0"]
+[ext_resource type="Script" path="res://scene/CPUParticles3D.gd" id="2_2ru81"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0mpr"]
 transparency = 1
+depth_draw_mode = 2
+no_depth_test = true
 shading_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_g8qk0")
+refraction_scale = -1.0
 billboard_mode = 2
 proximity_fade_distance = 0.0
 
 [sub_resource type="QuadMesh" id="QuadMesh_3be67"]
+lightmap_size_hint = Vector2i(4, 4)
 material = SubResource("StandardMaterial3D_o0mpr")
 size = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_65lqv"]
+resource_name = "new_animation"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g1rk8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_85o0i"]
+_data = {
+"RESET": SubResource("Animation_g1rk8"),
+"new_animation": SubResource("Animation_65lqv")
+}
 
 [node name="HZ_puff" type="Node3D"]
 
 [node name="CPUParticles3D" type="CPUParticles3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0124111, 0.231836, -0.0769126)
-amount = 4
+amount = 20
 lifetime = 1.1
 speed_scale = 1.4
 local_coords = true
-draw_order = 1
 mesh = SubResource("QuadMesh_3be67")
 emission_shape = 1
-emission_sphere_radius = 0.7
-direction = Vector3(1, 1, 1)
+emission_sphere_radius = 0.85
+direction = Vector3(1.4, 0.5, 1.4)
+spread = 126.29
 gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+script = ExtResource("2_2ru81")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CPUParticles3D"]
+libraries = {
+"": SubResource("AnimationLibrary_85o0i")
+}
