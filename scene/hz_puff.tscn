@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6lirsfitj0se"]
+
+[ext_resource type="Texture2D" uid="uid://c367sanafhcgu" path="res://assets/custom assets/pngwing.com (1).png" id="1_g8qk0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0mpr"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_g8qk0")
+billboard_mode = 2
+proximity_fade_distance = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_3be67"]
+material = SubResource("StandardMaterial3D_o0mpr")
+size = Vector2(0.5, 0.5)
+
+[node name="HZ_puff" type="Node3D"]
+
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0124111, 0.231836, -0.0769126)
+amount = 4
+lifetime = 1.1
+speed_scale = 1.4
+local_coords = true
+draw_order = 1
+mesh = SubResource("QuadMesh_3be67")
+emission_shape = 1
+emission_sphere_radius = 0.7
+direction = Vector3(1, 1, 1)
+gravity = Vector3(0, 0, 0)
