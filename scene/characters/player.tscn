@@ -31,9 +31,6 @@ turn_mode = 2
 
 [node name="FunctionTeleport" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("8_x5yc6")]
 
-[node name="MovementDirect" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("4_1kcqw")]
-strafe = true
-
 [node name="LeftHand" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("6_r3ey2")]
 
 [node name="RightXRController3D2" type="XRController3D" parent="."]
@@ -48,6 +45,10 @@ tracker = &"right_hand"
 
 [node name="FunctionPointer" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("10_1vh27")]
 distance = 5.0
+
+[node name="MovementDirect" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("4_1kcqw")]
+max_speed = 1000.0
+strafe = true
 
 [node name="PlayerBody" parent="." instance=ExtResource("9_y1w6x")]
 collision_layer = 524289

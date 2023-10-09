@@ -22,6 +22,7 @@ var star:int = 0
 
 @onready var key = preload("res://assets/custom assets/key.png")
 
+
 func _ready() -> void:
 	for i in get_tree().get_nodes_in_group("key"):
 		i.connect("add_key", add_key)
@@ -33,7 +34,7 @@ func _ready() -> void:
 		i.connect("add_coin", add_coin)
 		max_coin += 1
 	health_update()
-	coin_update()
+	
 
 func add_coin() -> void:
 	coin += 1
