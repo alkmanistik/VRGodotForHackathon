@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://tpeybjfj2wky"]
+[gd_scene load_steps=17 format=3 uid="uid://tpeybjfj2wky"]
 
 [ext_resource type="Script" path="res://scene/characters/player.gd" id="1_hjo01"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="2_w6d1a"]
@@ -11,6 +11,17 @@
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="9_klsff"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="9_y1w6x"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="10_1vh27"]
+[ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="12_i6e5d"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1g3ds"]
+viewport_path = NodePath("RightXRController3D2/CollisionHandRight/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_055ut"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_1g3ds")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_47g0e"]
+size = Vector2(0.3, 0.4)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5lxx"]
 
@@ -49,6 +60,16 @@ distance = 5.0
 [node name="MovementDirect" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("4_1kcqw")]
 max_speed = 1000.0
 strafe = true
+
+[node name="SubViewport" type="SubViewport" parent="RightXRController3D2/CollisionHandRight"]
+size = Vector2i(1024, 512)
+
+[node name="UI" parent="RightXRController3D2/CollisionHandRight/SubViewport" instance=ExtResource("12_i6e5d")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RightXRController3D2/CollisionHandRight"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.215232, 0.00280079, 0.0891045)
+material_override = SubResource("StandardMaterial3D_055ut")
+mesh = SubResource("PlaneMesh_47g0e")
 
 [node name="PlayerBody" parent="." instance=ExtResource("9_y1w6x")]
 collision_layer = 524289
