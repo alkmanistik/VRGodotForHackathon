@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bcd16j8c2tf5b" path="res://scene/Objects/Static/arrow.tscn" id="3_prmql"]
 [ext_resource type="PackedScene" uid="uid://ciqvjc0wjkmkl" path="res://scene/Objects/Static/rock_platforms_large.tscn" id="3_sbtrb"]
 [ext_resource type="PackedScene" uid="uid://dmy7or7jnvweu" path="res://scene/Objects/Static/rock_platforms_1.tscn" id="4_4kdi6"]
-[ext_resource type="PackedScene" uid="uid://cuegexc5r3utd" path="res://scene/Objects/Dynamic/key.tscn" id="4_oyfne"]
+[ext_resource type="PackedScene" path="res://scene/Objects/Dynamic/key.tscn" id="4_oyfne"]
 [ext_resource type="PackedScene" uid="uid://bfhxk7uuneyoh" path="res://scene/Objects/Static/rock_platforms_2.tscn" id="5_b5e6a"]
 [ext_resource type="PackedScene" uid="uid://dugybkx8yavpd" path="res://scene/Objects/Static/bridge_modular.tscn" id="5_kpng0"]
 [ext_resource type="PackedScene" uid="uid://cnhqjfp7b3b0p" path="res://scene/Objects/Static/rock_platform_medium.tscn" id="6_as76m"]
