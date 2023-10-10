@@ -1,5 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://dr88xfs62bkra"]
+[gd_scene load_steps=6 format=3 uid="uid://dr88xfs62bkra"]
 
 [ext_resource type="PackedScene" uid="uid://cmbf4uxi7aufp" path="res://assets/custom assets/Blender Assets/cube.glb" id="1_7afgw"]
+[ext_resource type="Script" path="res://addons/destruction/destruction.gd" id="2_e1a2d"]
+[ext_resource type="PackedScene" uid="uid://b67ybc0ksxhqm" path="res://assets/custom assets/Blender Assets/cube_broken_2.tscn" id="3_onse5"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_oqyck"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rxqp1"]
+size = Vector3(2, 2, 2)
 
 [node name="cube" instance=ExtResource("1_7afgw")]
+
+[node name="Destruction" type="Node" parent="." index="1" node_paths=PackedStringArray("shard_container")]
+script = ExtResource("2_e1a2d")
+fragmented = ExtResource("3_onse5")
+shard_container = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
+physics_material_override = SubResource("PhysicsMaterial_oqyck")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("BoxShape3D_rxqp1")

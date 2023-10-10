@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b67ybc0ksxhqm"]
+
+[ext_resource type="PackedScene" uid="uid://qnn1hih3kxoq" path="res://assets/custom assets/Blender Assets/cube_broken2.glb" id="1_j2ck0"]
+
+[node name="cube_broken2" instance=ExtResource("1_j2ck0")]
