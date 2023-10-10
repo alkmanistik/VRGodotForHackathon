@@ -1,16 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://tpeybjfj2wky"]
+[gd_scene load_steps=10 format=3 uid="uid://tpeybjfj2wky"]
 
 [ext_resource type="Script" path="res://scene/characters/player.gd" id="1_hjo01"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="2_w6d1a"]
-[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="4_1kcqw"]
 [ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="5_1ovmc"]
 [ext_resource type="PackedScene" uid="uid://hpr0v012ghsb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_tac_glove.tscn" id="6_r3ey2"]
-[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="7_bw4mo"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="7_bk6au"]
+[ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="8_53dgs"]
 [ext_resource type="PackedScene" uid="uid://dup2vp8v5rpi5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_tac_glove.tscn" id="8_nnnrb"]
-[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="8_x5yc6"]
-[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="9_klsff"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="9_y1w6x"]
-[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="10_1vh27"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5lxx"]
 
@@ -26,11 +23,6 @@ tracker = &"left_hand"
 
 [node name="CollisionHandLeft" parent="LeftXRController3D" instance=ExtResource("2_w6d1a")]
 
-[node name="MovementTurn" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("7_bw4mo")]
-turn_mode = 2
-
-[node name="FunctionTeleport" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("8_x5yc6")]
-
 [node name="LeftHand" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("6_r3ey2")]
 
 [node name="RightXRController3D2" type="XRController3D" parent="."]
@@ -41,18 +33,15 @@ tracker = &"right_hand"
 
 [node name="RightHand" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("8_nnnrb")]
 
-[node name="FunctionPickup" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("9_klsff")]
-
-[node name="FunctionPointer" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("10_1vh27")]
-distance = 5.0
-
-[node name="MovementDirect" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("4_1kcqw")]
-max_speed = 1000.0
-strafe = true
-
 [node name="PlayerBody" parent="." instance=ExtResource("9_y1w6x")]
 collision_layer = 524289
 collision_mask = 31
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerBody"]
 shape = SubResource("CapsuleShape3D_o5lxx")
+
+[node name="Viewport2Din3D" parent="." instance=ExtResource("7_bk6au")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.7, -0.236447)
+scene = ExtResource("8_53dgs")
+viewport_size = Vector2(1500, 600)
+unshaded = true

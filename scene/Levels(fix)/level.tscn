@@ -118,3 +118,4 @@ mesh = SubResource("PlaneMesh_ukfyh")
 [node name="Mechanic" type="Node3D" parent="."]
 
 [node name="UI" parent="." instance=ExtResource("5_x0qh2")]
+visible = false

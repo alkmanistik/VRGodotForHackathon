@@ -25,6 +25,7 @@ SoundPlayer="*res://autoload/sound_player.tscn"
 
 window/stretch/mode="viewport"
 window/stretch/aspect="ignore"
+window/layer_21="Pointable"
 
 [dotnet]
 
@@ -73,9 +74,14 @@ right={
 3d_physics/layer_3="Objects"
 3d_physics/layer_4="Projectiles"
 3d_physics/layer_5="AreaZone"
-3d_physics/layer_6="VRLaser"
-3d_physics/layer_7="Tools"
-3d_physics/layer_8="ground"
+3d_physics/layer_6="Herb Object"
+3d_physics/layer_7="Player Hand"
+3d_physics/layer_8="Pointable"
+
+[physics]
+
+3d/run_on_separate_thread=true
+3d/physics_engine="JoltPhysics3D"
 
 [rendering]
 
