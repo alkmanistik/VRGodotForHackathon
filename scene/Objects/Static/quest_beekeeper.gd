@@ -48,7 +48,7 @@ func quest_object_reset() -> void:
 	answer_keybord.hide()
 
 func check() -> void:
-	if  text_label.is_valid_int() and int(text_label) == amount:
+	if  !is_complete and text_label.is_valid_int() and int(text_label) == amount:
 		completed()
 
 func change_label(name: String):

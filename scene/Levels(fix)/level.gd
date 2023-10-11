@@ -8,4 +8,4 @@ func _ready():
 	player.position = spawn_position.position
 
 func _on_respawn_zone_body_entered(_body):
-	player.position = spawn_position.positionss
+	player.position = spawn_position.position

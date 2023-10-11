@@ -164,7 +164,7 @@ lightmap_size_hint = Vector2i(1502, 1502)
 material = SubResource("ShaderMaterial_ngp10")
 size = Vector2(300, 300)
 
-[node name="Level" type="Node3D"]
+[node name="Level" type="Node3D" groups=["level"]]
 script = ExtResource("1_cuiud")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

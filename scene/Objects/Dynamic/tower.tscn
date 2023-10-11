@@ -324,7 +324,7 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_l67fs"]
 size = Vector3(3, 6, 3)
 
-[node name="Tower" type="Node3D"]
+[node name="Tower" type="Node3D" groups=["tower"]]
 script = ExtResource("1_drmyd")
 
 [node name="Tower" type="Node3D" parent="."]

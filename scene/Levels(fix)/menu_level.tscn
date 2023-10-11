@@ -6921,7 +6921,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_5nwqn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Objects/Path3D" index="0"]
-transform = Transform3D(-0.551907, 0.00994437, -0.833796, -0.00260968, 0.999868, 0.0136522, 0.833855, 0.00971116, -0.551825, 4.29844, 2.98123, -0.597085)
+transform = Transform3D(-0.548734, 0.0599259, -0.833796, 0.0880242, 0.995989, 0.0136522, 0.831303, -0.0659059, -0.551825, 4.29844, 2.98123, -0.597085)
 progress = 3.34578
 
 [node name="Bee" type="Node3D" parent="Objects/Path3D/PathFollow3D" index="0"]
@@ -7431,4 +7431,4 @@ transform = Transform3D(0.565831, 0, -0.824521, 0, 1, 0, 0.824521, 0, 0.565831, 
 transform = Transform3D(0.234226, 0, 0.972182, 0, 1, 0, -0.972182, 0, 0.234226, -21.5127, -2, -3.71267)
 
 [node name="Player" parent="." index="9" instance=ExtResource("9_hjs0w")]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, 2.62138, 0)
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, 0, 0)

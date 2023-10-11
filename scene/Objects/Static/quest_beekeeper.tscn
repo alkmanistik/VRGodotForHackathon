@@ -11,7 +11,7 @@
 script = ExtResource("2_15wqd")
 
 [node name="Bee" type="Node3D" parent="Object" index="0"]
-visible = false
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -35, 5, -11)
 
 [node name="Tree" type="Node3D" parent="Object/Bee" index="0"]
 
@@ -95,5 +95,7 @@ transform = Transform3D(0.984359, 0, -0.176174, 0, 1, 0, 0.176174, 0, 0.984359, 
 transform = Transform3D(-0.79165, 0, 0.610974, 0, 1, 0, -0.610974, 0, -0.79165, -8.87498, 5.63833, 11.7177)
 
 [node name="Crab\'s platform" type="Node3D" parent="Object" index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 2, 0)
 
 [node name="Answer_Keybord" parent="Object/Crab\'s platform" index="0" instance=ExtResource("6_j7lec")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 2, 0)
