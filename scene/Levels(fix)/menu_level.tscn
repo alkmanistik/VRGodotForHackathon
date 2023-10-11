@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=3 uid="uid://cplnf1olqu8qw"]
+[gd_scene load_steps=100 format=3 uid="uid://cplnf1olqu8qw"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_l142q"]
 [ext_resource type="Script" path="res://scene/Levels(fix)/menu_level.gd" id="2_ee3qg"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dmy7or7jnvweu" path="res://scene/Objects/Static/rock_platforms_1.tscn" id="7_5ob1v"]
 [ext_resource type="PackedScene" uid="uid://cpx0xrvka0jhq" path="res://scene/Objects/Static/rock_platform_tall.tscn" id="8_u8j53"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="8_xc6hk"]
-[ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="9_hjs0w"]
 [ext_resource type="PackedScene" uid="uid://3rxi7owoo5rb" path="res://scene/Objects/Static/tree_fruit.tscn" id="9_ov4i0"]
 [ext_resource type="PackedScene" uid="uid://b84qye2gcp5my" path="res://scene/Objects/Static/rock_1.tscn" id="10_fvfhr"]
 [ext_resource type="PackedScene" uid="uid://7yu3kpkt2tc6" path="res://scene/Objects/Static/rock_2.tscn" id="11_8m6h0"]
@@ -22,6 +21,8 @@
 [ext_resource type="PackedScene" uid="uid://dhvxegusyvewf" path="res://scene/Objects/Static/pipe_straight.tscn" id="18_vuxeg"]
 [ext_resource type="PackedScene" uid="uid://hqg34k5an22p" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_1.gltf" id="20_m5ioo"]
 [ext_resource type="PackedScene" uid="uid://dsgntchwl8isc" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_3.gltf" id="21_0ofsa"]
+[ext_resource type="PackedScene" uid="uid://bopqii5ghkhub" path="res://scene/Menu/main_menu(fix).tscn" id="22_hxgam"]
+[ext_resource type="PackedScene" uid="uid://tpeybjfj2wky" path="res://scene/characters/player.tscn" id="23_q5cnf"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jw0p"]
 resource_name = "Main"
@@ -6835,7 +6836,7 @@ _data = {
 script = ExtResource("2_ee3qg")
 
 [node name="SpawnPosition" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 2, 0)
 
 [node name="CollisionShape3D" parent="RespawnZone" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224, 0, 4.914)
@@ -6921,7 +6922,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_5nwqn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Objects/Path3D" index="0"]
-transform = Transform3D(-0.548734, 0.0599259, -0.833796, 0.0880242, 0.995989, 0.0136522, 0.831303, -0.0659059, -0.551825, 4.29844, 2.98123, -0.597085)
+transform = Transform3D(-0.548734, 0.0599258, -0.833796, 0.0880242, 0.995987, 0.0136522, 0.831303, -0.0659057, -0.551825, 4.29844, 2.98123, -0.597085)
 progress = 3.34578
 
 [node name="Bee" type="Node3D" parent="Objects/Path3D/PathFollow3D" index="0"]
@@ -7004,23 +7005,19 @@ libraries = {
 "": SubResource("AnimationLibrary_j15xf")
 }
 
-[node name="Viewport2Din3D" parent="Objects" index="3" instance=ExtResource("8_xc6hk")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 4, 0)
-screen_size = Vector2(6, 4)
-
-[node name="Tree_Fruit" parent="Objects" index="4" instance=ExtResource("9_ov4i0")]
+[node name="Tree_Fruit" parent="Objects" index="3" instance=ExtResource("9_ov4i0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.61544, 2, -9.19193)
 
-[node name="Tree_Fruit2" parent="Objects" index="5" instance=ExtResource("9_ov4i0")]
+[node name="Tree_Fruit2" parent="Objects" index="4" instance=ExtResource("9_ov4i0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87133, 2, -7.39118)
 
-[node name="Tree_Fruit3" parent="Objects" index="6" instance=ExtResource("9_ov4i0")]
+[node name="Tree_Fruit3" parent="Objects" index="5" instance=ExtResource("9_ov4i0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.66794, 2, -5.77729)
 
-[node name="Tree_Fruit4" parent="Objects" index="7" instance=ExtResource("9_ov4i0")]
+[node name="Tree_Fruit4" parent="Objects" index="6" instance=ExtResource("9_ov4i0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.82419, 2, -9.25119)
 
-[node name="Rock" type="Node3D" parent="Objects" index="8"]
+[node name="Rock" type="Node3D" parent="Objects" index="7"]
 
 [node name="Rock_1" parent="Objects/Rock" index="0" instance=ExtResource("10_fvfhr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.90561, 3.1963, 4.21402)
@@ -7102,16 +7099,16 @@ libraries = {
 "": SubResource("AnimationLibrary_uj6jy")
 }
 
-[node name="Chest" parent="Objects" index="9" instance=ExtResource("12_vrjyd")]
+[node name="Chest" parent="Objects" index="8" instance=ExtResource("12_vrjyd")]
 transform = Transform3D(-0.854178, 0, -0.519981, 0, 1, 0, 0.519981, 0, -0.854178, 5.92052, 3.35693, 7.86697)
 
-[node name="Gem_Green" parent="Objects" index="10" instance=ExtResource("13_euvdg")]
+[node name="Gem_Green" parent="Objects" index="9" instance=ExtResource("13_euvdg")]
 transform = Transform3D(0.999303, 0, 0.0373414, 0, 1, 0, -0.0373414, 0, 0.999303, 9.73228, 7.33836, 2.9966)
 
-[node name="Key" parent="Objects" index="11" instance=ExtResource("14_ff4a8")]
+[node name="Key" parent="Objects" index="10" instance=ExtResource("14_ff4a8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 3, -4)
 
-[node name="To_Sky" type="Node3D" parent="Objects" index="12"]
+[node name="To_Sky" type="Node3D" parent="Objects" index="11"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 1.51018, 2.58066, -1.73344)
 
 [node name="Pipe_End" parent="Objects/To_Sky" index="0" instance=ExtResource("16_25rv1")]
@@ -7159,7 +7156,7 @@ transform = Transform3D(-8.9407e-08, 0, 1, 0, 1, 0, -1, 0, -8.9407e-08, -15, 9, 
 [node name="Coin" parent="Objects/To_Sky/Cloud" index="7" instance=ExtResource("14_bgh4k")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15, 12, 5.96046e-07)
 
-[node name="Character" type="Node3D" parent="Objects" index="13"]
+[node name="Character" type="Node3D" parent="Objects" index="12"]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -7, 2, -7)
 
 [node name="CharacterArmature" type="Node3D" parent="Objects/Character" index="0"]
@@ -7391,7 +7388,7 @@ libraries = {
 "": SubResource("AnimationLibrary_l17ts")
 }
 
-[node name="Cloud" type="Node3D" parent="Objects" index="14"]
+[node name="Cloud" type="Node3D" parent="Objects" index="13"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 
 [node name="Cloud_1" parent="Objects/Cloud" index="0" instance=ExtResource("20_m5ioo")]
@@ -7430,5 +7427,15 @@ transform = Transform3D(0.565831, 0, -0.824521, 0, 1, 0, 0.824521, 0, 0.565831, 
 [node name="Cloud_12" parent="Objects/Cloud" index="11" instance=ExtResource("21_0ofsa")]
 transform = Transform3D(0.234226, 0, 0.972182, 0, 1, 0, -0.972182, 0, 0.234226, -21.5127, -2, -3.71267)
 
-[node name="Player" parent="." index="9" instance=ExtResource("9_hjs0w")]
-transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, 0, 0)
+[node name="UI" parent="." index="8"]
+ui_disable = true
+
+[node name="Player" parent="." index="9" instance=ExtResource("23_q5cnf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+
+[node name="Viewport2Din3D" parent="." index="10" instance=ExtResource("8_xc6hk")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6, 4, 0)
+screen_size = Vector2(6, 4)
+scene = ExtResource("22_hxgam")
+viewport_size = Vector2(1920, 1080)
+unshaded = true

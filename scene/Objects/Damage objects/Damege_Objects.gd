@@ -5,5 +5,5 @@ var damage : int = 1
 
 signal emit_hit(damage:int)
 
-func hit(damage: int) -> void:
-	emit_hit.emit(damage)
+func hit(_damage: int) -> void:
+	emit_hit.emit(_damage)
