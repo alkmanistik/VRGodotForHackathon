@@ -22,7 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dhvxegusyvewf" path="res://scene/Objects/Static/pipe_straight.tscn" id="18_vuxeg"]
 [ext_resource type="PackedScene" uid="uid://hqg34k5an22p" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_1.gltf" id="20_m5ioo"]
 [ext_resource type="PackedScene" uid="uid://dsgntchwl8isc" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_3.gltf" id="21_0ofsa"]
-[ext_resource type="PackedScene" uid="uid://ctyxalrrdm60p" path="res://scene/Menu/settengs_menu(fix).tscn" id="23_41lep"]
+[ext_resource type="PackedScene" uid="uid://bopqii5ghkhub" path="res://scene/Menu/main_menu(fix).tscn" id="23_vtqse"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jw0p"]
 resource_name = "Main"
@@ -7436,6 +7436,6 @@ transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 
 
 [node name="Viewport2Din3D" parent="." index="10" instance=ExtResource("8_xc6hk")]
 transform = Transform3D(-1.31134e-07, 0, 3, 0, 3, 0, -3, 0, -1.31134e-07, -6, 3.63352, 0)
-scene = ExtResource("23_41lep")
+scene = ExtResource("23_vtqse")
 viewport_size = Vector2(1920, 1080)
 unshaded = true
