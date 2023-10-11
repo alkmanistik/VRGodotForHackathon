@@ -5,18 +5,16 @@
 [ext_resource type="Texture2D" uid="uid://fjltax3t7tjb" path="res://assets/Level screens/lvl1.png" id="2_rrpdf"]
 [ext_resource type="Texture2D" uid="uid://53tttm83xl6s" path="res://assets/custom assets/emptyl_star.png" id="3_b1qdf"]
 
-[node name="Levels_menu" type="CanvasLayer"]
-script = ExtResource("1_jnt6p")
-
-[node name="Control" type="Control" parent="."]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jnt6p")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,39 +22,39 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="Control/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 70)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="Control/VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_kub0s")
 theme_override_font_sizes/font_size = 50
 text = "Levels"
 horizontal_alignment = 1
 
-[node name="MarginContainer2" type="MarginContainer" parent="Control/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="Control/VBoxContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(640, 300)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 vertical_scroll_mode = 0
 
-[node name="Level Container" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 15
 
-[node name="Hidebox" type="Control" parent="Control/VBoxContainer/ScrollContainer/Level Container"]
+[node name="lvl1" type="Control" parent="VBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 330)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Hidebox"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl1"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -64,7 +62,7 @@ grow_horizontal = 2
 texture = ExtResource("2_rrpdf")
 expand_mode = 5
 
-[node name="Label" type="Label" parent="Control/VBoxContainer/ScrollContainer/Level Container/Hidebox"]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl1"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -81,7 +79,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Star_Container" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/Level Container/Hidebox"]
+[node name="Star_Container" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl1"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -94,7 +92,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Hidebox/Star_Container"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl1/Star_Container"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -102,14 +100,14 @@ size_flags_vertical = 4
 texture = ExtResource("3_b1qdf")
 expand_mode = 4
 
-[node name="TextureRect2" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Hidebox/Star_Container"]
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl1/Star_Container"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("3_b1qdf")
 expand_mode = 4
 
-[node name="TextureRect3" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Hidebox/Star_Container"]
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl1/Star_Container"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -117,7 +115,7 @@ size_flags_vertical = 4
 texture = ExtResource("3_b1qdf")
 expand_mode = 4
 
-[node name="Hidebox_Button" type="Button" parent="Control/VBoxContainer/ScrollContainer/Level Container/Hidebox"]
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl1"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -125,11 +123,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Crab\'s Trouble" type="Control" parent="Control/VBoxContainer/ScrollContainer/Level Container"]
+[node name="lvl2" type="Control" parent="VBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 330)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Crab\'s Trouble"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl2"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -137,7 +135,7 @@ grow_horizontal = 2
 texture = ExtResource("2_rrpdf")
 expand_mode = 5
 
-[node name="Label" type="Label" parent="Control/VBoxContainer/ScrollContainer/Level Container/Crab\'s Trouble"]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl2"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -154,7 +152,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Star_Container" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/Level Container/Crab\'s Trouble"]
+[node name="Star_Container" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl2"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -167,7 +165,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Crab\'s Trouble/Star_Container"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl2/Star_Container"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -175,14 +173,14 @@ size_flags_vertical = 4
 texture = ExtResource("3_b1qdf")
 expand_mode = 4
 
-[node name="TextureRect2" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Crab\'s Trouble/Star_Container"]
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl2/Star_Container"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("3_b1qdf")
 expand_mode = 4
 
-[node name="TextureRect3" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Crab\'s Trouble/Star_Container"]
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl2/Star_Container"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -190,7 +188,7 @@ size_flags_vertical = 4
 texture = ExtResource("3_b1qdf")
 expand_mode = 4
 
-[node name="Crab\'s trouble Button" type="Button" parent="Control/VBoxContainer/ScrollContainer/Level Container/Crab\'s Trouble"]
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl2"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -198,11 +196,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Beekeeper" type="Control" parent="Control/VBoxContainer/ScrollContainer/Level Container"]
+[node name="lvl3" type="Control" parent="VBoxContainer/ScrollContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 330)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Beekeeper"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl3"]
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -210,7 +208,7 @@ grow_horizontal = 2
 texture = ExtResource("2_rrpdf")
 expand_mode = 5
 
-[node name="Label" type="Label" parent="Control/VBoxContainer/ScrollContainer/Level Container/Beekeeper"]
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl3"]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -227,7 +225,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="Star_Container" type="HBoxContainer" parent="Control/VBoxContainer/ScrollContainer/Level Container/Beekeeper"]
+[node name="Star_Container" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl3"]
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -240,7 +238,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
 
-[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Beekeeper/Star_Container"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl3/Star_Container"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -248,14 +246,14 @@ size_flags_vertical = 4
 texture = ExtResource("3_b1qdf")
 expand_mode = 4
 
-[node name="TextureRect2" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Beekeeper/Star_Container"]
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl3/Star_Container"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_vertical = 4
 texture = ExtResource("3_b1qdf")
 expand_mode = 4
 
-[node name="TextureRect3" type="TextureRect" parent="Control/VBoxContainer/ScrollContainer/Level Container/Beekeeper/Star_Container"]
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl3/Star_Container"]
 custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -263,7 +261,7 @@ size_flags_vertical = 4
 texture = ExtResource("3_b1qdf")
 expand_mode = 4
 
-[node name="Beekeeper Button" type="Button" parent="Control/VBoxContainer/ScrollContainer/Level Container/Beekeeper"]
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl3"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -271,18 +269,87 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MarginContainer3" type="MarginContainer" parent="Control/VBoxContainer"]
+[node name="lvl4" type="Control" parent="VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 330)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl4"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+texture = ExtResource("2_rrpdf")
+expand_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl4"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 23.0
+offset_bottom = 104.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_kub0s")
+theme_override_font_sizes/font_size = 24
+text = "Climbing
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Star_Container" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl4"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = 244.0
+offset_right = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl4/Star_Container"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_b1qdf")
+expand_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl4/Star_Container"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_b1qdf")
+expand_mode = 4
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl4/Star_Container"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3_b1qdf")
+expand_mode = 4
+
+[node name="Button" type="Button" parent="VBoxContainer/ScrollContainer/HBoxContainer/lvl4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Control/VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("1_kub0s")
 theme_override_font_sizes/font_size = 30
 text = "Back"
-
-[connection signal="pressed" from="Control/VBoxContainer/ScrollContainer/Level Container/Hidebox/Hidebox_Button" to="." method="_on_hidebox_button_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/ScrollContainer/Level Container/Crab's Trouble/Crab's trouble Button" to="." method="_on_crabs_trouble_button_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/ScrollContainer/Level Container/Beekeeper/Beekeeper Button" to="." method="_on_beekeeper_button_pressed"]
-[connection signal="pressed" from="Control/VBoxContainer/Button" to="." method="_on_button_pressed"]
