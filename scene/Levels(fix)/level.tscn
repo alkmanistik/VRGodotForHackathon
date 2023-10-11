@@ -8,14 +8,15 @@
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_72q4q"]
 sky_top_color = Color(0.572549, 0.690196, 0.964706, 1)
+sky_horizon_color = Color(0.572549, 0.690196, 0.964706, 1)
 sky_curve = 0.01421
 ground_bottom_color = Color(0.572549, 0.690196, 0.964706, 1)
+ground_horizon_color = Color(0.572549, 0.690196, 0.964706, 1)
 sun_angle_max = 7.0
 sun_curve = 0.87845
 
 [sub_resource type="Sky" id="Sky_tryl1"]
 sky_material = SubResource("ProceduralSkyMaterial_72q4q")
-process_mode = 1
 
 [sub_resource type="Environment" id="Environment_1v8ha"]
 background_mode = 2
