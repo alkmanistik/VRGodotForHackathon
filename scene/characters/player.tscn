@@ -55,7 +55,6 @@ collision_mask = 327694
 enabled = false
 
 [node name="FunctionPointer" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("9_3w62p")]
-enabled = false
 laser_length = 1
 show_target = true
 
