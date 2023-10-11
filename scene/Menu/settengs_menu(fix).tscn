@@ -117,6 +117,4 @@ action_mode = 0
 keep_pressed_outside = true
 text = "Back"
 
-[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/Volume_panel_1/Volume_Scroll_Bar1" to="." method="_on_volume_scroll_bar_1_value_changed" flags=18]
-[connection signal="value_changed" from="Control/MarginContainer/VBoxContainer/Volume_panel_2/Volume_Scroll_Bar1" to="." method="_on_volume_scroll_bar_1_value_changed" flags=18]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Back_button" to="." method="_on_back_button_pressed" flags=18]
