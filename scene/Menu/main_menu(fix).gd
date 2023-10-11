@@ -8,3 +8,11 @@ func _on_settings_button_pressed():
 
 func _on_exit_button_pressed():
 	get_tree().quit()
+
+
+
+
+
+func _on_exit_button_focus_entered():
+	if Input.is_action_just_pressed("t"):
+		get_tree().quit()
