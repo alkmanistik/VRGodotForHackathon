@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
-@onready var menu_level = load("res://scene/Levels(fix)/menu_level.tscn")
+@onready var menu_level = preload("res://scene/Levels(fix)/menu_level.tscn")
 
 signal save()
 

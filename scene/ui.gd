@@ -2,6 +2,7 @@ extends CanvasLayer
 
 signal update_save(name: String, count_star: int)
 signal _have_key()
+@export var ui_disable: bool
 
 var have_key: bool = false
 
@@ -24,16 +25,17 @@ var star:int = 0
 
 
 func _ready() -> void:
-	if get_parent().name = "Menu_level":
-		return
-	get_tree().get_first_node_in_group("key").connect("add_key", add_key)
-	get_tree().get_first_node_in_group("chest").connect("chest_open", chest_open)
-	get_tree().get_first_node_in_group("quest").connect("quest_complete", quest_complete)
-	get_tree().get_first_node_in_group("tower").connect("save", save)
+	for i in get_tree().get_nodes_in_group("key"):
+		i.connect("add_key", add_key)
+	for i in get_tree().get_nodes_in_group("chest"):
+		i.connect("chest_open", chest_open)
+	for i in get_tree().get_nodes_in_group("quest"):
+		i.connect("quest_complete", quest_complete)
+	for i in get_tree().get_nodes_in_group("tower"):
+		i.connect("save", save)
 	for i in get_tree().get_nodes_in_group("coin"):
 		i.connect("add_coin", add_coin)
 		max_coin += 1
-	
 	health_update()
 	coin_update()
 
