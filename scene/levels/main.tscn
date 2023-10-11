@@ -23,6 +23,9 @@ sky_material = SubResource("ProceduralSkyMaterial_qi7sm")
 [sub_resource type="Environment" id="Environment_bbdc6"]
 background_mode = 2
 sky = SubResource("Sky_ype06")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.005
+volumetric_fog_emission = Color(0.560784, 0.992157, 0.917647, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_no54t"]
 size = Vector3(100, 1, 100)
@@ -564,7 +567,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1444, 0, -39.8547)
 shape = SubResource("BoxShape3D_no54t")
 
 [node name="Debug Player" parent="." instance=ExtResource("6_ny3di")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8316, 5.51566, -26.9246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8316, 3.87671, -26.9246)
 
 [node name="Coin" parent="." instance=ExtResource("7_jid5r")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -27.4334, 4.22049, -27.8988)
@@ -662,8 +665,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.652, 3.50536, -33.6291)
 [node name="Coin5" parent="." instance=ExtResource("7_jid5r")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -15.6549, 3.76837, -28.8416)
 
-[node name="cube" parent="." instance=ExtResource("14_50mhg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6364, 4.69244, -30.3345)
+[node name="cube2" parent="." instance=ExtResource("14_50mhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89016, 6.35108, -23.2891)
+
+[node name="cube3" parent="." instance=ExtResource("14_50mhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89016, 7.91318, -26.954)
+
+[node name="cube4" parent="." instance=ExtResource("14_50mhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0492, 7.91318, -26.954)
+
+[node name="cube5" parent="." instance=ExtResource("14_50mhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.7206, 7.91318, -26.954)
+
+[node name="cube6" parent="." instance=ExtResource("14_50mhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1635, 7.91318, -26.954)
+
+[node name="cube7" parent="." instance=ExtResource("14_50mhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4901, 7.91318, -26.954)
+
+[node name="cube8" parent="." instance=ExtResource("14_50mhg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.4901, 7.91318, -31.9923)
 
 [connection signal="body_exited" from="RespawnZone" to="." method="_on_respawn_zone_body_exited"]
 [connection signal="body_entered" from="Treasure/Area3D" to="Treasure" method="_on_area_3d_body_entered" flags=18]

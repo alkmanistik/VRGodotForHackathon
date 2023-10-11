@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ddp515rdd5geq"]
+[gd_scene load_steps=33 format=3 uid="uid://ddp515rdd5geq"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_yveak"]
 [ext_resource type="Script" path="res://scene/Levels(fix)/crab's_trouble.gd" id="2_n65om"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://cuegexc5r3utd" path="res://scene/Objects/Dynamic/key.tscn" id="13_alvf6"]
 [ext_resource type="PackedScene" uid="uid://blisueg4m8kk3" path="res://scene/Objects/Dynamic/coin.tscn" id="14_dcdt2"]
 [ext_resource type="PackedScene" uid="uid://bnq8leamayugy" path="res://scene/Levels(fix)/Quest/quest_crab's_trouble.tscn" id="18_5kiy4"]
+[ext_resource type="PackedScene" uid="uid://dsgntchwl8isc" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_3.gltf" id="19_xs1wh"]
+[ext_resource type="PackedScene" uid="uid://jnxfjv6rucuv" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_2.gltf" id="20_7rn7a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arjvv"]
 resource_name = "DarkMetal"
@@ -532,5 +534,50 @@ transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 6.65779, 0)
 
 [node name="quest_crab\'s_trouble" parent="." index="10" instance=ExtResource("18_5kiy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 9, -24)
+
+[node name="Cloud_3" parent="." index="12" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3935, 20.6703, -1.64864)
+
+[node name="Cloud_9" parent="." index="13" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.57874, 0, -0.815512, 0, 1, 0, 0.815512, 0, 0.57874, 3.2644, 20.6703, 2.99721)
+
+[node name="Cloud_11" parent="." index="14" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, -5.18071, 20.6703, 2.99721)
+
+[node name="Cloud_17" parent="." index="15" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, 14.8209, 20.6703, -14.4831)
+
+[node name="Cloud_12" parent="." index="16" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.916195, 0, -0.400733, 0, 1, 0, 0.400733, 0, 0.916195, -6.84636, 20.6703, 2.99721)
+
+[node name="Cloud_13" parent="." index="17" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, -13.9765, 20.6703, -4.29402)
+
+[node name="Cloud_14" parent="." index="18" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.916195, 0, -0.400733, 0, 1, 0, 0.400733, 0, 0.916195, -15.6421, 20.6703, -4.29402)
+
+[node name="Cloud_15" parent="." index="19" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, -13.9765, 20.6703, -14.5144)
+
+[node name="Cloud_16" parent="." index="20" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.916195, 0, -0.400733, 0, 1, 0, 0.400733, 0, 0.916195, -15.6421, 20.6703, -14.5144)
+
+[node name="Cloud_10" parent="." index="21" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.785414, 0, -0.618971, 0, 1, 0, 0.618971, 0, -0.785414, 16.2989, 20.6703, 4.53691)
+
+[node name="Cloud_4" parent="." index="22" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.466618, 0, 0.884459, 0, 1, 0, -0.884459, 0, 0.466618, 32.0598, 20.6703, -18.0351)
+
+[node name="Cloud_5" parent="." index="23" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.466618, 0, 0.884459, 0, 1, 0, -0.884459, 0, 0.466618, 13.1524, 20.6703, -33.4492)
+
+[node name="Cloud_6" parent="." index="24" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.314026, 0, 0.949414, 0, 1, 0, -0.949414, 0, -0.314026, 0.788189, 20.6703, -31.7855)
+
+[node name="Cloud_7" parent="." index="25" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.657494, 0, 0.75346, 0, 1, 0, -0.75346, 0, -0.657494, -6.51838, 20.6703, -28.0059)
+
+[node name="Cloud_2" parent="." index="26" instance=ExtResource("20_7rn7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.896, 22.3086, -29.6361)
 
 [connection signal="body_entered" from="Mechanic/secret_teleport" to="." method="_on_secret_teleport_body_entered"]

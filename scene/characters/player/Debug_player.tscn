@@ -4495,7 +4495,7 @@ _data = {
 }
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bcf15"]
-height = 1.0
+height = 1.6
 radius = 0.3
 
 [node name="Debug Player" type="CharacterBody3D" groups=["player"]]
@@ -4711,5 +4711,5 @@ libraries = {
 transform = Transform3D(-1, 8.74228e-08, 0, 8.74228e-08, 1, -8.74228e-08, -7.64274e-15, -8.74228e-08, -1, 6.01096e-09, 1.31889, 0.43389)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 shape = SubResource("CylinderShape3D_bcf15")
