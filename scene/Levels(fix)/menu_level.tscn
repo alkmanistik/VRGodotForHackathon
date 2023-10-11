@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://cplnf1olqu8qw"]
+[gd_scene load_steps=99 format=3 uid="uid://cplnf1olqu8qw"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_l142q"]
 [ext_resource type="Script" path="res://scene/Levels(fix)/menu_level.gd" id="2_ee3qg"]
@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://dhvxegusyvewf" path="res://scene/Objects/Static/pipe_straight.tscn" id="18_vuxeg"]
 [ext_resource type="PackedScene" uid="uid://hqg34k5an22p" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_1.gltf" id="20_m5ioo"]
 [ext_resource type="PackedScene" uid="uid://dsgntchwl8isc" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_3.gltf" id="21_0ofsa"]
-[ext_resource type="PackedScene" uid="uid://bopqii5ghkhub" path="res://scene/Menu/main_menu(fix).tscn" id="22_io1b4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jw0p"]
 resource_name = "Main"
@@ -6922,7 +6921,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_5nwqn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Objects/Path3D" index="0"]
-transform = Transform3D(-0.551907, 0.00994435, -0.833796, -0.00260968, 0.999866, 0.0136522, 0.833855, 0.00971114, -0.551825, 4.29844, 2.98123, -0.597085)
+transform = Transform3D(-0.548734, 0.0599259, -0.833796, 0.0880242, 0.995989, 0.0136522, 0.831303, -0.0659059, -0.551825, 4.29844, 2.98123, -0.597085)
 progress = 3.34578
 
 [node name="Bee" type="Node3D" parent="Objects/Path3D/PathFollow3D" index="0"]
@@ -7431,10 +7430,5 @@ transform = Transform3D(0.565831, 0, -0.824521, 0, 1, 0, 0.824521, 0, 0.565831, 
 [node name="Cloud_12" parent="Objects/Cloud" index="11" instance=ExtResource("21_0ofsa")]
 transform = Transform3D(0.234226, 0, 0.972182, 0, 1, 0, -0.972182, 0, 0.234226, -21.5127, -2, -3.71267)
 
-[node name="Viewport2Din3D" parent="." index="9" instance=ExtResource("8_xc6hk")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -6, 4, 0)
-scene = ExtResource("22_io1b4")
-viewport_size = Vector2(1920, 1080)
-
-[node name="Player" parent="." index="10" instance=ExtResource("9_hjs0w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6045, 3.93739, 1.21132)
+[node name="Player" parent="." index="9" instance=ExtResource("9_hjs0w")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, 0, 0)

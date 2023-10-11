@@ -1,4 +1,4 @@
-extends Node3D
+extends RigidBody3D
 
 @onready var true_cube: Node3D = $Cube_Exclamation
 @onready var mask_cube: Node3D = $Cube_Question
@@ -11,3 +11,7 @@ func replace() -> void:
 
 func _on_area_3d_body_entered(body):
 	box_entered.emit(true)
+
+func pointer_event(event : XRToolsPointerEvent) -> void:
+	if event.event_type == XRToolsPointerEvent.Type.PRESSED:
+		box_entered.emit(true)

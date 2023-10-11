@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://lea6d1tim6mf"]
+[gd_scene load_steps=10 format=3 uid="uid://lea6d1tim6mf"]
 
 [ext_resource type="PackedScene" uid="uid://cbwesehl4c23g" path="res://assets/Ultimate Platformer Pack - Dec 2021/Cubes/glTF/Cube_Question.gltf" id="1_ec0dc"]
 [ext_resource type="Script" path="res://scene/Objects/Dynamic/cube_question.gd" id="1_vqwjo"]
@@ -71,9 +71,15 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7wftw")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_dad2b"]
+size = Vector3(2.1, 2.1, 2.1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7275a"]
 size = Vector3(2, 2, 2)
 
-[node name="Cube_Question" type="Node3D" groups=["logic_cube"]]
+[node name="Cube_Question" type="RigidBody3D" groups=["logic_cube"]]
+collision_layer = 4
+collision_mask = 10
+freeze = true
 script = ExtResource("1_vqwjo")
 
 [node name="Cube_Question" parent="." instance=ExtResource("1_ec0dc")]
@@ -92,5 +98,8 @@ collision_mask = 33
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_dad2b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_7275a")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
