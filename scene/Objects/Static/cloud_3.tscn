@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhieb4m80n4e8"]
+
+[ext_resource type="PackedScene" uid="uid://dsgntchwl8isc" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_3.gltf" id="1_dq1nx"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_l4mmf"]
+height = 3.25
+radius = 1.5
+
+[node name="Cloud_3" type="Node3D"]
+
+[node name="Cloud_3" parent="." instance=ExtResource("1_dq1nx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.127081, 0, 0.115149)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cloud_3"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Cloud_3/MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cloud_3/MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.828032, 0)
+shape = SubResource("CylinderShape3D_l4mmf")
