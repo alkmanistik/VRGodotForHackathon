@@ -8,7 +8,6 @@ var rotate_to_quest: Vector3 = Vector3.ZERO
 @onready var start_position: Marker3D = $StartPosition
 
 signal quest_complete()
-signal startposition(marker: Marker3D)
 
 func start() -> void:
 	is_start = true
