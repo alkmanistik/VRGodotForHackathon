@@ -2,7 +2,6 @@ extends Node
 
 @onready var pickup_coin_audio: AudioStreamPlayer = $AudioPlayers/Coin
 @onready var chest_open: AudioStreamPlayer = $AudioPlayers/ChestOpen
-@onready var ambient_sunny: AudioStreamPlayer = $AudioPlayers/Ambient
 @onready var ambient_rain: AudioStreamPlayer = $AudioPlayers/AmbientRain
 @onready var star: AudioStreamPlayer = $AudioPlayers/Star
 @onready var poof: AudioStreamPlayer = $AudioPlayers/Poof
@@ -26,9 +25,6 @@ func play_key_sound():
 
 func play_rain_sound():
 	ambient_rain.play()
-
-func play_sunny_sound():
-	ambient_sunny.play()
 
 func play_break_sound():
 	stone_break.play()

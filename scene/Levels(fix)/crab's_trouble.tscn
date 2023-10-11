@@ -248,7 +248,7 @@ script = ExtResource("2_n65om")
 transform = Transform3D(-4.37114e-08, -1, 0, 0.583541, -2.55074e-08, 0.812084, -0.812084, 3.54973e-08, 0.583541, 12.9044, 15.0391, 0)
 
 [node name="SpawnPosition" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 5, 1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 6.44703, 1)
 
 [node name="Objects" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
