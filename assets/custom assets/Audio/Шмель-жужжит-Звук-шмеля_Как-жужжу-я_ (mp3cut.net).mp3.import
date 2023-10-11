@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ba2gwhoscblcd"
+path="res://.godot/imported/Шмель-жужжит-Звук-шмеля_Как-жужжу-я_ (mp3cut.net).mp3-28d1e36f8e55b64fb725dff72841936d.mp3str"
+
+[deps]
+
+source_file="res://assets/custom assets/Audio/Шмель-жужжит-Звук-шмеля_Как-жужжу-я_ (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/Шмель-жужжит-Звук-шмеля_Как-жужжу-я_ (mp3cut.net).mp3-28d1e36f8e55b64fb725dff72841936d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
