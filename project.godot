@@ -83,6 +83,8 @@ nkey={
 3d_physics/layer_7="Player Hand"
 3d_physics/layer_8="Pointable"
 3d_physics/layer_9="UI"
+3d_physics/layer_10="DestroyObject"
+3d_physics/layer_11="ObjectInHand"
 
 [physics]
 
