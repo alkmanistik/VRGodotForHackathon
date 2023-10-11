@@ -9,7 +9,7 @@ func replace() -> void:
 	true_cube.visible = !true_cube.visible
 	mask_cube.visible = !mask_cube.visible
 
-func _on_area_3d_body_entered(body):
+func _on_area_3d_body_entered(_body):
 	box_entered.emit(false)
 
 func pointer_event(event : XRToolsPointerEvent) -> void:

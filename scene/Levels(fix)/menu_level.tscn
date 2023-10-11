@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://cplnf1olqu8qw"]
+[gd_scene load_steps=99 format=3 uid="uid://cplnf1olqu8qw"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_l142q"]
 [ext_resource type="Script" path="res://scene/Levels(fix)/menu_level.gd" id="2_ee3qg"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dmy7or7jnvweu" path="res://scene/Objects/Static/rock_platforms_1.tscn" id="7_5ob1v"]
 [ext_resource type="PackedScene" uid="uid://cpx0xrvka0jhq" path="res://scene/Objects/Static/rock_platform_tall.tscn" id="8_u8j53"]
 [ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="8_xc6hk"]
+[ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="9_hjs0w"]
 [ext_resource type="PackedScene" uid="uid://3rxi7owoo5rb" path="res://scene/Objects/Static/tree_fruit.tscn" id="9_ov4i0"]
 [ext_resource type="PackedScene" uid="uid://b84qye2gcp5my" path="res://scene/Objects/Static/rock_1.tscn" id="10_fvfhr"]
 [ext_resource type="PackedScene" uid="uid://7yu3kpkt2tc6" path="res://scene/Objects/Static/rock_2.tscn" id="11_8m6h0"]
@@ -21,8 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://dhvxegusyvewf" path="res://scene/Objects/Static/pipe_straight.tscn" id="18_vuxeg"]
 [ext_resource type="PackedScene" uid="uid://hqg34k5an22p" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_1.gltf" id="20_m5ioo"]
 [ext_resource type="PackedScene" uid="uid://dsgntchwl8isc" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_3.gltf" id="21_0ofsa"]
-[ext_resource type="PackedScene" uid="uid://bopqii5ghkhub" path="res://scene/Menu/main_menu(fix).tscn" id="22_ccy2x"]
-[ext_resource type="PackedScene" uid="uid://tpeybjfj2wky" path="res://scene/characters/player.tscn" id="23_68tyu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jw0p"]
 resource_name = "Main"
@@ -6836,7 +6835,7 @@ _data = {
 script = ExtResource("2_ee3qg")
 
 [node name="SpawnPosition" parent="." index="2"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.71702, 2, -0.258826)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="CollisionShape3D" parent="RespawnZone" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.224, 0, 4.914)
@@ -6922,7 +6921,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_5nwqn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Objects/Path3D" index="0"]
-transform = Transform3D(-0.551907, 0.00994436, -0.833796, -0.00260968, 0.999867, 0.0136522, 0.833855, 0.00971115, -0.551825, 4.29844, 2.98123, -0.597085)
+transform = Transform3D(-0.548734, 0.0599259, -0.833796, 0.0880242, 0.995989, 0.0136522, 0.831303, -0.0659058, -0.551825, 4.29844, 2.98123, -0.597085)
 progress = 3.34578
 
 [node name="Bee" type="Node3D" parent="Objects/Path3D/PathFollow3D" index="0"]
@@ -7431,11 +7430,5 @@ transform = Transform3D(0.565831, 0, -0.824521, 0, 1, 0, 0.824521, 0, 0.565831, 
 [node name="Cloud_12" parent="Objects/Cloud" index="11" instance=ExtResource("21_0ofsa")]
 transform = Transform3D(0.234226, 0, 0.972182, 0, 1, 0, -0.972182, 0, 0.234226, -21.5127, -2, -3.71267)
 
-[node name="Player" parent="." index="9" instance=ExtResource("23_68tyu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.902773, 2, 0.0295386)
-
-[node name="Viewport2Din3D" parent="." index="10" instance=ExtResource("8_xc6hk")]
-transform = Transform3D(-8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, -6, 3.14232, -0.288302)
-scene = ExtResource("22_ccy2x")
-viewport_size = Vector2(1920, 1080)
-unshaded = true
+[node name="Player" parent="." index="9" instance=ExtResource("9_hjs0w")]
+transform = Transform3D(-6.55671e-08, 0, 1.5, 0, 1.5, 0, -1.5, 0, -6.55671e-08, 0, 0, 0)
