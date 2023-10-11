@@ -23,11 +23,10 @@ shard_container = NodePath("")
 fade_delay = 9.5
 shrink_delay = 9.5
 animation_length = 10.0
-collision_layer = 512
-collision_mask = 15
+collision_layer = 16
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
-collision_layer = 4
+collision_layer = 512
 collision_mask = 15
 physics_material_override = SubResource("PhysicsMaterial_oqyck")
 
@@ -36,7 +35,7 @@ shape = SubResource("BoxShape3D_rxqp1")
 
 [node name="Area3D" type="Area3D" parent="." index="3"]
 collision_layer = 16
-collision_mask = 512
+collision_mask = 513
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 shape = SubResource("BoxShape3D_s72of")
