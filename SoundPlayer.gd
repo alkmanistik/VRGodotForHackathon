@@ -7,7 +7,7 @@ extends Node
 @onready var poof: AudioStreamPlayer = $AudioPlayers/Poof
 @onready var pickup_key: AudioStreamPlayer = $AudioPlayers/Key
 @onready var stone_break: AudioStreamPlayer3D = $AudioPlayers/StoneBreak
-
+@onready var bee_buzzing: AudioStreamPlayer = $AudioPlayers/Bee
 func play_coin_sound():
 	pickup_coin_audio.play()
 	
@@ -28,3 +28,6 @@ func play_rain_sound():
 
 func play_break_sound():
 	stone_break.play()
+
+func play_bee_sound():
+	bee_buzzing.play()
