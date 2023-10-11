@@ -114,7 +114,6 @@ text = "Exit
 "
 
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Start_button" to="." method="_on_start_button_pressed" flags=18]
+[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/Settings_button" to="." method="_on_settings_button_mouse_entered"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Settings_button" to="." method="_on_settings_button_pressed" flags=18]
-[connection signal="focus_entered" from="Control/MarginContainer/VBoxContainer/Exit_button" to="." method="_on_exit_button_focus_entered"]
-[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/Exit_button" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Exit_button" to="." method="_on_exit_button_pressed" flags=18]
