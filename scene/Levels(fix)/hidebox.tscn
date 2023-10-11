@@ -10,8 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://3rxi7owoo5rb" path="res://scene/Objects/Static/tree_fruit.tscn" id="6_lbo81"]
 [ext_resource type="PackedScene" uid="uid://vxrmp7edq5b0" path="res://scene/Objects/Dynamic/treasure.tscn" id="9_e0gaq"]
 [ext_resource type="PackedScene" uid="uid://cuegexc5r3utd" path="res://scene/Objects/Dynamic/key.tscn" id="10_meq83"]
+[ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="12_dvegg"]
 [ext_resource type="PackedScene" uid="uid://cocih3mdliawc" path="res://scene/Levels(fix)/Quest/quest_hidebox.tscn" id="12_ika5t"]
-[ext_resource type="PackedScene" uid="uid://tpeybjfj2wky" path="res://scene/characters/player.tscn" id="12_vqwa5"]
 
 [node name="Hidebox" instance=ExtResource("1_gndjo")]
 
@@ -79,4 +79,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 6, 2)
 [node name="quest_hidebox" parent="." index="9" instance=ExtResource("12_ika5t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, -16)
 
-[node name="Player" parent="." index="10" instance=ExtResource("12_vqwa5")]
+[node name="UI" parent="." index="10"]
+visible = true
+
+[node name="Player" parent="." index="11" instance=ExtResource("12_dvegg")]

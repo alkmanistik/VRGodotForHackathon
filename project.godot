@@ -82,6 +82,7 @@ nkey={
 3d_physics/layer_6="Herb Object"
 3d_physics/layer_7="Player Hand"
 3d_physics/layer_8="Pointable"
+3d_physics/layer_9="UI"
 
 [physics]
 

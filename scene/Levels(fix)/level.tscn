@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://0otndonvy60n"]
+[gd_scene load_steps=14 format=3 uid="uid://0otndonvy60n"]
 
 [ext_resource type="PackedScene" uid="uid://dpy1eg3i331se" path="res://addons/godot-xr-tools/objects/teleport_area.tscn" id="1_b3e5s"]
 [ext_resource type="Script" path="res://scene/Levels(fix)/level.gd" id="1_cuiud"]
@@ -6,7 +6,14 @@
 [ext_resource type="Shader" path="res://addons/boujie_water_shader/shader/water.gdshader" id="3_2yryo"]
 [ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="5_x0qh2"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_72q4q"]
+
+[sub_resource type="Sky" id="Sky_tryl1"]
+sky_material = SubResource("ProceduralSkyMaterial_72q4q")
+
 [sub_resource type="Environment" id="Environment_1v8ha"]
+background_mode = 2
+sky = SubResource("Sky_tryl1")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_utito"]
 size = Vector3(100, 1, 100)
