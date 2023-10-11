@@ -1,29 +1,36 @@
-[gd_scene load_steps=14 format=3 uid="uid://0otndonvy60n"]
+[gd_scene load_steps=22 format=3 uid="uid://0otndonvy60n"]
 
 [ext_resource type="PackedScene" uid="uid://dpy1eg3i331se" path="res://addons/godot-xr-tools/objects/teleport_area.tscn" id="1_b3e5s"]
 [ext_resource type="Script" path="res://scene/Levels(fix)/level.gd" id="1_cuiud"]
-[ext_resource type="Texture2D" uid="uid://c28pojjx0kja3" path="res://addons/boujie_water_shader/shader/ocean_albedo_1.png" id="2_qg4kg"]
 [ext_resource type="Shader" path="res://addons/boujie_water_shader/shader/water.gdshader" id="3_2yryo"]
+[ext_resource type="Shader" path="res://shaders/water.gdshader" id="3_713t2"]
 [ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="5_x0qh2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_72q4q"]
 sky_top_color = Color(0.572549, 0.690196, 0.964706, 1)
 sky_curve = 0.01421
+ground_bottom_color = Color(0.572549, 0.690196, 0.964706, 1)
 sun_angle_max = 7.0
 sun_curve = 0.87845
 
 [sub_resource type="Sky" id="Sky_tryl1"]
 sky_material = SubResource("ProceduralSkyMaterial_72q4q")
+process_mode = 1
 
 [sub_resource type="Environment" id="Environment_1v8ha"]
 background_mode = 2
-background_energy_multiplier = 1.48
 sky = SubResource("Sky_tryl1")
-sky_custom_fov = 51.2
 ambient_light_source = 3
+reflected_light_source = 2
 tonemap_mode = 2
-tonemap_exposure = 0.66
-tonemap_white = 0.49
+tonemap_exposure = 0.83
+tonemap_white = 0.66
+ssao_radius = 4.53
+ssao_power = 4.87352
+fog_light_color = Color(0.388235, 0.619608, 0.784314, 1)
+fog_sky_affect = 0.242
+volumetric_fog_density = 0.1342
+adjustment_brightness = 0.9
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_utito"]
 size = Vector3(100, 1, 100)
@@ -31,18 +38,75 @@ size = Vector3(100, 1, 100)
 [sub_resource type="BoxShape3D" id="BoxShape3D_1cldl"]
 size = Vector3(100, 1, 100)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u5a0a"]
-albedo_texture = ExtResource("2_qg4kg")
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qiryd"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b3ki3"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_qiryd")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_yobk0"]
+noise_type = 0
+seed = 1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d88a2"]
+seamless = true
+as_normal_map = true
+noise = SubResource("FastNoiseLite_yobk0")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1yyon"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8gp3m"]
+seamless = true
+noise = SubResource("FastNoiseLite_1yyon")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wgkwf"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fawo8"]
+seamless = true
+noise = SubResource("FastNoiseLite_wgkwf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ue407"]
+render_priority = 0
+shader = ExtResource("3_713t2")
+shader_parameter/albedo = Color(0.02, 0.45, 0.8, 1)
+shader_parameter/transparency = 0.4
+shader_parameter/metallic = 0.56
+shader_parameter/roughness = 0.4
+shader_parameter/surface_normals_move_direction_a = Vector2(-1, 0)
+shader_parameter/surface_normals_move_direction_b = Vector2(0, 1)
+shader_parameter/surface_texture_roughness = 0.6
+shader_parameter/surface_texture_scale = 0.3
+shader_parameter/surface_texture_time_scale = 0.06
+shader_parameter/ssr_resolution = 2.0
+shader_parameter/ssr_max_travel = 30.0
+shader_parameter/ssr_max_diff = 4.0
+shader_parameter/ssr_mix_strength = 0.7
+shader_parameter/wave_noise_scale = 15.0
+shader_parameter/wave_height_scale = 0.25
+shader_parameter/wave_time_scale = 0.025
+shader_parameter/wave_normal_flatness = 30.0
+shader_parameter/border_color = Color(0.109804, 0.266667, 1, 1)
+shader_parameter/border_scale = 2.0
+shader_parameter/border_near = 0.5
+shader_parameter/border_far = 300.0
+shader_parameter/refraction_intensity = 0.4
+shader_parameter/max_visible_depth = 10.0
+shader_parameter/color_deep = Color(0, 0.1, 0.4, 1)
+shader_parameter/wave_a = SubResource("NoiseTexture2D_8gp3m")
+shader_parameter/wave_b = SubResource("NoiseTexture2D_fawo8")
+shader_parameter/surface_normals_a = SubResource("NoiseTexture2D_b3ki3")
+shader_parameter/surface_normals_b = SubResource("NoiseTexture2D_d88a2")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ngp10"]
 render_priority = 0
 shader = ExtResource("3_2yryo")
 shader_parameter/freeze_time = false
-shader_parameter/albedo = null
+shader_parameter/albedo = Color(0, 0, 0, 1)
 shader_parameter/albedo_fresnel = null
 shader_parameter/specular = 0.5
 shader_parameter/roughness = 0.2
-shader_parameter/metallic = 0.0
+shader_parameter/metallic = 0.341
 shader_parameter/vertex_displace_from_mesh_normal = null
 shader_parameter/normal_wave_from_mesh_normal = null
 shader_parameter/refraction = null
@@ -127,7 +191,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.1444, 0, -39.8547)
 shape = SubResource("BoxShape3D_1cldl")
 
 [node name="Water" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_u5a0a")
+material_override = SubResource("ShaderMaterial_ue407")
 mesh = SubResource("PlaneMesh_ukfyh")
 
 [node name="Objects" type="Node3D" parent="."]
