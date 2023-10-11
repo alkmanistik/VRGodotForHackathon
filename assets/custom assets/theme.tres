@@ -3,5 +3,6 @@
 [ext_resource type="FontFile" uid="uid://durqhw2g3uvsu" path="res://assets/custom assets/joystix.monospace-regular.otf" id="1_8qmcs"]
 
 [resource]
+Button/fonts/font = ExtResource("1_8qmcs")
 Label/font_sizes/font_size = 40
 Label/fonts/font = ExtResource("1_8qmcs")
