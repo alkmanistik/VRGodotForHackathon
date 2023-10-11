@@ -19,7 +19,7 @@ script = ExtResource("2_net6e")
 [node name="Destruction" type="Node" parent="." index="1" node_paths=PackedStringArray("shard_container")]
 script = ExtResource("2_e1a2d")
 fragmented = ExtResource("3_onse5")
-shard_container = NodePath("../..")
+shard_container = NodePath("")
 fade_delay = 9.5
 shrink_delay = 9.5
 animation_length = 10.0
