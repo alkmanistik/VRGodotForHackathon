@@ -1,9 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://f02rs5h3c0e6"]
+[gd_scene load_steps=19 format=3 uid="uid://f02rs5h3c0e6"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_020fg"]
 [ext_resource type="PackedScene" uid="uid://dugybkx8yavpd" path="res://scene/Objects/Static/bridge_modular.tscn" id="2_38yvq"]
 [ext_resource type="PackedScene" uid="uid://cxiob5fubrtm7" path="res://scene/Objects/Static/bridge_modular_center.tscn" id="3_3264q"]
+[ext_resource type="PackedScene" uid="uid://dhieb4m80n4e8" path="res://scene/Objects/Static/cloud_3.tscn" id="4_5f2ku"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="4_gqcb3"]
+[ext_resource type="PackedScene" uid="uid://bjm1geua20lid" path="res://scene/Objects/Static/fence_middle.tscn" id="5_l50wm"]
 [ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="5_vr8mt"]
 [ext_resource type="PackedScene" uid="uid://cpx0xrvka0jhq" path="res://scene/Objects/Static/rock_platform_tall.tscn" id="6_julsh"]
 [ext_resource type="PackedScene" uid="uid://bfhxk7uuneyoh" path="res://scene/Objects/Static/rock_platforms_2.tscn" id="7_qw457"]
@@ -11,6 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://7yu3kpkt2tc6" path="res://scene/Objects/Static/rock_2.tscn" id="9_en4vc"]
 [ext_resource type="PackedScene" uid="uid://dmy7or7jnvweu" path="res://scene/Objects/Static/rock_platforms_1.tscn" id="10_1t5ng"]
 [ext_resource type="PackedScene" uid="uid://w3utmrtbgcuy" path="res://scene/Objects/Static/rock_platforms_3.tscn" id="11_jluse"]
+[ext_resource type="PackedScene" uid="uid://blisueg4m8kk3" path="res://scene/Objects/Dynamic/coin.tscn" id="13_1kob7"]
+[ext_resource type="PackedScene" uid="uid://vxrmp7edq5b0" path="res://scene/Objects/Dynamic/treasure.tscn" id="15_pyduc"]
+[ext_resource type="PackedScene" uid="uid://cuegexc5r3utd" path="res://scene/Objects/Dynamic/key.tscn" id="16_pv75n"]
+[ext_resource type="PackedScene" uid="uid://0n1n4ocufvfs" path="res://scene/Objects/Damage objects/hazard_cylinder.tscn" id="17_eln1o"]
+[ext_resource type="PackedScene" uid="uid://dwiupkjdopnbr" path="res://scene/Objects/Damage objects/spiky_ball.tscn" id="18_lfe46"]
 
 [node name="Beekeeper" instance=ExtResource("1_020fg")]
 
@@ -55,6 +62,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.5258, 4.28956, -38.9828)
 
 [node name="Bridge_Modular_Center2" parent="Objects" index="11" instance=ExtResource("3_3264q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -48.498, 4.32106, -39.008)
+
+[node name="Cloud_3" parent="Objects" index="12" instance=ExtResource("4_5f2ku")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -40.2386, 2.42657, -13.9402)
+
+[node name="Cloud_4" parent="Objects" index="13" instance=ExtResource("4_5f2ku")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -37.1243, 3.21158, -9.81472)
+
+[node name="Cloud_5" parent="Objects" index="14" instance=ExtResource("4_5f2ku")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -32.119, 3.77051, -6.38146)
+
+[node name="Cloud_6" parent="Objects" index="15" instance=ExtResource("4_5f2ku")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -25.542, 4.21637, -6.38146)
+
+[node name="Cloud_7" parent="Objects" index="16" instance=ExtResource("4_5f2ku")]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, -19.1678, 4.8367, -5.89067)
+
+[node name="Fence_Middle" parent="Objects" index="17" instance=ExtResource("5_l50wm")]
+transform = Transform3D(-0.0155153, 0, -0.99988, 0, 1, 0, 0.99988, 0, -0.0155153, -30.0741, 4.33634, -34.5216)
+
+[node name="Fence_Middle2" parent="Objects" index="18" instance=ExtResource("5_l50wm")]
+transform = Transform3D(-0.0155153, 0, -0.99988, 0, 1, 0, 0.99988, 0, -0.0155153, -30.0741, 4.33634, -41.998)
 
 [node name="GridMap" type="GridMap" parent="." index="7"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.7899, -3.46596, -25.1317)
@@ -155,6 +183,57 @@ transform = Transform3D(1.59628, 0, 0, 0, 1.65049, 0, 0, 0, 1.99935, -30.5777, -
 
 [node name="Rock_10" parent="." index="36" instance=ExtResource("9_en4vc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.1148, -0.745041, -33.9492)
+
+[node name="Coin" parent="Mechanic" index="0" instance=ExtResource("13_1kob7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -40.4058, 5.57603, -13.8273)
+
+[node name="Coin2" parent="Mechanic" index="1" instance=ExtResource("13_1kob7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -37.3726, 6.40245, -9.67466)
+
+[node name="Coin3" parent="Mechanic" index="2" instance=ExtResource("13_1kob7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -32.2845, 6.93965, -6.0252)
+
+[node name="Coin4" parent="Mechanic" index="3" instance=ExtResource("13_1kob7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -25.551, 7.32496, -6.35316)
+
+[node name="Coin5" parent="Mechanic" index="4" instance=ExtResource("13_1kob7")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -19.1873, 8.00889, -5.87773)
+
+[node name="Treasure" parent="Mechanic" index="5" instance=ExtResource("15_pyduc")]
+transform = Transform3D(0.0213437, 0, -0.999772, 0, 1, 0, 0.999772, 0, 0.0213437, -8.72587, 4.50518, -38.2627)
+
+[node name="Key" parent="Mechanic" index="6" instance=ExtResource("16_pv75n")]
+transform = Transform3D(-0.136632, 0, -0.990622, 0, 1, 0, 0.990622, 0, -0.136632, -33.6934, 5.47342, -38.5898)
+
+[node name="Hazard_Cylinder" parent="Mechanic" index="7" instance=ExtResource("17_eln1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.4203, 4.53404, -41.0487)
+
+[node name="Hazard_Cylinder2" parent="Mechanic" index="8" instance=ExtResource("17_eln1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.236, 4.53404, -35.9009)
+
+[node name="Hazard_Cylinder3" parent="Mechanic" index="9" instance=ExtResource("17_eln1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7445, 4.53404, -35.423)
+
+[node name="Hazard_Cylinder4" parent="Mechanic" index="10" instance=ExtResource("17_eln1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.0929, 4.53404, -37.7504)
+
+[node name="Hazard_Cylinder5" parent="Mechanic" index="11" instance=ExtResource("17_eln1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.192, 4.57036, -41.7333)
+
+[node name="Hazard_Cylinder6" parent="Mechanic" index="12" instance=ExtResource("17_eln1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.192, 4.57036, -34.9314)
+
+[node name="Hazard_Cylinder7" parent="Mechanic" index="13" instance=ExtResource("17_eln1o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9107, 4.57036, -37.6293)
+
+[node name="SpikyBall" parent="Mechanic" index="14" instance=ExtResource("18_lfe46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.1884, 5.4092, -42.0758)
+
+[node name="SpikyBall2" parent="Mechanic" index="15" instance=ExtResource("18_lfe46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9561, 5.98217, -35.1067)
+
+[node name="SpikyBall3" parent="Mechanic" index="16" instance=ExtResource("18_lfe46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3224, 5.98217, -35.1067)
 
 [node name="GridMap3" type="GridMap" parent="." index="39"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.595, 0)
