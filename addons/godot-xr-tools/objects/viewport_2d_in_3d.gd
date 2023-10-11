@@ -201,7 +201,6 @@ func _on_pointer_event(event : XRToolsPointerEvent) -> void:
 func _input(event):
 	$Viewport.push_input(event)
 
-
 # Process event
 func _process(delta):
 	# Process screen refreshing
