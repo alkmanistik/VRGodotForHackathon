@@ -51,5 +51,5 @@ func check() -> void:
 	if  !is_complete and text_label.is_valid_int() and int(text_label) == amount:
 		completed()
 
-func change_label(label_name: String):
-	text_label = label_name
+func change_label(name: String):
+	text_label = name

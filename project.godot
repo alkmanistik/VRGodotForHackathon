@@ -20,7 +20,6 @@ config/icon="res://icon.svg"
 Settings="*res://autoload/settings.gd"
 XRToolsUserSettings="*res://addons/godot-xr-tools/user_settings/user_settings.gd"
 SoundPlayer="*res://autoload/sound_player.tscn"
-Save="*res://autoload/save.gd"
 
 [display]
 
