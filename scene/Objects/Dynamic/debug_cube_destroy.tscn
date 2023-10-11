@@ -12,6 +12,7 @@ size = Vector3(2, 2, 2)
 [node name="Debug_cube_destroy" type="RigidBody3D"]
 collision_layer = 4
 collision_mask = 15
+can_sleep = false
 script = ExtResource("1_4rjcm")
 
 [node name="Cube_Crate" parent="." instance=ExtResource("1_qxra8")]

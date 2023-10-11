@@ -1,6 +1,9 @@
 extends Node3D
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
+@onready var menu_level = load("res://scene/Levels(fix)/menu_level.tscn")
+
+signal save()
 
 func _ready():
 	for i in get_tree().get_nodes_in_group("quest"):
@@ -10,4 +13,6 @@ func open_door() -> void:
 	anim.play("open_door")
 
 func _on_exit_zone_body_entered(_body):
-	print("Выход")
+	save.emit()
+	await get_tree().create_timer(1).timeout
+	get_tree().change_scene_to_packed(menu_level)

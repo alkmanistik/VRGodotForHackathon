@@ -1,11 +1,11 @@
 extends Node
 
 var data={}
-var empty_data={}
+var empty_data={"Hidebox": 0, "Crab's Trouble": 0, "Beekeeper": 0}
 const SAVE_FILE = "user://save.dat"
 
 func _ready() -> void:
-	return
+	get_tree().get_first_node_in_group("ui").connect("update_save", update_save)
 	load_data()
 
 func save_data() -> void:
@@ -21,8 +21,8 @@ func load_data() -> void:
 	data = file.get_var()
 	file = null
 
-func update_save(name: String, count_star: int, is_finish: bool) -> void:
-	data[name]=[count_star, is_finish]
+func update_save(name: String, count_star: int) -> void:
+	data[name]= count_star
 	save_data()
 
 func get_inf(name: String) -> Array:

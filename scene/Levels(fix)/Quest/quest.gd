@@ -6,6 +6,7 @@ var is_complete: bool = false
 var rotate_to_quest: Vector3 = Vector3.ZERO
 
 @onready var start_position: Marker3D = $StartPosition
+@onready var end_position: Marker3D = $EndPosition
 
 signal quest_complete()
 
@@ -16,6 +17,7 @@ func start() -> void:
 func completed() -> void:
 	is_start= false
 	is_complete = true
+	teleport(end_position)
 	quest_complete.emit()
 	quest_object_after()
 
@@ -34,10 +36,10 @@ func check() -> void:
 
 func start_zone(_body):
 	if !is_complete and !is_start:
-		teleport()
+		teleport(start_position)
 		start()
 
-func teleport():
+func teleport(where: Marker3D):
 	var temp = get_tree().get_first_node_in_group("player")
-	temp.position = start_position.get_global_position()
+	temp.position = where.get_global_position()
 	temp.rotation = rotate_to_quest

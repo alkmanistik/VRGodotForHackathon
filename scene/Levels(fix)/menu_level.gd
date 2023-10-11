@@ -10,7 +10,7 @@ extends "res://scene/Levels(fix)/level.gd"
 const PATH_SPEED = 0.1
 const SPEED_ROTATE = 1
 var panel_scene = "res://scene/Menu/main_menu(fix).tscn"
-$Viewport2Din3D.scene
+
 func _ready():
 	player.position = spawn_position.position
 	anim_crab.connect("animation_finished", idle_anim)

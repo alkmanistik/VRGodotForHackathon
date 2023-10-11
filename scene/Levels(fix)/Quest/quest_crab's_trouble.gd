@@ -9,6 +9,6 @@ func quest_object_after():
 	house_collision.disabled = false
 
 func check():
-	if cubes.get_child_count() == 0:
+	if !is_complete and cubes.get_child_count() == 0:
 		completed()
 

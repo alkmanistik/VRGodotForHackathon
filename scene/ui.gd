@@ -1,7 +1,6 @@
 extends CanvasLayer
 
-signal dead()
-signal update_save(name: String, count_star: int, is_finish: bool)
+signal update_save(name: String, count_star: int)
 signal _have_key()
 
 var have_key: bool = false
@@ -16,6 +15,7 @@ var star:int = 0
 @onready var coin_label: Label = $MarginContainer/Coin/HBoxContainer/Coin_label
 @onready var health_contаiner: HBoxContainer = $MarginContainer/Health/Health_Container
 @onready var star_container: HBoxContainer = $MarginContainer/Star/Star_Container
+@onready var menu_level = preload("res://scene/Levels(fix)/menu_level.tscn")
 
 @onready var full_star = preload("res://assets/custom assets/full_star.png")
 @onready var rainbow_star = preload("res://assets/custom assets/rainbow_star.png")
@@ -24,15 +24,16 @@ var star:int = 0
 
 
 func _ready() -> void:
-	for i in get_tree().get_nodes_in_group("key"):
-		i.connect("add_key", add_key)
-	for i in get_tree().get_nodes_in_group("chest"):
-		i.connect("chest_open", chest_open)
-	for i in get_tree().get_nodes_in_group("quest"):
-		i.connect("quest_complete", quest_complete)
+	if get_parent().name = "Menu_level":
+		return
+	get_tree().get_first_node_in_group("key").connect("add_key", add_key)
+	get_tree().get_first_node_in_group("chest").connect("chest_open", chest_open)
+	get_tree().get_first_node_in_group("quest").connect("quest_complete", quest_complete)
+	get_tree().get_first_node_in_group("tower").connect("save", save)
 	for i in get_tree().get_nodes_in_group("coin"):
 		i.connect("add_coin", add_coin)
 		max_coin += 1
+	
 	health_update()
 	coin_update()
 
@@ -57,7 +58,7 @@ func health_update() -> void:
 func take_damage(damage: int) -> void:
 	health -= damage
 	if health <= 0:
-		dead.emit()
+		dead()
 		return
 	health_update()
 
@@ -82,3 +83,9 @@ func add_key():
 
 func quest_complete():
 	add_star("quest")
+
+func dead():
+	get_tree().change_scene_to_file(menu_level)
+
+func save():
+	update_save.emit(get_tree().get_first_node_in_group("level").name, star)
