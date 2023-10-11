@@ -23,7 +23,6 @@ sky_material = SubResource("ProceduralSkyMaterial_qi7sm")
 [sub_resource type="Environment" id="Environment_bbdc6"]
 background_mode = 2
 sky = SubResource("Sky_ype06")
-volumetric_fog_enabled = true
 volumetric_fog_density = 0.005
 volumetric_fog_emission = Color(0.560784, 0.992157, 0.917647, 1)
 
