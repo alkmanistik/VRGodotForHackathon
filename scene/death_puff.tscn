@@ -1,38 +1,76 @@
-[gd_scene load_steps=7 format=3 uid="uid://ccfoka5hfuq4u"]
+[gd_scene load_steps=8 format=3 uid="uid://c5qggq8qbq0jp"]
 
-[ext_resource type="Texture2D" uid="uid://c4rgwanhjpvxx" path="res://assets/custom assets/whitePuff00.png" id="1_ogxwd"]
+[ext_resource type="Texture2D" uid="uid://c367sanafhcgu" path="res://assets/custom assets/pngwing.com (1).png" id="1_fd0tg"]
+[ext_resource type="Script" path="res://scene/CPUParticles3D.gd" id="2_kkc1e"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_hocc6"]
-radius = 0.33
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0efns"]
-blend_mode = 1
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o0mpr"]
+transparency = 1
 shading_mode = 0
-albedo_texture = ExtResource("1_ogxwd")
-billboard_mode = 1
+albedo_texture = ExtResource("1_fd0tg")
+refraction_scale = -1.0
+billboard_mode = 2
+proximity_fade_distance = 0.0
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_di71y"]
-lifetime_randomness = 0.7
-emission_shape = 4
-emission_point_count = 1
-gravity = Vector3(0, -1, 0)
+[sub_resource type="QuadMesh" id="QuadMesh_3be67"]
+lightmap_size_hint = Vector2i(4, 4)
+material = SubResource("StandardMaterial3D_o0mpr")
+size = Vector2(0.5, 0.5)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0qok"]
+[sub_resource type="Animation" id="Animation_g1rk8"]
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
-[sub_resource type="QuadMesh" id="QuadMesh_0umml"]
-material = SubResource("StandardMaterial3D_r0qok")
+[sub_resource type="Animation" id="Animation_65lqv"]
+resource_name = "new_animation"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:mesh:material:albedo_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.1, 1.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
-[node name="Death_Puff" type="RigidBody3D"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_85o0i"]
+_data = {
+"RESET": SubResource("Animation_g1rk8"),
+"new_animation": SubResource("Animation_65lqv")
+}
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_hocc6")
+[node name="Death_Puff" type="Node3D"]
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-layers = 16
-material_override = SubResource("StandardMaterial3D_0efns")
-emitting = false
-amount = 1
-lifetime = 2.0
-collision_base_size = 0.02
-process_material = SubResource("ParticleProcessMaterial_di71y")
-draw_pass_1 = SubResource("QuadMesh_0umml")
+[node name="CPUParticles3D" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107128, 0.352787, -0.103339)
+layers = 8
+amount = 30
+lifetime = 1.1
+preprocess = 1.11
+speed_scale = 1.4
+mesh = SubResource("QuadMesh_3be67")
+direction = Vector3(0.5, 0.5, 0.5)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 2.0
+script = ExtResource("2_kkc1e")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CPUParticles3D"]
+libraries = {
+"": SubResource("AnimationLibrary_85o0i")
+}

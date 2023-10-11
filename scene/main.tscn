@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://blisueg4m8kk3" path="res://scene/Objects/Dynamic/coin.tscn" id="7_q1p1a"]
 [ext_resource type="PackedScene" uid="uid://bhifgoy7atjf5" path="res://scene/Objects/Static/tree.tscn" id="8_psesi"]
 [ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="9_spkxo"]
-[ext_resource type="PackedScene" uid="uid://c6lirsfitj0se" path="res://scene/hz_puff.tscn" id="10_8uxro"]
+[ext_resource type="PackedScene" uid="uid://c5qggq8qbq0jp" path="res://scene/death_puff.tscn" id="10_whgyo"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_qi7sm"]
 
@@ -175,7 +175,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5955, 2.91695, -36.3005)
 
 [node name="UI" parent="." instance=ExtResource("9_spkxo")]
 
-[node name="HZ_puff" parent="." instance=ExtResource("10_8uxro")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.9369, 4.15452, -33.3372)
+[node name="Death_Puff" parent="." instance=ExtResource("10_whgyo")]
 
 [connection signal="body_exited" from="RespawnZone" to="." method="_on_respawn_zone_body_exited"]
