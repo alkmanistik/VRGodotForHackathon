@@ -1,0 +1,273 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlu0hmvjgqo5p"]
+
+[ext_resource type="Script" path="res://scene/Menu/levels_menu.gd" id="1_pb5qt"]
+[ext_resource type="Theme" uid="uid://e053da73co0y" path="res://assets/custom assets/theme.tres" id="2_a6cm7"]
+[ext_resource type="Texture2D" uid="uid://fjltax3t7tjb" path="res://assets/Level screens/lvl1.png" id="3_ph0np"]
+[ext_resource type="Texture2D" uid="uid://53tttm83xl6s" path="res://assets/custom assets/emptyl_star.png" id="4_any6v"]
+
+[node name="Level_menu" type="CanvasLayer"]
+script = ExtResource("1_pb5qt")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_a6cm7")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Levels"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 76
+
+[node name="Hidebox" type="Control" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+
+[node name="Hidebox_Button" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Hidebox"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Hidebox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("3_ph0np")
+expand_mode = 4
+
+[node name="Star_Container" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Hidebox"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.5
+offset_top = -61.0
+offset_right = 184.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Hidebox/Star_Container"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_any6v")
+expand_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Hidebox/Star_Container"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_any6v")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Hidebox/Star_Container"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_any6v")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Hidebox"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_top = 200.0
+offset_right = 87.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 20
+text = "Hidebox
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Crab\'s Trouble" type="Control" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+
+[node name="Crab\'s Trouble_Button" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Crab\'s Trouble"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Crab\'s Trouble"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("3_ph0np")
+expand_mode = 4
+
+[node name="Star_Container" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Crab\'s Trouble"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.5
+offset_top = -61.0
+offset_right = 184.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Crab\'s Trouble/Star_Container"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_any6v")
+expand_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Crab\'s Trouble/Star_Container"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_any6v")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Crab\'s Trouble/Star_Container"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_any6v")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Crab\'s Trouble"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_top = 200.0
+offset_right = 87.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 15
+text = "Crab's Trouble
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Beekeeper" type="Control" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 300)
+layout_mode = 2
+
+[node name="Beekeeper_Button" type="Button" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Beekeeper"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Beekeeper"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("3_ph0np")
+expand_mode = 4
+
+[node name="Star_Container2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Beekeeper"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.5
+offset_top = -61.0
+offset_right = 184.5
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+mouse_filter = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Beekeeper/Star_Container2"]
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_any6v")
+expand_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Beekeeper/Star_Container2"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_any6v")
+expand_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Beekeeper/Star_Container2"]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("4_any6v")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Beekeeper"]
+custom_minimum_size = Vector2(200, 40)
+layout_mode = 0
+offset_top = 200.0
+offset_right = 87.0
+offset_bottom = 221.0
+theme_override_font_sizes/font_size = 20
+text = "Beekeeper"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Hidebox/Hidebox_Button" to="." method="_on_hidebox_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Crab's Trouble/Crab's Trouble_Button" to="." method="_on_crabs_trouble_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Beekeeper/Beekeeper_Button" to="." method="_on_beekeeper_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]

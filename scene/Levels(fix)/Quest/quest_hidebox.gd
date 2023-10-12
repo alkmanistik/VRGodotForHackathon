@@ -39,7 +39,7 @@ func check():
 		if right_box:
 			completed()
 		else:
-			teleport()
+			teleport(start_position)
 			quest_object_after()
 			anim.play("start")
 			await anim.animation_finished

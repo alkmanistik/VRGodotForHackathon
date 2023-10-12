@@ -1,10 +1,48 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuegexc5r3utd"]
+[gd_scene load_steps=7 format=3 uid="uid://cuegexc5r3utd"]
 
 [ext_resource type="PackedScene" uid="uid://cfnauwpex7thm" path="res://assets/Ultimate Platformer Pack - Dec 2021/Powerups and Pickups/glTF/Key.gltf" id="1_155u2"]
 [ext_resource type="Script" path="res://scene/Objects/Dynamic/key.gd" id="1_xj6lv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cdudr"]
 size = Vector3(1.5, 1, 0.5)
+
+[sub_resource type="Animation" id="Animation_jolk7"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Key:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.5, 0, 0), Vector3(-0.5, -0.05, 0), Vector3(-0.5, 0, 0), Vector3(-0.5, 0.05, 0), Vector3(-0.5, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pu1lj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Key:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.5, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3kuyi"]
+_data = {
+"Idle": SubResource("Animation_jolk7"),
+"RESET": SubResource("Animation_pu1lj")
+}
 
 [node name="Key" type="Node3D" groups=["key"]]
 script = ExtResource("1_xj6lv")
@@ -19,5 +57,11 @@ collision_layer = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 shape = SubResource("BoxShape3D_cdudr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Idle"
+libraries = {
+"": SubResource("AnimationLibrary_3kuyi")
+}
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

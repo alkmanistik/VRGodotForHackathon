@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://7cmq6g2ffk7s"]
+
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="1_bjmkg"]
+[ext_resource type="PackedScene" uid="uid://bopqii5ghkhub" path="res://scene/Menu/main_menu(fix).tscn" id="2_no8xm"]
+[ext_resource type="PackedScene" uid="uid://tpeybjfj2wky" path="res://scene/characters/player.tscn" id="3_tu3ke"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="Viewport2Din3D" parent="XROrigin3D" instance=ExtResource("1_bjmkg")]
+scene = ExtResource("2_no8xm")
+viewport_size = Vector2(1920, 1080)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.62809)
+
+[node name="Player" parent="." instance=ExtResource("3_tu3ke")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.6494)

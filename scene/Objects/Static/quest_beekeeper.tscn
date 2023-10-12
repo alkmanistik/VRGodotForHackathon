@@ -1,0 +1,101 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbqpp1qv8022w"]
+
+[ext_resource type="PackedScene" uid="uid://bbdpwjownr44e" path="res://scene/Levels(fix)/Quest/quest.tscn" id="1_r0wxu"]
+[ext_resource type="Script" path="res://scene/Objects/Static/quest_beekeeper.gd" id="2_15wqd"]
+[ext_resource type="PackedScene" uid="uid://3rxi7owoo5rb" path="res://scene/Objects/Static/tree_fruit.tscn" id="3_bcym5"]
+[ext_resource type="PackedScene" uid="uid://4jqnxmxqxfvr" path="res://scene/Objects/Static/bee's_house.tscn" id="4_8jty8"]
+[ext_resource type="PackedScene" uid="uid://ch3kvruy8glsa" path="res://scene/characters/static_bee.tscn" id="5_360ia"]
+[ext_resource type="PackedScene" uid="uid://dranakhe7t8lx" path="res://scene/ui/answer_keybord.tscn" id="6_j7lec"]
+
+[node name="quest_beekeeper" instance=ExtResource("1_r0wxu")]
+script = ExtResource("2_15wqd")
+
+[node name="Bee" type="Node3D" parent="Object" index="0"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -35, 5, -11)
+
+[node name="Tree" type="Node3D" parent="Object/Bee" index="0"]
+
+[node name="Tree_Fruit" parent="Object/Bee/Tree" index="0" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 6)
+
+[node name="Tree_Fruit2" parent="Object/Bee/Tree" index="1" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 6)
+
+[node name="Tree_Fruit3" parent="Object/Bee/Tree" index="2" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 6)
+
+[node name="Tree_Fruit4" parent="Object/Bee/Tree" index="3" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 6)
+
+[node name="Tree_Fruit5" parent="Object/Bee/Tree" index="4" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 6)
+
+[node name="Tree_Fruit6" parent="Object/Bee/Tree" index="5" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, 2)
+
+[node name="Tree_Fruit7" parent="Object/Bee/Tree" index="6" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -2)
+
+[node name="Tree_Fruit8" parent="Object/Bee/Tree" index="7" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -6)
+
+[node name="Tree_Fruit9" parent="Object/Bee/Tree" index="8" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -10)
+
+[node name="Tree_Fruit10" parent="Object/Bee/Tree" index="9" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, -10)
+
+[node name="Tree_Fruit11" parent="Object/Bee/Tree" index="10" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, -10)
+
+[node name="Tree_Fruit12" parent="Object/Bee/Tree" index="11" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, -10)
+
+[node name="Tree_Fruit13" parent="Object/Bee/Tree" index="12" instance=ExtResource("3_bcym5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, -10)
+
+[node name="bee\'s houses" type="Node3D" parent="Object/Bee" index="1"]
+
+[node name="Bee\'s house" parent="Object/Bee/bee\'s houses" index="0" instance=ExtResource("4_8jty8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.86048, 0, -3.67887)
+
+[node name="Bee\'s house2" parent="Object/Bee/bee\'s houses" index="1" instance=ExtResource("4_8jty8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.86048, 0, 5.68563)
+
+[node name="Bee\'s house3" parent="Object/Bee/bee\'s houses" index="2" instance=ExtResource("4_8jty8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.28088, 0, 5.68563)
+
+[node name="Bee\'s house4" parent="Object/Bee/bee\'s houses" index="3" instance=ExtResource("4_8jty8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -6.28088, 0, -4.09873)
+
+[node name="Bee\'s house5" parent="Object/Bee/bee\'s houses" index="4" instance=ExtResource("4_8jty8")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -0.0542493, 0, 0.784763)
+
+[node name="Bees" type="Node3D" parent="Object/Bee" index="2"]
+
+[node name="Static_bee" parent="Object/Bee/Bees" index="0" instance=ExtResource("5_360ia")]
+transform = Transform3D(0.935574, 0, 0.353132, 0, 1, 0, -0.353132, 0, 0.935574, -2.39817, 4.1612, 4.94269)
+
+[node name="Static_bee2" parent="Object/Bee/Bees" index="1" instance=ExtResource("5_360ia")]
+transform = Transform3D(-0.632841, 0, 0.774282, 0, 1, 0, -0.774282, 0, -0.632841, 4.50441, 4.91261, -3.84458)
+
+[node name="Static_bee3" parent="Object/Bee/Bees" index="2" instance=ExtResource("5_360ia")]
+transform = Transform3D(-0.980019, 0, -0.198906, 0, 1, 0, 0.198906, 0, -0.980019, -2.28196, 1.14083, -6.78942)
+
+[node name="Static_bee4" parent="Object/Bee/Bees" index="3" instance=ExtResource("5_360ia")]
+transform = Transform3D(-0.496247, 0, 0.868182, 0, 1, 0, -0.868182, 0, -0.496247, -11.7885, 4.59998, -6.78942)
+
+[node name="Static_bee5" parent="Object/Bee/Bees" index="4" instance=ExtResource("5_360ia")]
+transform = Transform3D(-0.913879, 0, 0.405987, 0, 1, 0, -0.405987, 0, -0.913879, -15.8498, 0.800652, 12.0424)
+
+[node name="Static_bee6" parent="Object/Bee/Bees" index="5" instance=ExtResource("5_360ia")]
+transform = Transform3D(0.984359, 0, -0.176174, 0, 1, 0, 0.176174, 0, 0.984359, -14.7714, 0.800652, 7.7817)
+
+[node name="Static_bee7" parent="Object/Bee/Bees" index="6" instance=ExtResource("5_360ia")]
+transform = Transform3D(-0.79165, 0, 0.610974, 0, 1, 0, -0.610974, 0, -0.79165, -8.87498, 5.63833, 11.7177)
+
+[node name="Crab\'s platform" type="Node3D" parent="Object" index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7, 2, 0)
+
+[node name="Answer_Keybord" parent="Object/Crab\'s platform" index="0" instance=ExtResource("6_j7lec")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 0, 2, 0)
