@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://tpeybjfj2wky"]
+[gd_scene load_steps=15 format=3 uid="uid://tpeybjfj2wky"]
 
 [ext_resource type="Script" path="res://scene/characters/player.gd" id="1_hjo01"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="2_w6d1a"]
@@ -11,17 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="9_klsff"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="9_y1w6x"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="10_1vh27"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="12_2aq0y"]
 [ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="12_i6e5d"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_1g3ds"]
-viewport_path = NodePath("RightXRController3D2/CollisionHandRight/SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_055ut"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_1g3ds")
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_47g0e"]
-size = Vector2(0.3, 0.4)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5lxx"]
 
@@ -31,16 +22,28 @@ script = ExtResource("1_hjo01")
 [node name="XRCamera3D" type="XRCamera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
+[node name="Viewport2Din3D" parent="XRCamera3D" instance=ExtResource("12_2aq0y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0453306, -0.0456379, -0.328213)
+screen_size = Vector2(0.3, 0.2)
+collision_layer = 5242880
+scene = ExtResource("12_i6e5d")
+viewport_size = Vector2(1920, 1080)
+transparent = 2
+unshaded = true
+filter = false
+
 [node name="LeftXRController3D" type="XRController3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
 tracker = &"left_hand"
 
 [node name="CollisionHandLeft" parent="LeftXRController3D" instance=ExtResource("2_w6d1a")]
 
-[node name="MovementTurn" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("7_bw4mo")]
-turn_mode = 2
+[node name="MovementDirect" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("4_1kcqw")]
+strafe = true
+enabled = false
 
 [node name="FunctionTeleport" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("8_x5yc6")]
+enabled = false
 
 [node name="LeftHand" parent="LeftXRController3D/CollisionHandLeft" instance=ExtResource("6_r3ey2")]
 
@@ -50,26 +53,18 @@ tracker = &"right_hand"
 
 [node name="CollisionHandRight" parent="RightXRController3D2" instance=ExtResource("5_1ovmc")]
 
+[node name="MovementTurn" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("7_bw4mo")]
+turn_mode = 2
+enabled = false
+
 [node name="RightHand" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("8_nnnrb")]
 
 [node name="FunctionPickup" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("9_klsff")]
+enabled = false
 
 [node name="FunctionPointer" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("10_1vh27")]
+enabled = false
 distance = 5.0
-
-[node name="MovementDirect" parent="RightXRController3D2/CollisionHandRight" instance=ExtResource("4_1kcqw")]
-max_speed = 1000.0
-strafe = true
-
-[node name="SubViewport" type="SubViewport" parent="RightXRController3D2/CollisionHandRight"]
-size = Vector2i(1024, 512)
-
-[node name="UI" parent="RightXRController3D2/CollisionHandRight/SubViewport" instance=ExtResource("12_i6e5d")]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RightXRController3D2/CollisionHandRight"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.215232, 0.00280079, 0.0891045)
-material_override = SubResource("StandardMaterial3D_055ut")
-mesh = SubResource("PlaneMesh_47g0e")
 
 [node name="PlayerBody" parent="." instance=ExtResource("9_y1w6x")]
 collision_layer = 524289

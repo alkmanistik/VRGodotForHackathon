@@ -5,6 +5,10 @@ extends RigidBody3D
 
 signal box_entered(is_right: bool)
 
+func _ready():
+	for i in get_tree().get_nodes_in_group("pointer"):
+		i.connect("pointer_event",pointer_event)
+
 func replace() -> void:
 	true_cube.visible = !true_cube.visible
 	mask_cube.visible = !mask_cube.visible

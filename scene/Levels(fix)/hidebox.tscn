@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://mw4a8upiykcm"]
+[gd_scene load_steps=24 format=3 uid="uid://mw4a8upiykcm"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_gndjo"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_i2f7l"]
@@ -10,8 +10,20 @@
 [ext_resource type="PackedScene" uid="uid://3rxi7owoo5rb" path="res://scene/Objects/Static/tree_fruit.tscn" id="6_lbo81"]
 [ext_resource type="PackedScene" uid="uid://vxrmp7edq5b0" path="res://scene/Objects/Dynamic/treasure.tscn" id="9_e0gaq"]
 [ext_resource type="PackedScene" uid="uid://cuegexc5r3utd" path="res://scene/Objects/Dynamic/key.tscn" id="10_meq83"]
-[ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="12_dvegg"]
 [ext_resource type="PackedScene" uid="uid://cocih3mdliawc" path="res://scene/Levels(fix)/Quest/quest_hidebox.tscn" id="12_ika5t"]
+[ext_resource type="Script" path="res://scene/characters/player.gd" id="12_toyp4"]
+[ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="13_wa7bi"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="14_fjb81"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="15_qkmr6"]
+[ext_resource type="PackedScene" uid="uid://hpr0v012ghsb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_tac_glove.tscn" id="16_ccyu6"]
+[ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="17_k3cug"]
+[ext_resource type="PackedScene" uid="uid://dup2vp8v5rpi5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_tac_glove.tscn" id="19_s8hu5"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="21_33e20"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="22_6s4yu"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="22_crv3b"]
+[ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="23_h4sym"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5lxx"]
 
 [node name="Hidebox" instance=ExtResource("1_gndjo")]
 
@@ -19,7 +31,10 @@
 transform = Transform3D(1, 0, 0, 0, 0.587785, 0.809017, 0, -0.809017, 0.587785, -11, 30, 20)
 
 [node name="SpawnPosition" parent="." index="2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 5, 6)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 6, 6)
+
+[node name="CollisionShape3D" parent="RespawnZone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.0185, 0, -87.5546)
 
 [node name="Tower" parent="Objects" index="0" instance=ExtResource("2_o5uwa")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.4, -26)
@@ -79,7 +94,52 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 6, 2)
 [node name="quest_hidebox" parent="." index="9" instance=ExtResource("12_ika5t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 6, -16)
 
-[node name="UI" parent="." index="10"]
-visible = true
+[node name="Player" type="XROrigin3D" parent="." index="11" groups=["player"]]
+script = ExtResource("12_toyp4")
 
-[node name="Player" parent="." index="11" instance=ExtResource("12_dvegg")]
+[node name="XRCamera3D" type="XRCamera3D" parent="Player" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="Viewport2Din3D" parent="Player/XRCamera3D" index="0" instance=ExtResource("22_crv3b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045, -0.046, -0.267)
+screen_size = Vector2(0.3, 0.2)
+collision_layer = 5242880
+scene = ExtResource("23_h4sym")
+viewport_size = Vector2(1920, 1080)
+transparent = 2
+unshaded = true
+filter = false
+
+[node name="LeftXRController3D" type="XRController3D" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+tracker = &"left_hand"
+
+[node name="CollisionHandLeft" parent="Player/LeftXRController3D" index="0" instance=ExtResource("13_wa7bi")]
+
+[node name="MovementDirect" parent="Player/LeftXRController3D/CollisionHandLeft" index="1" instance=ExtResource("14_fjb81")]
+strafe = true
+
+[node name="FunctionTeleport" parent="Player/LeftXRController3D/CollisionHandLeft" index="2" instance=ExtResource("15_qkmr6")]
+
+[node name="LeftHand" parent="Player/LeftXRController3D/CollisionHandLeft" index="3" instance=ExtResource("16_ccyu6")]
+
+[node name="RightXRController3D2" type="XRController3D" parent="Player" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+tracker = &"right_hand"
+
+[node name="CollisionHandRight" parent="Player/RightXRController3D2" index="0" instance=ExtResource("17_k3cug")]
+
+[node name="RightHand" parent="Player/RightXRController3D2/CollisionHandRight" index="1" instance=ExtResource("19_s8hu5")]
+
+[node name="FunctionPointer" parent="Player/RightXRController3D2/CollisionHandRight" index="2" groups=["pointer"] instance=ExtResource("21_33e20")]
+distance = 20.0
+laser_length = 1
+show_target = true
+collision_mask = 5242884
+
+[node name="PlayerBody" parent="Player" index="3" instance=ExtResource("22_6s4yu")]
+collision_layer = 524289
+collision_mask = 31
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerBody" index="0"]
+shape = SubResource("CapsuleShape3D_o5lxx")

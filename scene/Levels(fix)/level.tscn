@@ -34,10 +34,10 @@ volumetric_fog_density = 0.1342
 adjustment_brightness = 0.9
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_utito"]
-size = Vector3(100, 1, 100)
+size = Vector3(1000, 1, 1000)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1cldl"]
-size = Vector3(100, 1, 100)
+size = Vector3(1000, 1, 1000)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_qiryd"]
 

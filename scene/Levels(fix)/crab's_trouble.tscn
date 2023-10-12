@@ -1,11 +1,10 @@
-[gd_scene load_steps=33 format=3 uid="uid://ddp515rdd5geq"]
+[gd_scene load_steps=44 format=3 uid="uid://ddp515rdd5geq"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_yveak"]
 [ext_resource type="Script" path="res://scene/Levels(fix)/crab's_trouble.gd" id="2_n65om"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="2_w702g"]
 [ext_resource type="PackedScene" uid="uid://m7t6211h2q3" path="res://scene/Objects/Dynamic/tower.tscn" id="2_xyxto"]
 [ext_resource type="PackedScene" uid="uid://c0gu02gohut42" path="res://scene/Objects/Static/fence_corner.tscn" id="3_7o10o"]
-[ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="3_a8q4n"]
 [ext_resource type="PackedScene" uid="uid://bjm1geua20lid" path="res://scene/Objects/Static/fence_middle.tscn" id="4_j8p36"]
 [ext_resource type="PackedScene" uid="uid://dnby66eaxr7ms" path="res://scene/Objects/Static/bush_fruit.tscn" id="5_63eyi"]
 [ext_resource type="PackedScene" uid="uid://hfxa2kek2ot7" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Tree.gltf" id="6_87cbo"]
@@ -20,6 +19,17 @@
 [ext_resource type="PackedScene" uid="uid://bnq8leamayugy" path="res://scene/Levels(fix)/Quest/quest_crab's_trouble.tscn" id="18_5kiy4"]
 [ext_resource type="PackedScene" uid="uid://dsgntchwl8isc" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_3.gltf" id="19_xs1wh"]
 [ext_resource type="PackedScene" uid="uid://jnxfjv6rucuv" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_2.gltf" id="20_7rn7a"]
+[ext_resource type="PackedScene" uid="uid://cpfxsnducd02r" path="res://scene/Objects/Pickable object/pickaxe.tscn" id="21_1p4jr"]
+[ext_resource type="Script" path="res://scene/characters/player.gd" id="21_522dy"]
+[ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="22_3gcwb"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="23_bfxiq"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="24_rrfav"]
+[ext_resource type="PackedScene" uid="uid://hpr0v012ghsb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_tac_glove.tscn" id="25_lfypo"]
+[ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="26_e6010"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="27_phl6l"]
+[ext_resource type="PackedScene" uid="uid://dup2vp8v5rpi5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_tac_glove.tscn" id="28_q06yk"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="29_a8wou"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="31_6ictw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_arjvv"]
 resource_name = "DarkMetal"
@@ -240,6 +250,8 @@ _data = {
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wjort"]
 size = Vector3(4, 4, 10)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5lxx"]
 
 [node name="Crab\'s Trouble" instance=ExtResource("1_yveak")]
 script = ExtResource("2_n65om")
@@ -464,6 +476,51 @@ open = true
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 19, -15)
 open = true
 
+[node name="Cloud_3" parent="Objects" index="12" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3935, 19.6703, -1.64864)
+
+[node name="Cloud_9" parent="Objects" index="13" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.57874, 0, -0.815512, 0, 1, 0, 0.815512, 0, 0.57874, 3.2644, 19.6703, 2.99721)
+
+[node name="Cloud_11" parent="Objects" index="14" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, -5.18071, 19.6703, 2.99721)
+
+[node name="Cloud_17" parent="Objects" index="15" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, 14.8209, 19.6703, -14.4831)
+
+[node name="Cloud_12" parent="Objects" index="16" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.916195, 0, -0.400733, 0, 1, 0, 0.400733, 0, 0.916195, -6.84636, 19.6703, 2.99721)
+
+[node name="Cloud_13" parent="Objects" index="17" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, -13.9765, 19.6703, -4.29402)
+
+[node name="Cloud_14" parent="Objects" index="18" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.916195, 0, -0.400733, 0, 1, 0, 0.400733, 0, 0.916195, -15.6421, 19.6703, -4.29402)
+
+[node name="Cloud_15" parent="Objects" index="19" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, -13.9765, 19.6703, -14.5144)
+
+[node name="Cloud_16" parent="Objects" index="20" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.916195, 0, -0.400733, 0, 1, 0, 0.400733, 0, 0.916195, -15.6421, 19.6703, -14.5144)
+
+[node name="Cloud_10" parent="Objects" index="21" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.785414, 0, -0.618971, 0, 1, 0, 0.618971, 0, -0.785414, 16.2989, 19.6703, 4.53691)
+
+[node name="Cloud_4" parent="Objects" index="22" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.466618, 0, 0.884459, 0, 1, 0, -0.884459, 0, 0.466618, 32.0598, 19.6703, -18.0351)
+
+[node name="Cloud_5" parent="Objects" index="23" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(0.466618, 0, 0.884459, 0, 1, 0, -0.884459, 0, 0.466618, 13.1524, 19.6703, -33.4492)
+
+[node name="Cloud_6" parent="Objects" index="24" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.314026, 0, 0.949414, 0, 1, 0, -0.949414, 0, -0.314026, 0.788189, 19.6703, -31.7855)
+
+[node name="Cloud_7" parent="Objects" index="25" instance=ExtResource("19_xs1wh")]
+transform = Transform3D(-0.657494, 0, 0.75346, 0, 1, 0, -0.75346, 0, -0.657494, -6.51838, 19.6703, -28.0059)
+
+[node name="Cloud_2" parent="Objects" index="26" instance=ExtResource("20_7rn7a")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.896, 21.3086, -29.6361)
+
 [node name="Treasure" parent="Mechanic" index="0" instance=ExtResource("12_c20um")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7, 20, -9)
 
@@ -529,55 +586,54 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 12, 0)
 
-[node name="Player" parent="." index="9" instance=ExtResource("3_a8q4n")]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 6.65779, 0)
-
-[node name="quest_crab\'s_trouble" parent="." index="10" instance=ExtResource("18_5kiy4")]
+[node name="quest_crab\'s_trouble" parent="." index="9" instance=ExtResource("18_5kiy4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 9, -24)
 
-[node name="Cloud_3" parent="." index="11" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3935, 20.6703, -1.64864)
+[node name="Player" type="XROrigin3D" parent="." index="11" groups=["player"]]
+script = ExtResource("21_522dy")
 
-[node name="Cloud_9" parent="." index="12" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(0.57874, 0, -0.815512, 0, 1, 0, 0.815512, 0, 0.57874, 3.2644, 20.6703, 2.99721)
+[node name="XRCamera3D" type="XRCamera3D" parent="Player" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
-[node name="Cloud_11" parent="." index="13" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, -5.18071, 20.6703, 2.99721)
+[node name="LeftXRController3D" type="XRController3D" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+tracker = &"left_hand"
 
-[node name="Cloud_17" parent="." index="14" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, 14.8209, 20.6703, -14.4831)
+[node name="CollisionHandLeft" parent="Player/LeftXRController3D" index="0" instance=ExtResource("22_3gcwb")]
 
-[node name="Cloud_12" parent="." index="15" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(0.916195, 0, -0.400733, 0, 1, 0, 0.400733, 0, 0.916195, -6.84636, 20.6703, 2.99721)
+[node name="MovementDirect" parent="Player/LeftXRController3D/CollisionHandLeft" index="1" instance=ExtResource("23_bfxiq")]
+strafe = true
 
-[node name="Cloud_13" parent="." index="16" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, -13.9765, 20.6703, -4.29402)
+[node name="FunctionTeleport" parent="Player/LeftXRController3D/CollisionHandLeft" index="2" instance=ExtResource("24_rrfav")]
 
-[node name="Cloud_14" parent="." index="17" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(0.916195, 0, -0.400733, 0, 1, 0, 0.400733, 0, 0.916195, -15.6421, 20.6703, -4.29402)
+[node name="LeftHand" parent="Player/LeftXRController3D/CollisionHandLeft" index="3" instance=ExtResource("25_lfypo")]
 
-[node name="Cloud_15" parent="." index="18" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(-0.447759, 0, -0.894154, 0, 1, 0, 0.894154, 0, -0.447759, -13.9765, 20.6703, -14.5144)
+[node name="RightXRController3D2" type="XRController3D" parent="Player" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+tracker = &"right_hand"
 
-[node name="Cloud_16" parent="." index="19" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(0.916195, 0, -0.400733, 0, 1, 0, 0.400733, 0, 0.916195, -15.6421, 20.6703, -14.5144)
+[node name="CollisionHandRight" parent="Player/RightXRController3D2" index="0" instance=ExtResource("26_e6010")]
+collision_layer = 131136
 
-[node name="Cloud_10" parent="." index="20" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(-0.785414, 0, -0.618971, 0, 1, 0, 0.618971, 0, -0.785414, 16.2989, 20.6703, 4.53691)
+[node name="MovementTurn" parent="Player/RightXRController3D2/CollisionHandRight" index="1" instance=ExtResource("27_phl6l")]
+turn_mode = 2
 
-[node name="Cloud_4" parent="." index="21" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(0.466618, 0, 0.884459, 0, 1, 0, -0.884459, 0, 0.466618, 32.0598, 20.6703, -18.0351)
+[node name="RightHand" parent="Player/RightXRController3D2/CollisionHandRight" index="2" instance=ExtResource("28_q06yk")]
 
-[node name="Cloud_5" parent="." index="22" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(0.466618, 0, 0.884459, 0, 1, 0, -0.884459, 0, 0.466618, 13.1524, 20.6703, -33.4492)
+[node name="FunctionPickup" parent="Player/RightXRController3D2/CollisionHandRight" index="3" instance=ExtResource("29_a8wou")]
+grab_distance = 1.0
+grab_collision_mask = 327679
+ranged_collision_mask = 65535
 
-[node name="Cloud_6" parent="." index="23" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(-0.314026, 0, 0.949414, 0, 1, 0, -0.949414, 0, -0.314026, 0.788189, 20.6703, -31.7855)
+[node name="PlayerBody" parent="Player" index="3" instance=ExtResource("31_6ictw")]
+collision_layer = 524289
+collision_mask = 31
 
-[node name="Cloud_7" parent="." index="24" instance=ExtResource("19_xs1wh")]
-transform = Transform3D(-0.657494, 0, 0.75346, 0, 1, 0, -0.75346, 0, -0.657494, -6.51838, 20.6703, -28.0059)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerBody" index="0"]
+shape = SubResource("CapsuleShape3D_o5lxx")
 
-[node name="Cloud_2" parent="." index="25" instance=ExtResource("20_7rn7a")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.896, 22.3086, -29.6361)
+[node name="Pickaxe" parent="." index="12" instance=ExtResource("21_1p4jr")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.58374, 8.356, -2.10487)
+picked_up_layer = 96255
 
 [connection signal="body_entered" from="Mechanic/secret_teleport" to="." method="_on_secret_teleport_body_entered"]

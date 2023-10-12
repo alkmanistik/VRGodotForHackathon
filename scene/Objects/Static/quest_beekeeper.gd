@@ -44,7 +44,7 @@ func create_array() -> Array:
 	temp[currect_answer] = amount
 	return temp
 
-func quest_object_reset() -> void:
+func quest_object_after() -> void:
 	answer_keybord.hide()
 
 func check() -> void:

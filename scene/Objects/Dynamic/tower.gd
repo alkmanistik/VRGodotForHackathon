@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
-@onready var menu_level = preload("res://scene/Levels(fix)/menu_level.tscn")
+var main_level = "res://scene/Levels(fix)/main_level.tscn"
 
 signal save()
 
@@ -15,4 +15,4 @@ func open_door() -> void:
 func _on_exit_zone_body_entered(_body):
 	save.emit()
 	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_packed(menu_level)
+	get_tree().change_scene_to_file(main_level)

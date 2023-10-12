@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=3 uid="uid://cstj0mxacytg3"]
+[gd_scene load_steps=111 format=3 uid="uid://cstj0mxacytg3"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_ak2hc"]
 [ext_resource type="Script" path="res://scene/Levels(fix)/main_level.gd" id="2_lhbey"]
@@ -20,6 +20,19 @@
 [ext_resource type="PackedScene" uid="uid://jnxfjv6rucuv" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_2.gltf" id="17_fru6m"]
 [ext_resource type="PackedScene" uid="uid://blisueg4m8kk3" path="res://scene/Objects/Dynamic/coin.tscn" id="18_81f0y"]
 [ext_resource type="PackedScene" uid="uid://dsgntchwl8isc" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_3.gltf" id="19_vlt81"]
+[ext_resource type="Script" path="res://scene/characters/player.gd" id="21_s8oeg"]
+[ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="22_8u2eu"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="23_bkmby"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="24_0tqc3"]
+[ext_resource type="PackedScene" uid="uid://hpr0v012ghsb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_tac_glove.tscn" id="25_3st4p"]
+[ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="26_w3acq"]
+[ext_resource type="PackedScene" uid="uid://dup2vp8v5rpi5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_tac_glove.tscn" id="27_q3p48"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="28_smeqh"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="29_cxxuk"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="30_yuh4f"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="32_e3itc"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="33_pujqj"]
+[ext_resource type="PackedScene" uid="uid://dlu0hmvjgqo5p" path="res://scene/Menu/level_menu(fix).tscn" id="34_0bb38"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0jw0p"]
 resource_name = "Main"
@@ -6829,6 +6842,8 @@ _data = {
 "Yes": SubResource("Animation_guwui")
 }
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5lxx"]
+
 [node name="Main_Level" instance=ExtResource("1_ak2hc")]
 script = ExtResource("2_lhbey")
 
@@ -6913,7 +6928,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_xhvm5")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Objects/Path3D" index="0"]
-transform = Transform3D(-0.548734, 0.0599258, -0.833796, 0.0880242, 0.995987, 0.0136522, 0.831303, -0.0659057, -0.551825, 4.29844, 2.98123, -0.597085)
+transform = Transform3D(-0.551907, 0.00994434, -0.833796, -0.00260968, 0.999865, 0.0136522, 0.833855, 0.00971113, -0.551825, 4.29844, 2.98123, -0.597085)
 progress = 3.34578
 
 [node name="Bee" type="Node3D" parent="Objects/Path3D/PathFollow3D" index="0"]
@@ -7417,3 +7432,57 @@ transform = Transform3D(0.565831, 0, -0.824521, 0, 1, 0, 0.824521, 0, 0.565831, 
 
 [node name="Cloud_12" parent="Objects/Cloud" index="11" instance=ExtResource("19_vlt81")]
 transform = Transform3D(0.234226, 0, 0.972182, 0, 1, 0, -0.972182, 0, 0.234226, -21.5127, -2, -3.71267)
+
+[node name="Player" type="XROrigin3D" parent="." index="9" groups=["player"]]
+script = ExtResource("21_s8oeg")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="Player" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="LeftXRController3D" type="XRController3D" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+tracker = &"left_hand"
+
+[node name="CollisionHandLeft" parent="Player/LeftXRController3D" index="0" instance=ExtResource("22_8u2eu")]
+
+[node name="MovementDirect" parent="Player/LeftXRController3D/CollisionHandLeft" index="1" instance=ExtResource("30_yuh4f")]
+strafe = true
+enabled = false
+
+[node name="FunctionTeleport" parent="Player/LeftXRController3D/CollisionHandLeft" index="2" instance=ExtResource("24_0tqc3")]
+enabled = false
+
+[node name="LeftHand" parent="Player/LeftXRController3D/CollisionHandLeft" index="3" instance=ExtResource("25_3st4p")]
+
+[node name="RightXRController3D2" type="XRController3D" parent="Player" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+tracker = &"right_hand"
+
+[node name="CollisionHandRight" parent="Player/RightXRController3D2" index="0" instance=ExtResource("26_w3acq")]
+
+[node name="MovementTurn" parent="Player/RightXRController3D2/CollisionHandRight" index="1" instance=ExtResource("23_bkmby")]
+turn_mode = 2
+
+[node name="RightHand" parent="Player/RightXRController3D2/CollisionHandRight" index="2" instance=ExtResource("27_q3p48")]
+
+[node name="FunctionPickup" parent="Player/RightXRController3D2/CollisionHandRight" index="3" instance=ExtResource("28_smeqh")]
+enabled = false
+
+[node name="FunctionPointer" parent="Player/RightXRController3D2/CollisionHandRight" index="4" instance=ExtResource("29_cxxuk")]
+distance = 5.0
+
+[node name="PlayerBody" parent="Player" index="3" instance=ExtResource("32_e3itc")]
+collision_layer = 524289
+collision_mask = 31
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerBody" index="0"]
+shape = SubResource("CapsuleShape3D_o5lxx")
+
+[node name="Viewport2Din3D" parent="." index="10" instance=ExtResource("33_pujqj")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4, 4, 0)
+screen_size = Vector2(6, 4)
+collision_layer = 5242880
+scene = ExtResource("34_0bb38")
+viewport_size = Vector2(1152, 648)
+transparent = 2
+unshaded = true

@@ -78,7 +78,7 @@ size = Vector3(2, 2, 2)
 
 [node name="Cube_Question" type="RigidBody3D" groups=["logic_cube"]]
 collision_layer = 4
-collision_mask = 10
+collision_mask = 139
 freeze = true
 script = ExtResource("1_vqwjo")
 

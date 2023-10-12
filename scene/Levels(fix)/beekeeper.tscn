@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://f02rs5h3c0e6"]
+[gd_scene load_steps=32 format=3 uid="uid://f02rs5h3c0e6"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_020fg"]
 [ext_resource type="PackedScene" uid="uid://dugybkx8yavpd" path="res://scene/Objects/Static/bridge_modular.tscn" id="2_38yvq"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dhieb4m80n4e8" path="res://scene/Objects/Static/cloud_3.tscn" id="4_5f2ku"]
 [ext_resource type="MeshLibrary" uid="uid://chbvhoppumll4" path="res://assets/custom assets/meshlib_floor.tres" id="4_gqcb3"]
 [ext_resource type="PackedScene" uid="uid://bjm1geua20lid" path="res://scene/Objects/Static/fence_middle.tscn" id="5_l50wm"]
-[ext_resource type="PackedScene" uid="uid://8hm8o3cu16t0" path="res://scene/characters/player/Debug_player.tscn" id="5_vr8mt"]
 [ext_resource type="PackedScene" uid="uid://cpx0xrvka0jhq" path="res://scene/Objects/Static/rock_platform_tall.tscn" id="6_julsh"]
 [ext_resource type="PackedScene" uid="uid://bfhxk7uuneyoh" path="res://scene/Objects/Static/rock_platforms_2.tscn" id="7_qw457"]
 [ext_resource type="PackedScene" uid="uid://b84qye2gcp5my" path="res://scene/Objects/Static/rock_1.tscn" id="8_veou8"]
@@ -18,12 +17,32 @@
 [ext_resource type="PackedScene" uid="uid://cuegexc5r3utd" path="res://scene/Objects/Dynamic/key.tscn" id="16_pv75n"]
 [ext_resource type="PackedScene" uid="uid://0n1n4ocufvfs" path="res://scene/Objects/Damage objects/hazard_cylinder.tscn" id="17_eln1o"]
 [ext_resource type="PackedScene" uid="uid://dwiupkjdopnbr" path="res://scene/Objects/Damage objects/spiky_ball.tscn" id="18_lfe46"]
+[ext_resource type="PackedScene" uid="uid://m7t6211h2q3" path="res://scene/Objects/Dynamic/tower.tscn" id="18_x38ju"]
 [ext_resource type="PackedScene" uid="uid://bbqpp1qv8022w" path="res://scene/Objects/Static/quest_beekeeper.tscn" id="19_njmnx"]
+[ext_resource type="Script" path="res://scene/characters/player.gd" id="19_w2qdy"]
+[ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="20_i8cgj"]
+[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="21_kwd0j"]
+[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="22_ohgw2"]
+[ext_resource type="PackedScene" uid="uid://hpr0v012ghsb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_tac_glove.tscn" id="23_x54i3"]
+[ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="24_gc2pr"]
+[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="25_adlat"]
+[ext_resource type="PackedScene" uid="uid://dup2vp8v5rpi5" path="res://addons/godot-xr-tools/hands/scenes/highpoly/right_tac_glove.tscn" id="26_v10mu"]
+[ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="27_v8rtd"]
+[ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="28_fryan"]
+[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="29_eyl46"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5lxx"]
 
 [node name="Beekeeper" instance=ExtResource("1_020fg")]
 
 [node name="SpawnPosition" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 5.5, -22)
+
+[node name="CollisionShape3D" parent="RespawnZone" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.144, -1, -39.855)
+
+[node name="CollisionShape3D" parent="TeleportArea" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.144, -1, -39.855)
 
 [node name="Objects" parent="." index="6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3269, 0)
@@ -174,10 +193,7 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 2, 0)
 
-[node name="Player" parent="." index="8" instance=ExtResource("5_vr8mt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5731, 4.69446, -38.3879)
-
-[node name="GridMap2" type="GridMap" parent="." index="9"]
+[node name="GridMap2" type="GridMap" parent="." index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.7899, -3.46596, -25.1317)
 mesh_library = ExtResource("4_gqcb3")
 data = {
@@ -236,7 +252,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.9561, 5.98217, -35.1067)
 [node name="SpikyBall3" parent="Mechanic" index="16" instance=ExtResource("18_lfe46")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3224, 5.98217, -35.1067)
 
-[node name="GridMap3" type="GridMap" parent="." index="12"]
+[node name="Tower" parent="Mechanic" index="17" instance=ExtResource("18_x38ju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 3, -58)
+
+[node name="GridMap3" type="GridMap" parent="." index="11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.595, 0)
 mesh_library = ExtResource("4_gqcb3")
 data = {
@@ -244,5 +263,48 @@ data = {
 }
 metadata/_editor_floor_ = Vector3(0, 1, 0)
 
-[node name="quest_beekeeper" parent="." index="13" instance=ExtResource("19_njmnx")]
+[node name="quest_beekeeper" parent="." index="12" instance=ExtResource("19_njmnx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, -1, -26)
+
+[node name="Player" type="XROrigin3D" parent="." index="13" groups=["player"]]
+script = ExtResource("19_w2qdy")
+
+[node name="XRCamera3D" type="XRCamera3D" parent="Player" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="LeftXRController3D" type="XRController3D" parent="Player" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
+tracker = &"left_hand"
+
+[node name="CollisionHandLeft" parent="Player/LeftXRController3D" index="0" instance=ExtResource("20_i8cgj")]
+
+[node name="MovementDirect" parent="Player/LeftXRController3D/CollisionHandLeft" index="1" instance=ExtResource("21_kwd0j")]
+strafe = true
+
+[node name="FunctionTeleport" parent="Player/LeftXRController3D/CollisionHandLeft" index="2" instance=ExtResource("22_ohgw2")]
+
+[node name="LeftHand" parent="Player/LeftXRController3D/CollisionHandLeft" index="3" instance=ExtResource("23_x54i3")]
+
+[node name="RightXRController3D2" type="XRController3D" parent="Player" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, -0.5)
+tracker = &"right_hand"
+
+[node name="CollisionHandRight" parent="Player/RightXRController3D2" index="0" instance=ExtResource("24_gc2pr")]
+
+[node name="MovementTurn" parent="Player/RightXRController3D2/CollisionHandRight" index="1" instance=ExtResource("25_adlat")]
+turn_mode = 2
+
+[node name="RightHand" parent="Player/RightXRController3D2/CollisionHandRight" index="2" instance=ExtResource("26_v10mu")]
+
+[node name="FunctionPickup" parent="Player/RightXRController3D2/CollisionHandRight" index="3" instance=ExtResource("27_v8rtd")]
+enabled = false
+
+[node name="FunctionPointer" parent="Player/RightXRController3D2/CollisionHandRight" index="4" instance=ExtResource("28_fryan")]
+distance = 5.0
+
+[node name="PlayerBody" parent="Player" index="3" instance=ExtResource("29_eyl46")]
+collision_layer = 524289
+collision_mask = 31
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerBody" index="0"]
+shape = SubResource("CapsuleShape3D_o5lxx")
