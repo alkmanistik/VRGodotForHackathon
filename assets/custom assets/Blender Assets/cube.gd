@@ -1,4 +1,4 @@
-extends Node3D
+extends RigidBody3D
 
 @onready var destruction = $Destruction
 func _on_area_3d_body_entered(body):

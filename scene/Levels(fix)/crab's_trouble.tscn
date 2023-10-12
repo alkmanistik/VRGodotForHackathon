@@ -496,7 +496,7 @@ shape = SubResource("BoxShape3D_wjort")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, -6)
 
 [node name="end_teleport" type="Marker3D" parent="Mechanic" index="9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 12, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 20, -12)
 
 [node name="Grid" type="Node3D" parent="." index="8"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
