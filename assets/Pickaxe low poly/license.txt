@@ -1,0 +1,11 @@
+Model Information:
+* title:	LowPoly Pickaxe - Low Poly - Blender - GameReady
+* source:	https://sketchfab.com/3d-models/lowpoly-pickaxe-low-poly-blender-gameready-f5c61608a74a4fc7be6de89de934ddcb
+* author:	yAncioso (https://sketchfab.com/yAncioso)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "LowPoly Pickaxe - Low Poly - Blender - GameReady" (https://sketchfab.com/3d-models/lowpoly-pickaxe-low-poly-blender-gameready-f5c61608a74a4fc7be6de89de934ddcb) by yAncioso (https://sketchfab.com/yAncioso) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

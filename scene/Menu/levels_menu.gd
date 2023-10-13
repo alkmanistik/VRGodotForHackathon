@@ -11,6 +11,9 @@ var crabs_trouble: String = "res://scene/Levels(fix)/crab's_trouble.tscn"
 var beekeeper: String = "res://scene/Levels(fix)/beekeeper.tscn"
 
 func _ready():
+	updete_level_stat()
+
+func updete_level_stat():
 	for i in level_container.get_children():
 		var temp = Save.get_inf(i.name)
 		if temp == 0:
@@ -26,7 +29,8 @@ func _ready():
 			temp -= 1
 
 func _on_button_pressed():
-	viewport.scene = main_menu
+	Save.delete_save()
+	updete_level_stat()
 
 
 func _on_hidebox_button_pressed():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://ddp515rdd5geq"]
+[gd_scene load_steps=43 format=3 uid="uid://ddp515rdd5geq"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_yveak"]
 [ext_resource type="Script" path="res://scene/Levels(fix)/crab's_trouble.gd" id="2_n65om"]
@@ -19,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://bnq8leamayugy" path="res://scene/Levels(fix)/Quest/quest_crab's_trouble.tscn" id="18_5kiy4"]
 [ext_resource type="PackedScene" uid="uid://dsgntchwl8isc" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_3.gltf" id="19_xs1wh"]
 [ext_resource type="PackedScene" uid="uid://jnxfjv6rucuv" path="res://assets/Ultimate Platformer Pack - Dec 2021/Nature/glTF/Cloud_2.gltf" id="20_7rn7a"]
-[ext_resource type="PackedScene" uid="uid://cpfxsnducd02r" path="res://scene/Objects/Pickable object/pickaxe.tscn" id="21_1p4jr"]
 [ext_resource type="Script" path="res://scene/characters/player.gd" id="21_522dy"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="22_3gcwb"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="23_bfxiq"]
@@ -631,9 +630,5 @@ collision_mask = 31
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerBody" index="0"]
 shape = SubResource("CapsuleShape3D_o5lxx")
-
-[node name="Pickaxe" parent="." index="12" instance=ExtResource("21_1p4jr")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 4.58374, 8.356, -2.10487)
-picked_up_layer = 96255
 
 [connection signal="body_entered" from="Mechanic/secret_teleport" to="." method="_on_secret_teleport_body_entered"]

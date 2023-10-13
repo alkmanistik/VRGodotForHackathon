@@ -28,3 +28,7 @@ func update_save(level_name: String, count_star: int) -> void:
 
 func get_inf(level_name: String) -> int:
 	return data[level_name]
+
+func delete_save() -> void:
+	data = empty_data
+	save_data()
