@@ -2,6 +2,7 @@ extends Node3D
 
 @onready var anim: AnimationPlayer = $AnimationPlayer
 var main_level = "res://scene/Levels(fix)/main_level.tscn"
+var exit: bool = false
 
 signal save()
 
@@ -13,6 +14,8 @@ func open_door() -> void:
 	anim.play("open_door")
 
 func _on_exit_zone_body_entered(_body):
-	save.emit()
-	await get_tree().create_timer(1).timeout
-	get_tree().change_scene_to_file(main_level)
+	if !exit:
+		save.emit()
+		await get_tree().create_timer(1.5).timeout
+		get_tree().change_scene_to_file(main_level)
+		exit = true

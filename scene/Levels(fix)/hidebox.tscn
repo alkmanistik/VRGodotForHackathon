@@ -102,6 +102,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 
 [node name="Viewport2Din3D" parent="Player/XRCamera3D" index="0" instance=ExtResource("22_crv3b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045, -0.046, -0.267)
+visible = false
 screen_size = Vector2(0.3, 0.2)
 collision_layer = 5242880
 scene = ExtResource("23_h4sym")

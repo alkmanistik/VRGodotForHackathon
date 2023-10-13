@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://f02rs5h3c0e6"]
+[gd_scene load_steps=35 format=3 uid="uid://f02rs5h3c0e6"]
 
 [ext_resource type="PackedScene" uid="uid://0otndonvy60n" path="res://scene/Levels(fix)/level.tscn" id="1_020fg"]
 [ext_resource type="PackedScene" uid="uid://dugybkx8yavpd" path="res://scene/Objects/Static/bridge_modular.tscn" id="2_38yvq"]
@@ -22,7 +22,9 @@
 [ext_resource type="Script" path="res://scene/characters/player.gd" id="19_w2qdy"]
 [ext_resource type="PackedScene" uid="uid://bkv43ec6chcf3" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_left.tscn" id="20_i8cgj"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="21_kwd0j"]
+[ext_resource type="PackedScene" uid="uid://clujaf3u776a3" path="res://addons/godot-xr-tools/objects/viewport_2d_in_3d.tscn" id="21_law3h"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="22_ohgw2"]
+[ext_resource type="PackedScene" uid="uid://cqogtolk2gp3p" path="res://scene/ui.tscn" id="22_sqakf"]
 [ext_resource type="PackedScene" uid="uid://hpr0v012ghsb" path="res://addons/godot-xr-tools/hands/scenes/highpoly/left_tac_glove.tscn" id="23_x54i3"]
 [ext_resource type="PackedScene" uid="uid://c3uoohvnshach" path="res://addons/godot-xr-tools/hands/scenes/collision/collision_hand_right.tscn" id="24_gc2pr"]
 [ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="25_adlat"]
@@ -30,6 +32,9 @@
 [ext_resource type="PackedScene" uid="uid://b4ysuy43poobf" path="res://addons/godot-xr-tools/functions/function_pickup.tscn" id="27_v8rtd"]
 [ext_resource type="PackedScene" uid="uid://cqhw276realc" path="res://addons/godot-xr-tools/functions/function_pointer.tscn" id="28_fryan"]
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="29_eyl46"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kffjg"]
+size = Vector3(0.5, 0.5, 0.5)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_o5lxx"]
 
@@ -255,6 +260,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.3224, 5.98217, -35.1067)
 [node name="Tower" parent="Mechanic" index="17" instance=ExtResource("18_x38ju")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38, 3, -58)
 
+[node name="Area3D" type="Area3D" parent="Mechanic" index="18"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Mechanic/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1665, 7.93653, -5.86429)
+shape = SubResource("BoxShape3D_kffjg")
+
 [node name="GridMap3" type="GridMap" parent="." index="11"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.595, 0)
 mesh_library = ExtResource("4_gqcb3")
@@ -271,6 +282,17 @@ script = ExtResource("19_w2qdy")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="Player" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+
+[node name="Viewport2Din3D" parent="Player/XRCamera3D" index="0" instance=ExtResource("21_law3h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045, -0.046, -0.267)
+visible = false
+screen_size = Vector2(0.3, 0.2)
+collision_layer = 5242880
+scene = ExtResource("22_sqakf")
+viewport_size = Vector2(1920, 1080)
+transparent = 2
+unshaded = true
+filter = false
 
 [node name="LeftXRController3D" type="XRController3D" parent="Player" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.5)
@@ -308,3 +330,5 @@ collision_mask = 31
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player/PlayerBody" index="0"]
 shape = SubResource("CapsuleShape3D_o5lxx")
+
+[connection signal="body_entered" from="Mechanic/Area3D" to="." method="_on_area_3d_body_entered"]

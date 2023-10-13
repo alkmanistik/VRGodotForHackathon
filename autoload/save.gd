@@ -23,7 +23,7 @@ func load_data() -> void:
 	file = null
 
 func update_save(level_name: String, count_star: int) -> void:
-	data[level_name]= count_star
+	data[level_name] = count_star
 	save_data()
 
 func get_inf(level_name: String) -> int:

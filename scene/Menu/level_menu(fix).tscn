@@ -73,6 +73,7 @@ texture = ExtResource("3_ph0np")
 expand_mode = 4
 
 [node name="Star_Container" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Hidebox"]
+visible = false
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
 anchors_preset = 7
@@ -144,6 +145,7 @@ texture = ExtResource("3_ph0np")
 expand_mode = 4
 
 [node name="Star_Container" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Crab\'s Trouble"]
+visible = false
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
 anchors_preset = 7
@@ -215,6 +217,7 @@ texture = ExtResource("3_ph0np")
 expand_mode = 4
 
 [node name="Star_Container2" type="HBoxContainer" parent="Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer/Beekeeper"]
+visible = false
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 1
 anchors_preset = 7

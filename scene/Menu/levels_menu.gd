@@ -5,15 +5,13 @@ var main_menu = preload("res://scene/Menu/main_menu(fix).tscn")
 @onready var level_container: HBoxContainer = $Control/MarginContainer/VBoxContainer/ScrollContainer/HBoxContainer
 var full_star = preload("res://assets/custom assets/full_star.png")
 var rainbow_star = preload("res://assets/custom assets/rainbow_star.png")
+var empty_star = preload("res://assets/custom assets/emptyl_star.png")
 
 var hidebox: String = "res://scene/Levels(fix)/hidebox.tscn"
 var crabs_trouble: String = "res://scene/Levels(fix)/crab's_trouble.tscn"
 var beekeeper: String = "res://scene/Levels(fix)/beekeeper.tscn"
 
 func _ready():
-	updete_level_stat()
-
-func updete_level_stat():
 	for i in level_container.get_children():
 		var temp = Save.get_inf(i.name)
 		if temp == 0:
@@ -30,7 +28,7 @@ func updete_level_stat():
 
 func _on_button_pressed():
 	Save.delete_save()
-	updete_level_stat()
+	get_tree().change_scene_to_file("res://scene/Levels(fix)/main_level.tscn")
 
 
 func _on_hidebox_button_pressed():

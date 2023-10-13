@@ -69,14 +69,14 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j37l1")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s72of"]
-size = Vector3(2.1, 2.1, 2.1)
+size = Vector3(2.2, 2.2, 2.2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rxqp1"]
 size = Vector3(2, 2, 2)
 
 [node name="cube" type="RigidBody3D"]
 collision_layer = 4
-collision_mask = 11
+collision_mask = 15
 can_sleep = false
 script = ExtResource("2_net6e")
 
@@ -87,7 +87,7 @@ skeleton = NodePath("")
 [node name="Destruction" type="Node" parent="." node_paths=PackedStringArray("shard_container")]
 script = ExtResource("2_e1a2d")
 fragmented = ExtResource("3_onse5")
-shard_container = NodePath("../..")
+shard_container = NodePath("")
 fade_delay = 9.5
 shrink_delay = 9.5
 animation_length = 10.0
@@ -95,7 +95,7 @@ collision_layer = 16
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 16
-collision_mask = 512
+collision_mask = 576
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_s72of")

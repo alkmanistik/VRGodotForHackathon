@@ -40,6 +40,7 @@ func start_zone(_body):
 		start()
 
 func teleport(where: Marker3D):
+	return
 	var temp = get_tree().get_first_node_in_group("player")
 	temp.position = where.get_global_position()
 	temp.rotation = rotate_to_quest

@@ -8,7 +8,11 @@ func quest_object_after():
 	house.show()
 	house_collision.disabled = false
 
+func _process(delta):
+	check()
+
 func check():
 	if !is_complete and cubes.get_child_count() == 0:
 		completed()
+
 

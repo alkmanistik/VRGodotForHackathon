@@ -6928,7 +6928,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 curve = SubResource("Curve3D_xhvm5")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Objects/Path3D" index="0"]
-transform = Transform3D(-0.551907, 0.00994434, -0.833796, -0.00260968, 0.999865, 0.0136522, 0.833855, 0.00971113, -0.551825, 4.29844, 2.98123, -0.597085)
+transform = Transform3D(-0.551907, 0.00994434, -0.833796, -0.00260968, 0.999865, 0.0136522, 0.833855, 0.00971114, -0.551825, 4.29844, 2.98123, -0.597085)
 progress = 3.34578
 
 [node name="Bee" type="Node3D" parent="Objects/Path3D/PathFollow3D" index="0"]
