@@ -716,7 +716,6 @@ script = ExtResource("21_522dy")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="Player" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
-visible = false
 
 [node name="Viewport2Din3D" parent="Player/XRCamera3D" index="0" instance=ExtResource("21_xhwsh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.045, -0.046, -0.267)
