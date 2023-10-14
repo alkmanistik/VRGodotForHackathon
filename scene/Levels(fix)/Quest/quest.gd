@@ -33,11 +33,16 @@ func check_zone(_body) -> void:
 func check() -> void:
 	return
 
+func start_zone_func() -> void:
+	return
 
 func start_zone(_body):
-	if !is_complete and !is_start:
-		teleport(start_position)
-		start()
+	if !is_complete:
+		start_zone_func()
+		if !is_start:
+			teleport(start_position)
+			start()
+		
 
 func teleport(where: Marker3D):
 	return
