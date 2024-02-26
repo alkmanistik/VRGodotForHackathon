@@ -1,8 +1,7 @@
 # VRGodotForHackathon
 
 # Сам проект:
-Наш проект это VR игра
-Посмотреть его можно на [youtube](https://youtu.be/g1keA9Iyt38)
+Наш проект это VR игра. Посмотреть его можно на [youtube](https://youtu.be/g1keA9Iyt38)
  
 # Паттерн программирования:
 	## Переменные
